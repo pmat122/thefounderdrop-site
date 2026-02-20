@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free AI Cold Email Writer | Generate Cold Outreach in Seconds</title>
+<meta name="description" content="Create personalized cold email sequences instantly. Free AI-powered tool for sales teams and founders. No signup required.">
+<meta name="keywords" content="ai cold email generator, cold email template generator, free cold email writer, cold outreach tool">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Free AI Cold Email Writer | Generate Cold Outreach in Seconds">
+<meta property="og:description" content="Create personalized cold email sequences instantly. Free AI-powered tool for sales teams and founders.">
+<meta property="og:image" content="https://thefounderdrop.com/og-cold-email-writer.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://thefounderdrop.com/free-tools/ai-cold-email-writer">
+<meta property="og:site_name" content="The Founder Drop">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free AI Cold Email Writer | The Founder Drop">
+<meta name="twitter:description" content="Generate a 3-email cold outreach sequence in seconds. No signup required.">
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+<!-- Schema Markup -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "AI Cold Email Writer",
+  "description": "Create personalized cold email sequences instantly. Free AI-powered tool for sales teams and founders.",
+  "url": "https://thefounderdrop.com/free-tools/ai-cold-email-writer",
+  "applicationCategory": "BusinessApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "operatingSystem": "Any",
+  "browserRequirements": "Requires JavaScript"
+}
+</script>
+
+<style>
+:root {
+  --primary: #5B9BD5;
+  --primary-hover: #4A8BC5;
+  --bg-dark: #0D0D0D;
+  --bg-card: #1A1A1A;
+  --bg-input: #141414;
+  --text-primary: #FFFFFF;
+  --text-secondary: #A0A0A0;
+  --text-muted: #666666;
+  --border: #2A2A2A;
+  --border-light: #333333;
+  --success: #4CAF50;
+  --accent-glow: rgba(91, 155, 213, 0.15);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--bg-dark);
+  color: var(--text-primary);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* Navigation */
+.site-nav {
+  border-bottom: 1px solid var(--border);
+  padding: 16px 20px;
+  position: sticky;
+  top: 0;
+  background: rgba(13, 13, 13, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 100;
+}
+
+.nav-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.nav-links a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: var(--text-primary);
+}
+
+.nav-cta {
+  background: var(--primary) !important;
+  color: #fff !important;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
+.nav-cta:hover {
+  background: var(--primary-hover) !important;
+}
+
+/* Container */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* Page Header */
+.page-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.page-header h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+  background: linear-gradient(135deg, var(--text-primary), var(--primary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.page-header p {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+}
+
+/* Tool Card */
+.tool-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 32px;
+  margin-bottom: 32px;
+}
+
+/* Form Styles */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.form-group small {
+  display: block;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  margin-top: 4px;
+}
+
+input[type="text"],
+textarea,
+select {
+  width: 100%;
+  padding: 14px 16px;
+  background: var(--bg-input);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input[type="text"]:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--text-muted);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23A0A0A0' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10l-5 5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+}
+
+/* Generate Button */
+.generate-btn {
+  width: 100%;
+  padding: 16px 24px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.generate-btn:hover {
+  background: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+.generate-btn:active {
+  transform: translateY(0);
+}
+
+.generate-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.generate-btn .icon {
+  font-size: 1.2rem;
+}
+
+/* Output Area */
+.output-area {
+  display: none;
+  margin-top: 32px;
+}
+
+.output-area.visible {
+  display: block;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Email Card */
+.email-card {
+  background: var(--bg-input);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.email-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  background: rgba(91, 155, 213, 0.1);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.email-header h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.email-header .badge {
+  font-size: 0.75rem;
+  padding: 4px 10px;
+  background: var(--bg-dark);
+  border-radius: 100px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.copy-all-btn {
+  padding: 8px 14px;
+  background: var(--bg-dark);
+  border: 1px solid var(--border-light);
+  border-radius: 6px;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.copy-all-btn:hover {
+  background: var(--border);
+  color: var(--text-primary);
+}
+
+.copy-all-btn.copied {
+  background: var(--success);
+  color: white;
+  border-color: var(--success);
+}
+
+.email-content {
+  padding: 20px;
+}
+
+.email-subject {
+  margin-bottom: 16px;
+}
+
+.email-subject label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.email-subject p {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.email-body label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.email-body p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  white-space: pre-wrap;
+}
+
+/* Affiliate Section */
+.affiliate-section {
+  background: linear-gradient(135deg, rgba(91, 155, 213, 0.1), rgba(91, 155, 213, 0.05));
+  border: 1px solid rgba(91, 155, 213, 0.2);
+  border-radius: 16px;
+  padding: 32px;
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.affiliate-section h3 {
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+  color: var(--text-primary);
+}
+
+.affiliate-section p {
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+}
+
+.affiliate-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  background: var(--primary);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.affiliate-btn:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px var(--accent-glow);
+}
+
+/* Email Capture */
+.email-capture {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 32px;
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.email-capture h3 {
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+}
+
+.email-capture p {
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+}
+
+.capture-form {
+  display: flex;
+  gap: 12px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.capture-form input {
+  flex: 1;
+}
+
+.capture-form button {
+  padding: 14px 24px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s;
+}
+
+.capture-form button:hover {
+  background: var(--primary-hover);
+}
+
+.capture-success {
+  display: none;
+  padding: 20px;
+  background: rgba(76, 175, 80, 0.1);
+  border: 1px solid rgba(76, 175, 80, 0.3);
+  border-radius: 8px;
+  color: var(--success);
+  text-align: center;
+}
+
+.capture-success.visible {
+  display: block;
+}
+
+/* Related Tools */
+.related-tools {
+  margin-bottom: 32px;
+}
+
+.related-tools h3 {
+  font-size: 1.1rem;
+  margin-bottom: 16px;
+  color: var(--text-secondary);
+}
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.tool-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--text-primary);
+  transition: all 0.2s;
+}
+
+.tool-link:hover {
+  border-color: var(--primary);
+  transform: translateY(-2px);
+}
+
+.tool-link .icon {
+  font-size: 1.5rem;
+}
+
+.tool-link span {
+  font-weight: 500;
+}
+
+/* Footer */
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 40px 20px;
+  text-align: center;
+  margin-top: 60px;
+}
+
+.footer-links {
+  margin-bottom: 16px;
+}
+
+.footer-links a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover {
+  color: var(--primary);
+}
+
+.footer-links .sep {
+  color: var(--border);
+  margin: 0 12px;
+}
+
+.footer-social {
+  margin-bottom: 16px;
+}
+
+.footer-social a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.footer-copy {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+  .page-header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .tool-card {
+    padding: 24px 20px;
+  }
+  
+  .capture-form {
+    flex-direction: column;
+  }
+  
+  .capture-form button {
+    width: 100%;
+  }
+  
+  .nav-links a:not(.nav-cta) {
+    display: none;
+  }
+  
+  .email-header {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+}
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="nav-container">
+    <a href="/" class="nav-logo">The Founder Drop</a>
+    <div class="nav-links">
+      <a href="/toolkit">Toolkit</a>
+      <a href="/free-tools">Free Tools</a>
+      <a href="/guides">Guides</a>
+      <a href="/#form" class="nav-cta">Subscribe</a>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <header class="page-header">
+    <h1>Free AI Cold Email Writer</h1>
+    <p>Generate a 3-email outreach sequence in seconds. No signup required.</p>
+  </header>
+
+  <div class="tool-card">
+    <form id="email-generator-form">
+      <div class="form-group">
+        <label for="industry">Industry</label>
+        <select id="industry" required>
+          <option value="">Select your target industry...</option>
+          <option value="SaaS">SaaS / Software</option>
+          <option value="E-commerce">E-commerce / Retail</option>
+          <option value="Marketing Agency">Marketing Agency</option>
+          <option value="Real Estate">Real Estate</option>
+          <option value="Healthcare">Healthcare</option>
+          <option value="Finance">Finance / Fintech</option>
+          <option value="Education">Education / EdTech</option>
+          <option value="Manufacturing">Manufacturing</option>
+          <option value="Professional Services">Professional Services</option>
+          <option value="Consulting">Consulting</option>
+          <option value="Tech Startup">Tech Startup</option>
+          <option value="Media">Media / Entertainment</option>
+          <option value="Other">Other</option>
+        </select>
+        <small>What industry is your prospect in?</small>
+      </div>
+
+      <div class="form-group">
+        <label for="role">Target Role</label>
+        <input type="text" id="role" placeholder="e.g., Head of Marketing, CEO, VP Sales" required>
+        <small>Who are you reaching out to?</small>
+      </div>
+
+      <div class="form-group">
+        <label for="offer">Your Offer / Value Prop</label>
+        <textarea id="offer" placeholder="e.g., We help SaaS companies reduce churn by 30% using AI-powered customer success automation. Our clients typically see ROI within 60 days." required></textarea>
+        <small>What do you offer and what results do you deliver?</small>
+      </div>
+
+      <button type="submit" class="generate-btn">
+        <span class="icon">⚡</span>
+        Generate Email Sequence
+      </button>
+    </form>
+
+    <div id="output-area" class="output-area">
+      <!-- Email 1 -->
+      <div class="email-card" id="email-1-card">
+        <div class="email-header">
+          <h3>📧 Email 1 <span class="badge">Initial Outreach</span></h3>
+          <button class="copy-all-btn" onclick="copyEmail(1)">
+            <span>📋</span> Copy
+          </button>
+        </div>
+        <div class="email-content">
+          <div class="email-subject">
+            <label>Subject Line</label>
+            <p id="email-1-subject"></p>
+          </div>
+          <div class="email-body">
+            <label>Body</label>
+            <p id="email-1-body"></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Email 2 -->
+      <div class="email-card" id="email-2-card">
+        <div class="email-header">
+          <h3>📧 Email 2 <span class="badge">Value-Add Follow-up</span></h3>
+          <button class="copy-all-btn" onclick="copyEmail(2)">
+            <span>📋</span> Copy
+          </button>
+        </div>
+        <div class="email-content">
+          <div class="email-subject">
+            <label>Subject Line</label>
+            <p id="email-2-subject"></p>
+          </div>
+          <div class="email-body">
+            <label>Body</label>
+            <p id="email-2-body"></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Email 3 -->
+      <div class="email-card" id="email-3-card">
+        <div class="email-header">
+          <h3>📧 Email 3 <span class="badge">Breakup Email</span></h3>
+          <button class="copy-all-btn" onclick="copyEmail(3)">
+            <span>📋</span> Copy
+          </button>
+        </div>
+        <div class="email-content">
+          <div class="email-subject">
+            <label>Subject Line</label>
+            <p id="email-3-subject"></p>
+          </div>
+          <div class="email-body">
+            <label>Body</label>
+            <p id="email-3-body"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Affiliate Section -->
+  <div class="affiliate-section">
+    <h3>Ready to send these emails?</h3>
+    <p>Use Instantly.ai to automate your entire outreach sequence with AI-powered deliverability.</p>
+    <a href="/go/instantly" class="affiliate-btn">
+      Try Instantly.ai Free →
+    </a>
+  </div>
+
+  <!-- Email Capture -->
+  <div class="email-capture" id="email-capture-section">
+    <h3>🔥 Get the Complete Cold Outbound SOP</h3>
+    <p>10x more templates, scripts, and the exact follow-up cadence that books meetings.</p>
+    <div id="capture-form-container">
+      <form class="capture-form" id="sop-form">
+        <input type="email" id="sop-email" placeholder="Enter your email" required>
+        <button type="submit">Get the SOP</button>
+      </form>
+    </div>
+    <div class="capture-success" id="capture-success">
+      ✅ Check your inbox! The SOP is on its way.
+    </div>
+  </div>
+
+  <!-- Related Tools -->
+  <div class="related-tools">
+    <h3>More Free Tools</h3>
+    <div class="tools-grid">
+      <a href="/free-tools" class="tool-link">
+        <span class="icon">🧠</span>
+        <span>All Free Tools</span>
+      </a>
+      <a href="/toolkit" class="tool-link">
+        <span class="icon">🛠️</span>
+        <span>Founder Toolkit</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <nav class="footer-links">
+    <a href="/">Home</a>
+    <span class="sep">|</span>
+    <a href="/toolkit">Toolkit</a>
+    <span class="sep">|</span>
+    <a href="/free-tools">Free Tools</a>
+    <span class="sep">|</span>
+    <a href="/guides">Guides</a>
+  </nav>
+  <div class="footer-social">
+    <a href="https://instagram.com/thefounderdrop" target="_blank" rel="noopener">@thefounderdrop</a>
+  </div>
+  <p class="footer-copy">© 2026 The Founder Drop</p>
+</footer>
+
+<script>
+// Email templates
+const emailTemplates = {
+  email1: {
+    subjects: [
+      "Quick question about {industry}",
+      "{role}s are struggling with this",
+      "Noticed something about {industry}",
+      "Not another pitch (promise)"
+    ],
+    bodies: [
+      `Hey {{firstName}},
+
+I've been digging into how {industry} companies handle {painPoint} — and I noticed most {role}s are still doing it the hard way.
+
+We just helped a similar company {benefit}. Took about 60 days.
+
+{offer}
+
+Worth a 15-min call to see if this fits?
+
+Best,
+[Your name]`,
+      `Hi {{firstName}},
+
+Random question — how's your team currently handling {painPoint}?
+
+I ask because we work with {industry} companies and their {role}s keep telling us it's their #1 time sink.
+
+{offer}
+
+If that resonates, happy to share what's working for others in a quick call.
+
+Best,
+[Your name]`,
+      `{{firstName}},
+
+I'll keep this short.
+
+Most {role}s in {industry} waste hours on {painPoint}. We built something that fixes that.
+
+{offer}
+
+Curious if you're open to a 15-min chat? No pitch — just seeing if there's a fit.
+
+[Your name]`,
+      `Hey {{firstName}},
+
+Weird question — if you could wave a magic wand and fix one thing about {painPoint}, what would it be?
+
+I work with {industry} companies, and that's usually the answer I get.
+
+{offer}
+
+If you're open to it, I'd love to share how we're solving this for companies like yours.
+
+15 minutes. No fluff.
+
+[Your name]`
+    ]
+  },
+  email2: {
+    subjects: [
+      "Re: Quick question about {industry}",
+      "Thought you'd find this useful",
+      "Quick resource for {role}s",
+      "Following up (with something useful)"
+    ],
+    bodies: [
+      `Hey {{firstName}},
+
+Following up on my last note.
+
+I put together a quick breakdown of how top {industry} companies are tackling {painPoint} — thought it might be useful whether we chat or not.
+
+The TL;DR: {benefit}
+
+{offer}
+
+Worth 15 minutes to see if this could work for you?
+
+Best,
+[Your name]`,
+      `Hi {{firstName}},
+
+Wanted to share something that might help.
+
+We recently did a case study with a {industry} company. Their {role} was spending 10+ hours/week on {painPoint}.
+
+After working with us: {benefit}
+
+{offer}
+
+If you're curious how we did it, happy to walk you through it. 15 min max.
+
+[Your name]`,
+      `{{firstName}},
+
+Quick follow-up with something useful.
+
+I was talking to another {role} in {industry} yesterday — they mentioned how {painPoint} was eating up their whole week.
+
+We helped them {benefit}. They couldn't believe how fast it happened.
+
+{offer}
+
+Would love to show you how. Free to chat this week?
+
+[Your name]`,
+      `Hey {{firstName}},
+
+Not trying to be annoying — just wanted to add some value.
+
+Here's what I'm seeing work for {role}s in {industry} right now:
+
+→ They're automating {painPoint}
+→ Result: {benefit}
+→ Timeline: Usually 30-60 days
+
+{offer}
+
+If this is even remotely interesting, let's grab 15 min.
+
+[Your name]`
+    ]
+  },
+  email3: {
+    subjects: [
+      "Should I close the loop?",
+      "One last thing",
+      "Closing the file",
+      "Am I way off base?"
+    ],
+    bodies: [
+      `Hey {{firstName}},
+
+I've reached out a couple times and haven't heard back — totally get it, you're busy.
+
+I'll assume the timing isn't right and close the loop on my end.
+
+But if {painPoint} becomes a priority and you want to explore how we {benefit}, just reply to this and we'll pick it up.
+
+No hard feelings either way.
+
+Best,
+[Your name]`,
+      `{{firstName}},
+
+Last email from me, I promise.
+
+If solving {painPoint} isn't a priority right now, no worries at all. I'll stop reaching out.
+
+But if things change and you want to see how {industry} companies are achieving {benefit}, this thread will still be here.
+
+Either way, wishing you and the team all the best.
+
+[Your name]`,
+      `Hi {{firstName}},
+
+I'll keep this short since it's my last reach-out.
+
+Three quick options:
+
+1. "Yes, let's chat" → I'll send times
+2. "Not now, try me in 3 months" → I'll follow up then
+3. No reply → I'll assume timing's off and move on
+
+No pressure. Just didn't want to keep emailing without checking in.
+
+Best,
+[Your name]`,
+      `{{firstName}},
+
+Going to assume I've caught you at a bad time.
+
+If {painPoint} ever bubbles up as something you want to fix, just know that we've helped other {role}s in {industry} {benefit}.
+
+{offer}
+
+Until then, I'll get out of your hair. Best of luck with everything!
+
+[Your name]`
+    ]
+  }
+};
+
+// Pain points by industry
+const painPoints = {
+  "SaaS": "customer churn and retention",
+  "E-commerce": "cart abandonment and customer acquisition costs",
+  "Marketing Agency": "client reporting and campaign management",
+  "Real Estate": "lead follow-up and deal pipeline management",
+  "Healthcare": "patient engagement and administrative overhead",
+  "Finance": "compliance and customer onboarding",
+  "Education": "student engagement and enrollment",
+  "Manufacturing": "supply chain visibility and production planning",
+  "Professional Services": "client communication and project delivery",
+  "Consulting": "proposal creation and client management",
+  "Tech Startup": "growth and scaling operations",
+  "Media": "content distribution and audience engagement",
+  "Other": "operational efficiency"
+};
+
+// Benefits by industry
+const benefits = {
+  "SaaS": "reduce churn by 30% and boost retention",
+  "E-commerce": "recover 25% more abandoned carts",
+  "Marketing Agency": "save 10+ hours/week on reporting",
+  "Real Estate": "close 40% more deals with automated follow-up",
+  "Healthcare": "improve patient satisfaction scores by 35%",
+  "Finance": "cut onboarding time in half",
+  "Education": "increase enrollment rates by 25%",
+  "Manufacturing": "reduce supply chain delays by 40%",
+  "Professional Services": "deliver projects 30% faster",
+  "Consulting": "win 50% more proposals",
+  "Tech Startup": "scale 2x faster without adding headcount",
+  "Media": "grow audience engagement by 45%",
+  "Other": "improve efficiency by 40%"
+};
+
+// Helper function to get random item from array
+function randomItem(arr) {
+  return arr[Math.floor(Math.random() * arr.length)];
+}
+
+// Generate emails
+function generateEmails(industry, role, offer) {
+  const painPoint = painPoints[industry] || painPoints["Other"];
+  const benefit = benefits[industry] || benefits["Other"];
+  
+  const replacements = {
+    "{industry}": industry,
+    "{role}": role,
+    "{painPoint}": painPoint,
+    "{benefit}": benefit,
+    "{offer}": offer,
+    "{{firstName}}": "{{firstName}}"
+  };
+  
+  function applyReplacements(text) {
+    let result = text;
+    for (const [key, value] of Object.entries(replacements)) {
+      result = result.split(key).join(value);
+    }
+    return result;
+  }
+  
+  const email1Subject = applyReplacements(randomItem(emailTemplates.email1.subjects));
+  const email1Body = applyReplacements(randomItem(emailTemplates.email1.bodies));
+  
+  const email2Subject = applyReplacements(randomItem(emailTemplates.email2.subjects));
+  const email2Body = applyReplacements(randomItem(emailTemplates.email2.bodies));
+  
+  const email3Subject = applyReplacements(randomItem(emailTemplates.email3.subjects));
+  const email3Body = applyReplacements(randomItem(emailTemplates.email3.bodies));
+  
+  return {
+    email1: { subject: email1Subject, body: email1Body },
+    email2: { subject: email2Subject, body: email2Body },
+    email3: { subject: email3Subject, body: email3Body }
+  };
+}
+
+// Form submission
+document.getElementById('email-generator-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  
+  const industry = document.getElementById('industry').value;
+  const role = document.getElementById('role').value.trim();
+  const offer = document.getElementById('offer').value.trim();
+  
+  if (!industry || !role || !offer) {
+    alert('Please fill in all fields');
+    return;
+  }
+  
+  const btn = document.querySelector('.generate-btn');
+  btn.innerHTML = '<span class="icon">⏳</span> Generating...';
+  btn.disabled = true;
+  
+  // Simulate a small delay for UX
+  setTimeout(() => {
+    const emails = generateEmails(industry, role, offer);
+    
+    document.getElementById('email-1-subject').textContent = emails.email1.subject;
+    document.getElementById('email-1-body').textContent = emails.email1.body;
+    
+    document.getElementById('email-2-subject').textContent = emails.email2.subject;
+    document.getElementById('email-2-body').textContent = emails.email2.body;
+    
+    document.getElementById('email-3-subject').textContent = emails.email3.subject;
+    document.getElementById('email-3-body').textContent = emails.email3.body;
+    
+    document.getElementById('output-area').classList.add('visible');
+    
+    btn.innerHTML = '<span class="icon">⚡</span> Generate Email Sequence';
+    btn.disabled = false;
+    
+    // Scroll to output
+    document.getElementById('output-area').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, 800);
+});
+
+// Copy email function
+function copyEmail(emailNum) {
+  const subject = document.getElementById(`email-${emailNum}-subject`).textContent;
+  const body = document.getElementById(`email-${emailNum}-body`).textContent;
+  const text = `Subject: ${subject}\n\n${body}`;
+  
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = document.querySelector(`#email-${emailNum}-card .copy-all-btn`);
+    btn.innerHTML = '<span>✅</span> Copied!';
+    btn.classList.add('copied');
+    
+    setTimeout(() => {
+      btn.innerHTML = '<span>📋</span> Copy';
+      btn.classList.remove('copied');
+    }, 2000);
+  });
+}
+
+// Email capture form
+const GHL_WEBHOOK_URL = '{{GHL_WEBHOOK}}';
+
+document.getElementById('sop-form').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  
+  const email = document.getElementById('sop-email').value.trim();
+  
+  if (!email || !email.includes('@')) {
+    document.getElementById('sop-email').style.borderColor = '#ff4444';
+    return;
+  }
+  
+  const btn = this.querySelector('button');
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+  
+  try {
+    await fetch(GHL_WEBHOOK_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      mode: 'no-cors',
+      body: JSON.stringify({
+        email: email,
+        source: 'ai-cold-email-writer',
+        tag: 'tool_cold_email_writer'
+      })
+    });
+  } catch (e) {
+    console.log('Webhook send attempted');
+  }
+  
+  document.getElementById('capture-form-container').style.display = 'none';
+  document.getElementById('capture-success').classList.add('visible');
+});
+</script>
+
+</body>
+</html>
