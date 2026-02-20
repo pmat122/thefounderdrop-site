@@ -1105,31 +1105,47 @@ document.getElementById('sop-form').addEventListener('submit', async function(e)
   e.preventDefault();
   
   const email = document.getElementById('sop-email').value.trim();
+  const emailInput = document.getElementById('sop-email');
+  const btn = this.querySelector('button');
+  const formContainer = document.getElementById('capture-form-container');
+  const successEl = document.getElementById('capture-success');
+  
+  // Reset any previous error state
+  emailInput.style.borderColor = '';
   
   if (!email || !email.includes('@')) {
-    document.getElementById('sop-email').style.borderColor = '#ff4444';
+    emailInput.style.borderColor = '#ff4444';
     return;
   }
   
-  const btn = this.querySelector('button');
   btn.textContent = 'Sending...';
   btn.disabled = true;
   
   try {
-    await fetch(GHL_WEBHOOK_URL, {
+    const response = await fetch(GHL_WEBHOOK_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      mode: 'no-cors',
-      body: JSON.stringify({
-        email: email
-      })
+      body: JSON.stringify({ email: email })
     });
-  } catch (e) {
-    console.log('Webhook send attempted');
+    
+    if (response.ok) {
+      // Success - hide form, show success message
+      formContainer.style.display = 'none';
+      successEl.classList.add('visible');
+    } else {
+      throw new Error('Request failed');
+    }
+  } catch (err) {
+    console.error('Webhook error:', err);
+    // Show error state
+    btn.textContent = 'Error - Try Again';
+    btn.disabled = false;
+    btn.style.background = '#ff4444';
+    setTimeout(() => {
+      btn.textContent = 'Get the SOP';
+      btn.style.background = '';
+    }, 3000);
   }
-  
-  document.getElementById('capture-form-container').style.display = 'none';
-  document.getElementById('capture-success').classList.add('visible');
 });
 </script>
 
