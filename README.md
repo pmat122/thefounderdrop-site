@@ -4,10 +4,11 @@ Auto-deployed to Netlify.
 
 ## Important
 
-**The root `index.html` is NOT in this repo.**
+**`index.html` is LOCKED.** Knox (AI) cannot modify it without Paul's explicit approval.
 
-Paul maintains the landing page manually. This repo only contains subpages and assets:
+## Contents
 
+- `/index.html` - Landing page (LOCKED)
 - `/toolkit` - Affiliate toolkit
 - `/free-tools` - Free founder tools
 - `/guides` - Tactical guides
@@ -19,4 +20,4 @@ Paul maintains the landing page manually. This repo only contains subpages and a
 
 Push to `main` → Netlify auto-deploys.
 
-Knox (AI) can deploy freely to any page **except** the root landing page.
+Knox can deploy freely to any page **except** index.html.
