@@ -1099,7 +1099,7 @@ function copyEmail(emailNum) {
 }
 
 // Email capture form
-const GHL_WEBHOOK_URL = '{{GHL_WEBHOOK}}';
+const GHL_WEBHOOK_URL = 'https://services.leadconnectorhq.com/hooks/73JctoYNF5rEgo4S5PU0/webhook-trigger/d8dc5980-71a0-45bf-9efc-55cc41b1a976';
 
 document.getElementById('sop-form').addEventListener('submit', async function(e) {
   e.preventDefault();
@@ -1122,8 +1122,7 @@ document.getElementById('sop-form').addEventListener('submit', async function(e)
       mode: 'no-cors',
       body: JSON.stringify({
         email: email,
-        source: 'ai-cold-email-writer',
-        tag: 'tool_cold_email_writer'
+        tags: ['founder-drop', 'cold-email-writer']
       })
     });
   } catch (e) {
