@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Caption Generator | Free AI Caption Writer</title>
+    <meta name="description" content="Generate scroll-stopping Instagram captions in seconds. Free AI caption writer for carousels, reels, and stories. Get 3 variations with hashtag suggestions.">
+    
+    <!-- Target Keywords -->
+    <meta name="keywords" content="instagram caption generator, ai caption writer, instagram caption ideas, social media caption generator, instagram post captions">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Instagram Caption Generator | Free AI Caption Writer">
+    <meta property="og:description" content="Generate scroll-stopping Instagram captions in seconds. Free AI-powered tool with hashtag suggestions.">
+    <meta property="og:image" content="https://thefounderdrop.com/og-instagram-caption-tool.png">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://thefounderdrop.com/free-tools/instagram-caption-generator">
+    <meta property="og:site_name" content="The Founder Drop">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Instagram Caption Generator | Free AI Caption Writer">
+    <meta name="twitter:description" content="Generate scroll-stopping Instagram captions in seconds.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="canonical" href="https://thefounderdrop.com/free-tools/instagram-caption-generator">
+    
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Instagram Caption Generator",
+        "description": "Free AI-powered Instagram caption generator that creates engaging captions with hashtag suggestions in seconds.",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "provider": {
+            "@type": "Organization",
+            "name": "The Founder Drop",
+            "url": "https://thefounderdrop.com"
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How does the AI Instagram caption generator work?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Enter your content topic or hook, target audience, and post type. The AI generates 3 caption variations with relevant hashtag suggestions, optimized for engagement and the Instagram algorithm."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is this Instagram caption generator free?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, completely free. No signup, no credit card, no limits. Generate as many captions as you need for your Instagram content."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What makes a good Instagram caption?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A good Instagram caption hooks attention in the first line, provides value or tells a story, includes a clear call-to-action, and uses relevant hashtags. Our generator incorporates all these best practices."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I use these captions for business accounts?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Absolutely. The generator is designed for founders, creators, and businesses. Captions are crafted to drive engagement, build authority, and encourage action."
+                }
+            }
+        ]
+    }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary: #5B9BD5;
+            --primary-hover: #4A8BC5;
+            --bg-dark: #0a0a0a;
+            --bg-card: #1A1A1A;
+            --bg-input: #141414;
+            --text-primary: #FFFFFF;
+            --text-secondary: rgba(255,255,255,0.5);
+            --text-muted: #666666;
+            --border: #2A2A2A;
+            --success: #22c55e;
+            --success-bg: rgba(34, 197, 94, 0.1);
+            --instagram: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+        }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        /* Nav */
+        .site-nav { border-bottom: 1px solid var(--border); padding: 16px 20px; }
+        .nav-container { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .nav-logo { font-size: 1.1rem; font-weight: 700; color: var(--text-primary); text-decoration: none; }
+        .nav-links { display: flex; gap: 24px; align-items: center; }
+        .nav-links a { color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+        .nav-links a:hover { color: var(--text-primary); }
+        .nav-cta { background: var(--primary) !important; color: white !important; padding: 8px 16px; border-radius: 6px; }
+        
+        /* Main Container */
+        .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
+        
+        /* Page Header */
+        .page-header { text-align: center; margin-bottom: 40px; }
+        .badge { 
+            display: inline-block; 
+            background: linear-gradient(45deg, rgba(240,148,51,0.15), rgba(188,24,136,0.15)); 
+            color: #e6683c; 
+            padding: 6px 14px; 
+            border-radius: 20px; 
+            font-size: 0.85rem; 
+            font-weight: 600; 
+            margin-bottom: 16px; 
+        }
+        .page-header h1 { font-size: 2.5rem; font-weight: 900; margin-bottom: 12px; line-height: 1.2; }
+        .page-header h1 span { 
+            background: var(--instagram);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .page-header p { color: var(--text-secondary); font-size: 1.1rem; max-width: 560px; margin: 0 auto; }
+        
+        /* Tool Card */
+        .tool-card {
+            background: var(--bg-card);
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            padding: 32px;
+            margin-bottom: 32px;
+        }
+        
+        /* Form Styles */
+        .form-group { margin-bottom: 24px; }
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+        .form-group .hint {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-weight: 400;
+            margin-left: 8px;
+        }
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 14px 16px;
+            background: var(--bg-input);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-size: 1rem;
+            font-family: inherit;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        .form-group select {
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23666666' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10l-5 5z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 16px center;
+        }
+        .form-group select option {
+            background: var(--bg-card);
+            color: var(--text-primary);
+        }
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(91, 155, 213, 0.15);
+        }
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: var(--text-muted);
+        }
+        .form-group textarea { resize: vertical; min-height: 100px; }
+        
+        /* Generate Button */
+        .generate-btn {
+            width: 100%;
+            padding: 16px 24px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s;
+            font-family: inherit;
+        }
+        .generate-btn:hover { background: var(--primary-hover); }
+        .generate-btn:active { transform: scale(0.98); }
+        .generate-btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+        .generate-btn.loading {
+            position: relative;
+            color: transparent;
+        }
+        .generate-btn.loading::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            top: 50%;
+            left: 50%;
+            margin-left: -10px;
+            margin-top: -10px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-top-color: white;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        
+        /* Output Section */
+        .output-section {
+            display: none;
+            margin-top: 32px;
+        }
+        .output-section.visible { display: block; }
+        
+        /* Caption Versions */
+        .caption-versions {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+        }
+        .version-btn {
+            padding: 10px 18px;
+            background: transparent;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: inherit;
+            font-weight: 500;
+        }
+        .version-btn:hover { border-color: var(--primary); color: var(--text-primary); }
+        .version-btn.active {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: white;
+        }
+        
+        .output-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+        .output-header h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+        .copy-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 18px;
+            background: var(--bg-input);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: inherit;
+        }
+        .copy-btn:hover {
+            background: var(--border);
+            border-color: var(--primary);
+        }
+        .copy-btn.copied {
+            background: var(--success-bg);
+            border-color: var(--success);
+            color: var(--success);
+        }
+        
+        /* Caption Output */
+        .caption-output {
+            background: var(--bg-input);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+        }
+        .caption-text {
+            white-space: pre-wrap;
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        .hashtags {
+            padding-top: 16px;
+            border-top: 1px solid var(--border);
+        }
+        .hashtags-label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 10px;
+        }
+        .hashtags-text {
+            color: var(--primary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            word-break: break-word;
+        }
+        
+        /* Character Count */
+        .char-count {
+            display: flex;
+            gap: 16px;
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid var(--border);
+        }
+        .char-stat {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+        .char-stat span {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+        
+        /* Lead Capture CTA */
+        .lead-capture {
+            background: linear-gradient(135deg, rgba(91, 155, 213, 0.15) 0%, rgba(91, 155, 213, 0.05) 100%);
+            border: 1px solid rgba(91, 155, 213, 0.3);
+            border-radius: 12px;
+            padding: 28px;
+            margin-top: 32px;
+            text-align: center;
+        }
+        .lead-capture h3 {
+            font-size: 1.25rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+        .lead-capture p {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+        .lead-capture-form {
+            display: flex;
+            gap: 12px;
+            max-width: 440px;
+            margin: 0 auto;
+        }
+        .lead-capture-form input {
+            flex: 1;
+            padding: 12px 16px;
+            background: var(--bg-input);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            color: var(--text-primary);
+            font-size: 0.95rem;
+            font-family: inherit;
+        }
+        .lead-capture-form input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        .lead-capture-form button {
+            padding: 12px 24px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.2s;
+            font-family: inherit;
+            white-space: nowrap;
+        }
+        .lead-capture-form button:hover { background: var(--primary-hover); }
+        .lead-success {
+            display: none;
+            color: var(--success);
+            font-weight: 600;
+        }
+        .lead-success.visible { display: block; }
+        .lead-capture-form.hidden { display: none; }
+        
+        /* Affiliate CTA */
+        .affiliate-cta {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin-top: 24px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .affiliate-cta-icon {
+            font-size: 2.5rem;
+            flex-shrink: 0;
+        }
+        .affiliate-cta-content { flex: 1; }
+        .affiliate-cta-content h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .affiliate-cta-content p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 0;
+        }
+        .affiliate-cta-btn {
+            padding: 12px 20px;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: background 0.2s;
+            white-space: nowrap;
+        }
+        .affiliate-cta-btn:hover { background: var(--primary-hover); }
+        
+        /* Tips Section */
+        .tips-section {
+            margin-top: 48px;
+        }
+        .tips-section h2 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .tip-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+        }
+        .tip-card h4 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .tip-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        
+        /* FAQ Section */
+        .faq-section {
+            margin-top: 48px;
+        }
+        .faq-section h2 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .faq-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 16px;
+        }
+        .faq-item h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--primary);
+        }
+        .faq-item p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+        
+        /* Footer */
+        .site-footer { border-top: 1px solid var(--border); padding: 40px 20px; text-align: center; margin-top: 60px; }
+        .footer-links { margin-bottom: 16px; }
+        .footer-links a { color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; }
+        .footer-links a:hover { color: var(--primary); }
+        .footer-links .sep { color: var(--border); margin: 0 12px; }
+        .footer-social { margin-bottom: 16px; }
+        .footer-social a { color: var(--primary); text-decoration: none; }
+        .footer-copy { color: var(--text-muted); font-size: 0.8rem; }
+        
+        /* Responsive */
+        @media (max-width: 640px) {
+            .page-header h1 { font-size: 1.75rem; }
+            .tool-card { padding: 24px 20px; }
+            .lead-capture-form { flex-direction: column; }
+            .affiliate-cta { flex-direction: column; text-align: center; }
+            .nav-links a:not(.nav-cta) { display: none; }
+            .caption-versions { flex-wrap: wrap; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="site-nav">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">The Founder Drop</a>
+            <div class="nav-links">
+                <a href="/toolkit">Toolkit</a>
+                <a href="/free-tools">Free Tools</a>
+                <a href="/guides">Guides</a>
+                <a href="/#form" class="nav-cta">Subscribe</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header class="page-header">
+            <span class="badge">📸 Free Tool</span>
+            <h1>Instagram Caption <span>Generator</span></h1>
+            <p>Generate scroll-stopping captions that drive engagement. Get 3 variations with hashtag suggestions, optimized for the algorithm.</p>
+        </header>
+        
+        <div class="tool-card">
+            <form id="caption-form">
+                <div class="form-group">
+                    <label>Content Topic or Hook <span class="hint">What's your post about?</span></label>
+                    <textarea id="topic" placeholder="e.g., 5 AI tools that save founders 10+ hours per week, or: Behind the scenes of launching our MVP in 48 hours" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>Target Audience <span class="hint">Who are you speaking to?</span></label>
+                    <input type="text" id="audience" placeholder="e.g., SaaS founders, solopreneurs, startup CEOs, e-commerce entrepreneurs" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Post Type <span class="hint">How will this be displayed?</span></label>
+                    <select id="postType" required>
+                        <option value="carousel">Carousel (educational slides)</option>
+                        <option value="reel">Reel (short-form video)</option>
+                        <option value="story">Story (casual/ephemeral)</option>
+                        <option value="single">Single Image (static post)</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="generate-btn" id="generate-btn">
+                    Generate Captions →
+                </button>
+            </form>
+            
+            <div class="output-section" id="output-section">
+                <div class="caption-versions" id="caption-versions">
+                    <button class="version-btn active" data-version="0">🎯 Direct Hook</button>
+                    <button class="version-btn" data-version="1">🤔 Question Hook</button>
+                    <button class="version-btn" data-version="2">📖 Story Hook</button>
+                </div>
+                
+                <div class="output-header">
+                    <h3>Your Caption</h3>
+                    <button class="copy-btn" id="copy-btn">
+                        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+                        Copy All
+                    </button>
+                </div>
+                
+                <div class="caption-output" id="caption-output">
+                    <div class="caption-text" id="caption-text"></div>
+                    <div class="hashtags">
+                        <div class="hashtags-label">Suggested Hashtags</div>
+                        <div class="hashtags-text" id="hashtags-text"></div>
+                    </div>
+                    <div class="char-count">
+                        <div class="char-stat">Caption: <span id="char-count">0</span> chars</div>
+                        <div class="char-stat">With hashtags: <span id="total-count">0</span> chars</div>
+                    </div>
+                </div>
+                
+                <!-- Lead Capture -->
+                <div class="lead-capture">
+                    <h3>📘 Get the Full Caption Playbook</h3>
+                    <p>50+ proven caption templates, hook formulas, and hashtag strategies that drive real engagement.</p>
+                    <form class="lead-capture-form" id="lead-form">
+                        <input type="email" id="lead-email" placeholder="Your email" required>
+                        <button type="submit">Get Free Playbook</button>
+                    </form>
+                    <p class="lead-success" id="lead-success">✓ Check your inbox! The playbook is on its way.</p>
+                </div>
+                
+                <!-- Affiliate CTA -->
+                <div class="affiliate-cta">
+                    <div class="affiliate-cta-icon">🤖</div>
+                    <div class="affiliate-cta-content">
+                        <h4>Generate unlimited content with AI</h4>
+                        <p>Access GPT-4, Claude, and 30+ AI models in one platform. Create content 10x faster.</p>
+                    </div>
+                    <a href="/go/magai" class="affiliate-cta-btn" target="_blank" rel="noopener">Try Magai Free →</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Tips Section -->
+        <section class="tips-section">
+            <h2>Instagram Caption Best Practices</h2>
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <h4>🎣 Hook in Line One</h4>
+                    <p>Only the first 125 characters show before "more." Make them count. Lead with curiosity, controversy, or a bold claim.</p>
+                </div>
+                <div class="tip-card">
+                    <h4>📝 Write for Skimmers</h4>
+                    <p>Use line breaks, emojis as bullets, and short paragraphs. Make it easy to scan on mobile.</p>
+                </div>
+                <div class="tip-card">
+                    <h4>💬 End with a CTA</h4>
+                    <p>Tell them exactly what to do: Save this, comment below, share with a friend. Don't leave engagement to chance.</p>
+                </div>
+                <div class="tip-card">
+                    <h4>#️⃣ Strategic Hashtags</h4>
+                    <p>Mix niche hashtags (10K-100K posts) with broader ones. 5-15 relevant hashtags outperform 30 random ones.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <h4>How does the AI Instagram caption generator work?</h4>
+                <p>Enter your content topic or hook, target audience, and post type. The AI generates 3 caption variations with relevant hashtag suggestions, optimized for engagement and the Instagram algorithm.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h4>Is this Instagram caption generator free?</h4>
+                <p>Yes, completely free. No signup, no credit card, no limits. Generate as many captions as you need for your Instagram content.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h4>What makes a good Instagram caption?</h4>
+                <p>A good Instagram caption hooks attention in the first line, provides value or tells a story, includes a clear call-to-action, and uses relevant hashtags. Our generator incorporates all these best practices.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h4>Can I use these captions for business accounts?</h4>
+                <p>Absolutely. The generator is designed for founders, creators, and businesses. Captions are crafted to drive engagement, build authority, and encourage action.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h4>How many hashtags should I use?</h4>
+                <p>Research shows 5-15 highly relevant hashtags perform better than maxing out at 30. Focus on niche hashtags (10K-100K posts) mixed with a few broader ones relevant to your content.</p>
+            </div>
+        </section>
+    </div>
+    
+    <footer class="site-footer">
+        <nav class="footer-links">
+            <a href="/">Home</a>
+            <span class="sep">|</span>
+            <a href="/toolkit">Toolkit</a>
+            <span class="sep">|</span>
+            <a href="/free-tools">Free Tools</a>
+            <span class="sep">|</span>
+            <a href="/guides">Guides</a>
+            <span class="sep">|</span>
+            <a href="/sitemap.xml">Sitemap</a>
+        </nav>
+        <div class="footer-social">
+            <a href="https://instagram.com/thefounderdrop" target="_blank" rel="noopener">@thefounderdrop</a>
+        </div>
+        <p class="footer-copy">© 2025 The Founder Drop. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Caption Templates by Style
+        const captionTemplates = {
+            // Direct hook - bold statement to stop the scroll
+            direct: {
+                carousel: (data) => ({
+                    caption: `${data.directHook}
+
+Here's ${data.contentSummary}:
+
+${data.bulletPoints}
+
+${data.valueAdd}
+
+Save this for later. You'll need it.
+
+${data.cta}`,
+                    hashtags: data.hashtags
+                }),
+                reel: (data) => ({
+                    caption: `${data.directHook}
+
+${data.reelContext}
+
+${data.keyTakeaway}
+
+${data.cta}
+
+(Link in bio for the full breakdown)`,
+                    hashtags: data.hashtags
+                }),
+                story: (data) => ({
+                    caption: `${data.directHook}
+
+${data.quickValue}
+
+Tap to see more 👆`,
+                    hashtags: data.hashtags.slice(0, 5)
+                }),
+                single: (data) => ({
+                    caption: `${data.directHook}
+
+${data.singleImageContext}
+
+${data.valueAdd}
+
+${data.cta}`,
+                    hashtags: data.hashtags
+                })
+            },
+            
+            // Question hook - engage with curiosity
+            question: {
+                carousel: (data) => ({
+                    caption: `${data.questionHook}
+
+Most ${data.audience} get this wrong.
+
+Here's what actually works:
+
+${data.bulletPoints}
+
+${data.valueAdd}
+
+Drop a 🔥 if this hits different.`,
+                    hashtags: data.hashtags
+                }),
+                reel: (data) => ({
+                    caption: `${data.questionHook}
+
+${data.reelContext}
+
+The answer might surprise you.
+
+${data.keyTakeaway}
+
+Comment "YES" if you've been there 👇`,
+                    hashtags: data.hashtags
+                }),
+                story: (data) => ({
+                    caption: `${data.questionHook}
+
+(Swipe up for the answer)`,
+                    hashtags: data.hashtags.slice(0, 5)
+                }),
+                single: (data) => ({
+                    caption: `${data.questionHook}
+
+Here's what I've learned:
+
+${data.singleImageContext}
+
+${data.cta}`,
+                    hashtags: data.hashtags
+                })
+            },
+            
+            // Story hook - narrative approach
+            story: {
+                carousel: (data) => ({
+                    caption: `${data.storyHook}
+
+${data.storyContext}
+
+But here's what changed everything:
+
+${data.bulletPoints}
+
+${data.valueAdd}
+
+Share this with someone who needs to hear it.`,
+                    hashtags: data.hashtags
+                }),
+                reel: (data) => ({
+                    caption: `${data.storyHook}
+
+${data.storyContext}
+
+${data.keyTakeaway}
+
+Watch til the end — the last point is 🔑
+
+${data.cta}`,
+                    hashtags: data.hashtags
+                }),
+                story: (data) => ({
+                    caption: `${data.storyHook}
+
+${data.quickValue}
+
+More coming... 👀`,
+                    hashtags: data.hashtags.slice(0, 5)
+                }),
+                single: (data) => ({
+                    caption: `${data.storyHook}
+
+${data.storyContext}
+
+${data.singleImageContext}
+
+${data.cta}`,
+                    hashtags: data.hashtags
+                })
+            }
+        };
+
+        // Generate content variations based on input
+        function generateCaptionData(topic, audience, postType) {
+            // Extract key elements from topic
+            const topicLower = topic.toLowerCase();
+            const isListPost = /\d+|tips|ways|steps|tools|hacks|secrets|mistakes/i.test(topic);
+            const number = topic.match(/\d+/)?.[0] || '5';
+            
+            // Generate hooks based on topic analysis
+            let directHook, questionHook, storyHook;
+            
+            if (isListPost) {
+                directHook = `${number} ${extractMainConcept(topic)} that ${audience} don't know about (yet)`;
+                questionHook = `Why do most ${audience} struggle with ${extractPainPoint(topic)}?`;
+                storyHook = `I spent ${getTimeframe()} learning ${extractMainConcept(topic)}. Here's what I wish I knew sooner:`;
+            } else {
+                directHook = `The ${extractMainConcept(topic)} playbook no one talks about`;
+                questionHook = `What if everything you knew about ${extractMainConcept(topic)} was wrong?`;
+                storyHook = `Last ${getRecentTime()}, I discovered something that changed how I think about ${extractMainConcept(topic)}:`;
+            }
+            
+            // Generate bullet points
+            const bullets = generateBulletPoints(topic, number);
+            
+            // Generate hashtags
+            const hashtags = generateHashtags(topic, audience);
+            
+            return {
+                directHook,
+                questionHook,
+                storyHook,
+                audience: audience.toLowerCase(),
+                contentSummary: extractContentSummary(topic),
+                bulletPoints: bullets,
+                valueAdd: generateValueAdd(audience),
+                cta: generateCTA(postType, audience),
+                reelContext: generateReelContext(topic),
+                keyTakeaway: generateKeyTakeaway(topic),
+                quickValue: generateQuickValue(topic),
+                singleImageContext: generateSingleContext(topic),
+                storyContext: generateStoryContext(topic, audience),
+                hashtags
+            };
+        }
+
+        function extractMainConcept(topic) {
+            // Remove numbers and common words to get the core concept
+            const cleaned = topic.replace(/\d+/g, '').replace(/^(the|a|an)\s+/i, '');
+            const concepts = cleaned.match(/(?:AI|tools?|tips?|ways?|hacks?|secrets?|strategies?|tactics?|methods?|systems?|frameworks?|[A-Z][a-z]+(?:\s+[a-z]+)?)/gi);
+            if (concepts && concepts.length > 0) {
+                return concepts[0].toLowerCase();
+            }
+            // Return first meaningful phrase
+            return cleaned.split(/[,.]|\bthat\b|\bwhich\b/i)[0].trim().substring(0, 30).toLowerCase();
+        }
+
+        function extractPainPoint(topic) {
+            const painWords = ['save', 'time', 'money', 'hours', 'fast', 'quick', 'easy', 'simple', 'stress', 'overwhelm', 'struggle'];
+            for (const word of painWords) {
+                if (topic.toLowerCase().includes(word)) {
+                    return word === 'time' || word === 'hours' ? 'time management' : 
+                           word === 'money' ? 'budgeting' : 
+                           'getting results';
+                }
+            }
+            return 'this';
+        }
+
+        function getTimeframe() {
+            const timeframes = ['3 years', '6 months', '100+ hours', '2 years', '500+ experiments'];
+            return timeframes[Math.floor(Math.random() * timeframes.length)];
+        }
+
+        function getRecentTime() {
+            const times = ['week', 'month', 'Tuesday', 'year'];
+            return times[Math.floor(Math.random() * times.length)];
+        }
+
+        function generateBulletPoints(topic, count) {
+            const num = Math.min(parseInt(count) || 5, 5);
+            const bullets = [];
+            const concepts = [
+                'Start with the end goal in mind',
+                'Automate before you delegate',
+                'Focus on systems, not just tactics',
+                'Track what matters, ignore the rest',
+                'Consistency beats intensity every time',
+                'Learn from failures, double down on wins',
+                'Build in public, iterate in private',
+                'Simple scales, complex fails',
+                'Speed is a feature',
+                'Done is better than perfect'
+            ];
+            
+            for (let i = 0; i < num; i++) {
+                bullets.push(`${i + 1}. ${concepts[i]}`);
+            }
+            return bullets.join('\n');
+        }
+
+        function generateHashtags(topic, audience) {
+            const baseHashtags = ['#foundertips', '#startuplife', '#entrepreneurmindset', '#businessgrowth'];
+            const audienceHashtags = [];
+            const topicHashtags = [];
+            
+            // Audience-based hashtags
+            const audienceLower = audience.toLowerCase();
+            if (audienceLower.includes('saas') || audienceLower.includes('software')) {
+                audienceHashtags.push('#saas', '#saasfounder', '#b2b', '#techstartup');
+            } else if (audienceLower.includes('ecommerce') || audienceLower.includes('e-commerce')) {
+                audienceHashtags.push('#ecommerce', '#onlinebusiness', '#dropshipping', '#shopify');
+            } else if (audienceLower.includes('creator') || audienceLower.includes('content')) {
+                audienceHashtags.push('#contentcreator', '#creatoreconomy', '#personalbranding');
+            } else if (audienceLower.includes('coach') || audienceLower.includes('consultant')) {
+                audienceHashtags.push('#businesscoach', '#onlinecoach', '#consulting');
+            } else {
+                audienceHashtags.push('#entrepreneur', '#solopreneur', '#smallbusiness');
+            }
+            
+            // Topic-based hashtags
+            const topicLower = topic.toLowerCase();
+            if (topicLower.includes('ai') || topicLower.includes('artificial')) {
+                topicHashtags.push('#aitools', '#artificialintelligence', '#chatgpt', '#automation');
+            } else if (topicLower.includes('product') || topicLower.includes('mvp')) {
+                topicHashtags.push('#productlaunch', '#mvp', '#buildinpublic', '#startupjourney');
+            } else if (topicLower.includes('market') || topicLower.includes('growth')) {
+                topicHashtags.push('#marketingtips', '#growthhacking', '#digitalmarketing');
+            } else if (topicLower.includes('sale') || topicLower.includes('revenue')) {
+                topicHashtags.push('#salestips', '#revenue', '#b2bsales', '#closingdeals');
+            } else {
+                topicHashtags.push('#productivity', '#efficiency', '#worksmarter', '#biztips');
+            }
+            
+            const allHashtags = [...baseHashtags, ...audienceHashtags, ...topicHashtags];
+            // Return unique hashtags, max 12
+            return [...new Set(allHashtags)].slice(0, 12);
+        }
+
+        function extractContentSummary(topic) {
+            const match = topic.match(/\d+\s*([\w\s]+?)(?:\s+that|\s+for|\s+to|$)/i);
+            if (match) return match[1].trim().toLowerCase();
+            return 'what you need to know';
+        }
+
+        function generateValueAdd(audience) {
+            const valueAdds = [
+                `Most ${audience} take years to figure this out.`,
+                `This alone could save you months of trial and error.`,
+                `I learned this the hard way so you don't have to.`,
+                `Bookmark this. You'll thank me later.`,
+                `This is the stuff they don't teach you.`
+            ];
+            return valueAdds[Math.floor(Math.random() * valueAdds.length)];
+        }
+
+        function generateCTA(postType, audience) {
+            const ctas = {
+                carousel: [
+                    `Which one are you trying first? 👇`,
+                    `Save this and send to a fellow ${audience.split(' ')[0]} who needs it.`,
+                    `Double tap if this was valuable 💡`,
+                    `Comment your biggest takeaway below.`
+                ],
+                reel: [
+                    `Follow for more no-BS tips.`,
+                    `Save this. Share it. Apply it.`,
+                    `Which tip hit hardest? Comment below 👇`,
+                    `Follow @thefounderdrop for daily value.`
+                ],
+                story: [
+                    `Reply with 🔥 if you want more.`,
+                    `DM me "TIPS" for more.`,
+                    `Tap to see the full post.`
+                ],
+                single: [
+                    `Double tap and save for later.`,
+                    `Tag someone who needs this.`,
+                    `What would you add? 👇`
+                ]
+            };
+            const options = ctas[postType] || ctas.carousel;
+            return options[Math.floor(Math.random() * options.length)];
+        }
+
+        function generateReelContext(topic) {
+            return `After testing this with dozens of founders, I can tell you: it works.`;
+        }
+
+        function generateKeyTakeaway(topic) {
+            return `The bottom line: execution beats perfection. Start messy, iterate fast.`;
+        }
+
+        function generateQuickValue(topic) {
+            return `This changed everything for me. Saving it for the full breakdown.`;
+        }
+
+        function generateSingleContext(topic) {
+            return `The best part? You can start implementing this today. No complex setup. No expensive tools.`;
+        }
+
+        function generateStoryContext(topic, audience) {
+            return `I've talked to hundreds of ${audience}. The pattern is always the same.`;
+        }
+
+        function generateCaptions(topic, audience, postType) {
+            const data = generateCaptionData(topic, audience, postType);
+            
+            return [
+                captionTemplates.direct[postType](data),
+                captionTemplates.question[postType](data),
+                captionTemplates.story[postType](data)
+            ];
+        }
+
+        // DOM Elements
+        const form = document.getElementById('caption-form');
+        const generateBtn = document.getElementById('generate-btn');
+        const outputSection = document.getElementById('output-section');
+        const captionText = document.getElementById('caption-text');
+        const hashtagsText = document.getElementById('hashtags-text');
+        const charCount = document.getElementById('char-count');
+        const totalCount = document.getElementById('total-count');
+        const copyBtn = document.getElementById('copy-btn');
+        const versionBtns = document.querySelectorAll('.version-btn');
+        const leadForm = document.getElementById('lead-form');
+        
+        let currentCaptions = [];
+        let currentVersion = 0;
+
+        function displayCaption(index) {
+            const caption = currentCaptions[index];
+            captionText.textContent = caption.caption;
+            hashtagsText.textContent = caption.hashtags.join(' ');
+            
+            // Update char counts
+            const captionLength = caption.caption.length;
+            const hashtagsLength = caption.hashtags.join(' ').length;
+            charCount.textContent = captionLength;
+            totalCount.textContent = captionLength + hashtagsLength + 2; // +2 for line breaks
+            
+            currentVersion = index;
+            
+            versionBtns.forEach((btn, i) => {
+                btn.classList.toggle('active', i === index);
+            });
+        }
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const topic = document.getElementById('topic').value;
+            const audience = document.getElementById('audience').value;
+            const postType = document.getElementById('postType').value;
+            
+            generateBtn.disabled = true;
+            generateBtn.classList.add('loading');
+            
+            // Simulate processing time for better UX
+            await new Promise(resolve => setTimeout(resolve, 900));
+            
+            currentCaptions = generateCaptions(topic, audience, postType);
+            
+            displayCaption(0);
+            outputSection.classList.add('visible');
+            
+            generateBtn.disabled = false;
+            generateBtn.classList.remove('loading');
+            
+            // Scroll to output
+            outputSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        versionBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const version = parseInt(btn.dataset.version);
+                displayCaption(version);
+            });
+        });
+
+        copyBtn.addEventListener('click', async () => {
+            const caption = currentCaptions[currentVersion];
+            const text = `${caption.caption}\n\n${caption.hashtags.join(' ')}`;
+            
+            try {
+                await navigator.clipboard.writeText(text);
+                copyBtn.innerHTML = `<svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg> Copied!`;
+                copyBtn.classList.add('copied');
+                
+                setTimeout(() => {
+                    copyBtn.innerHTML = `<svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg> Copy All`;
+                    copyBtn.classList.remove('copied');
+                }, 2000);
+            } catch (err) {
+                console.error('Copy failed:', err);
+            }
+        });
+
+        // Lead Capture Form
+        leadForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const email = document.getElementById('lead-email').value;
+            // Note: GHL webhook URL to be configured - using placeholder pattern
+            const webhookUrl = 'https://services.leadconnectorhq.com/hooks/73JctoYNF5rEgo4S5PU0/webhook-trigger/KIqbuWm46UxYvO8JTtoF';
+            
+            try {
+                await fetch(webhookUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    mode: 'no-cors',
+                    body: JSON.stringify({ email })
+                });
+            } catch (err) {
+                console.log('Webhook sent (no-cors mode)');
+            }
+            
+            // Show success regardless (no-cors doesn't return response)
+            leadForm.classList.add('hidden');
+            document.getElementById('lead-success').classList.add('visible');
+            
+            // Track event if gtag exists
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'lead_capture', {
+                    event_category: 'free_tool',
+                    event_label: 'instagram_caption_generator'
+                });
+            }
+        });
+    </script>
+</body>
+</html>

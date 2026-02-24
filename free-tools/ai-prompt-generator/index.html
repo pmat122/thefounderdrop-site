@@ -1,0 +1,1347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free AI Prompt Generator | ChatGPT Prompt Templates</title>
+<meta name="description" content="Generate effective AI prompts for ChatGPT, Claude, and more. Free prompt generator with multiple variations and templates.">
+<meta name="keywords" content="ai prompt generator, chatgpt prompt templates, ai prompt templates, prompt engineering, chatgpt prompts">
+<link rel="canonical" href="https://thefounderdrop.com/free-tools/ai-prompt-generator">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Free AI Prompt Generator | ChatGPT Prompt Templates">
+<meta property="og:description" content="Generate effective AI prompts for ChatGPT, Claude, and more. Free prompt generator with multiple variations and templates.">
+<meta property="og:image" content="https://thefounderdrop.com/og-prompt-generator.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://thefounderdrop.com/free-tools/ai-prompt-generator">
+<meta property="og:site_name" content="The Founder Drop">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free AI Prompt Generator | The Founder Drop">
+<meta name="twitter:description" content="Generate effective AI prompts for ChatGPT, Claude, and more. 3 prompt variations instantly.">
+<meta name="twitter:image" content="https://thefounderdrop.com/og-prompt-generator.png">
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Schema Markup: SoftwareApplication -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "AI Prompt Generator",
+  "description": "Generate effective AI prompts for ChatGPT, Claude, and more. Free prompt generator with multiple variations and templates.",
+  "url": "https://thefounderdrop.com/free-tools/ai-prompt-generator",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Any",
+  "browserRequirements": "Requires JavaScript",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "The Founder Drop",
+    "url": "https://thefounderdrop.com"
+  }
+}
+</script>
+
+<!-- Schema Markup: FAQPage -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is an AI prompt generator?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "An AI prompt generator helps you create effective prompts for AI tools like ChatGPT, Claude, and others. It takes your goals and context and generates optimized prompts that get better responses from AI."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I write better ChatGPT prompts?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Better ChatGPT prompts include: clear task descriptions, relevant context, specified output format, desired tone, and length requirements. Our generator creates 3 variations: Direct Ask (straightforward), Roleplay (persona-based), and Framework (structured approach)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the difference between Direct, Roleplay, and Framework prompts?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Direct Ask prompts get straight to the point. Roleplay prompts give the AI a persona or expertise to embody. Framework prompts use structured approaches like step-by-step instructions or specific methodologies for more comprehensive outputs."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which AI should I use these prompts with?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "These prompts work with any modern AI assistant including ChatGPT, Claude, Gemini, and others. For managing multiple AI chats in one place, we recommend Magai."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+:root {
+  --primary: #5B9BD5;
+  --primary-hover: #4A8BC5;
+  --bg-dark: #0a0a0a;
+  --bg-card: #1A1A1A;
+  --bg-input: #141414;
+  --text-primary: #FFFFFF;
+  --text-secondary: #A0A0A0;
+  --text-muted: #666666;
+  --border: #2A2A2A;
+  --border-light: #333333;
+  --success: #4CAF50;
+  --accent-glow: rgba(91, 155, 213, 0.15);
+  
+  /* Prompt card colors */
+  --direct-color: #5B9BD5;
+  --roleplay-color: #6BCB77;
+  --framework-color: #FF9F43;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--bg-dark);
+  color: var(--text-primary);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* Navigation */
+.site-nav {
+  border-bottom: 1px solid var(--border);
+  padding: 16px 20px;
+  position: sticky;
+  top: 0;
+  background: rgba(10, 10, 10, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 100;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.nav-links a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: var(--text-primary);
+}
+
+.nav-cta {
+  background: var(--primary) !important;
+  color: #fff !important;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
+.nav-cta:hover {
+  background: var(--primary-hover) !important;
+}
+
+/* Main Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* Page Header */
+.page-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.page-header h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+  background: linear-gradient(135deg, var(--text-primary), var(--primary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.page-header p {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Tool Layout */
+.tool-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .tool-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Tool Card */
+.tool-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px;
+}
+
+.tool-card h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Form Styles */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.form-group small {
+  display: block;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  margin-top: 4px;
+}
+
+input[type="text"],
+textarea,
+select {
+  width: 100%;
+  padding: 14px 16px;
+  background: var(--bg-input);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input[type="text"]:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--text-muted);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23A0A0A0' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10l-5 5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+}
+
+/* Form Row */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 500px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Length Selector */
+.length-selector {
+  display: flex;
+  gap: 8px;
+}
+
+.length-btn {
+  flex: 1;
+  padding: 12px 16px;
+  background: var(--bg-input);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  color: var(--text-secondary);
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.length-btn:hover {
+  border-color: var(--primary);
+  color: var(--text-primary);
+}
+
+.length-btn.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: white;
+}
+
+/* Generate Button */
+.generate-btn {
+  width: 100%;
+  padding: 16px 24px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.generate-btn:hover {
+  background: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+.generate-btn:active {
+  transform: translateY(0);
+}
+
+.generate-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Output Area */
+.output-area {
+  position: sticky;
+  top: 80px;
+}
+
+.output-placeholder {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--text-muted);
+}
+
+.output-placeholder .icon {
+  font-size: 3rem;
+  margin-bottom: 16px;
+  display: block;
+}
+
+/* Prompt Cards */
+.prompt-cards {
+  display: none;
+}
+
+.prompt-cards.visible {
+  display: block;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.prompt-card {
+  background: var(--bg-input);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+
+.prompt-card.direct { border-left: 4px solid var(--direct-color); }
+.prompt-card.roleplay { border-left: 4px solid var(--roleplay-color); }
+.prompt-card.framework { border-left: 4px solid var(--framework-color); }
+
+.prompt-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.prompt-header h3 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.prompt-card.direct .prompt-header h3 { color: var(--direct-color); }
+.prompt-card.roleplay .prompt-header h3 { color: var(--roleplay-color); }
+.prompt-card.framework .prompt-header h3 { color: var(--framework-color); }
+
+.prompt-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ai-badge {
+  font-size: 0.75rem;
+  padding: 4px 10px;
+  background: var(--bg-dark);
+  border-radius: 100px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.quality-stars {
+  display: flex;
+  gap: 2px;
+  font-size: 0.8rem;
+}
+
+.star { color: var(--text-muted); }
+.star.filled { color: #FFD700; }
+
+.copy-btn {
+  padding: 8px 14px;
+  background: var(--bg-dark);
+  border: 1px solid var(--border-light);
+  border-radius: 6px;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: inherit;
+}
+
+.copy-btn:hover {
+  background: var(--border);
+  color: var(--text-primary);
+}
+
+.copy-btn.copied {
+  background: var(--success);
+  color: white;
+  border-color: var(--success);
+}
+
+.prompt-content {
+  padding: 18px;
+}
+
+.prompt-text {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  white-space: pre-wrap;
+  font-family: 'Inter', monospace;
+}
+
+/* Live Preview */
+.live-preview {
+  background: var(--bg-dark);
+  border: 1px dashed var(--border-light);
+  border-radius: 8px;
+  padding: 16px;
+  margin-top: 16px;
+}
+
+.live-preview-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+.live-preview-text {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  max-height: 120px;
+  overflow-y: auto;
+}
+
+/* Affiliate Section */
+.affiliate-section {
+  background: linear-gradient(135deg, rgba(91, 155, 213, 0.1), rgba(91, 155, 213, 0.05));
+  border: 1px solid rgba(91, 155, 213, 0.2);
+  border-radius: 16px;
+  padding: 32px;
+  text-align: center;
+  margin-top: 32px;
+}
+
+.affiliate-section h3 {
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+  color: var(--text-primary);
+}
+
+.affiliate-section p {
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+}
+
+.affiliate-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  background: var(--primary);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.affiliate-btn:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px var(--accent-glow);
+}
+
+/* Email Capture */
+.email-capture {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 32px;
+  text-align: center;
+  margin-top: 32px;
+}
+
+.email-capture h3 {
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+}
+
+.email-capture p {
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+}
+
+.capture-form {
+  display: flex;
+  gap: 12px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.capture-form input {
+  flex: 1;
+}
+
+.capture-form button {
+  padding: 14px 24px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s;
+  font-family: inherit;
+}
+
+.capture-form button:hover {
+  background: var(--primary-hover);
+}
+
+.capture-success {
+  display: none;
+  padding: 20px;
+  background: rgba(76, 175, 80, 0.1);
+  border: 1px solid rgba(76, 175, 80, 0.3);
+  border-radius: 8px;
+  color: var(--success);
+  text-align: center;
+}
+
+.capture-success.visible {
+  display: block;
+}
+
+/* FAQ Section */
+.faq-section {
+  margin-top: 48px;
+  padding-top: 32px;
+  border-top: 1px solid var(--border);
+}
+
+.faq-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.faq-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px 24px;
+  margin-bottom: 12px;
+}
+
+.faq-item h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--text-primary);
+}
+
+.faq-item p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Related Tools */
+.related-tools {
+  margin-top: 32px;
+}
+
+.related-tools h3 {
+  font-size: 1.1rem;
+  margin-bottom: 16px;
+  color: var(--text-secondary);
+}
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.tool-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--text-primary);
+  transition: all 0.2s;
+}
+
+.tool-link:hover {
+  border-color: var(--primary);
+  transform: translateY(-2px);
+}
+
+.tool-link .icon {
+  font-size: 1.5rem;
+}
+
+.tool-link span {
+  font-weight: 500;
+}
+
+/* Footer */
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 40px 20px;
+  text-align: center;
+  margin-top: 60px;
+}
+
+.footer-links {
+  margin-bottom: 16px;
+}
+
+.footer-links a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover {
+  color: var(--primary);
+}
+
+.footer-links .sep {
+  color: var(--border);
+  margin: 0 12px;
+}
+
+.footer-social {
+  margin-bottom: 16px;
+}
+
+.footer-social a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.footer-copy {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+  .page-header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .tool-card {
+    padding: 20px;
+  }
+  
+  .capture-form {
+    flex-direction: column;
+  }
+  
+  .capture-form button {
+    width: 100%;
+  }
+  
+  .nav-links a:not(.nav-cta) {
+    display: none;
+  }
+  
+  .prompt-header {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  
+  .prompt-meta {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .output-area {
+    position: static;
+  }
+}
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="nav-container">
+    <a href="/" class="nav-logo">The Founder Drop</a>
+    <div class="nav-links">
+      <a href="/toolkit">Toolkit</a>
+      <a href="/free-tools">Free Tools</a>
+      <a href="/guides">Guides</a>
+      <a href="/#form" class="nav-cta">Subscribe</a>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <header class="page-header">
+    <h1>Free AI Prompt Generator</h1>
+    <p>Generate 3 optimized prompts for ChatGPT, Claude, and other AI tools. No signup required.</p>
+  </header>
+
+  <div class="tool-layout">
+    <!-- Input Form -->
+    <div class="tool-card">
+      <h2>🎯 Create Your Prompt</h2>
+      
+      <form id="prompt-generator-form">
+        <div class="form-group">
+          <label for="task">What do you want the AI to do?</label>
+          <textarea id="task" placeholder="e.g., Write a LinkedIn post about launching a new product, Summarize this article for executives, Create a weekly meal plan for a busy professional" required></textarea>
+          <small>Be specific about the task or goal</small>
+        </div>
+
+        <div class="form-group">
+          <label for="context">Context / Background (optional)</label>
+          <textarea id="context" placeholder="e.g., I'm a SaaS founder launching a B2B analytics tool. My target audience is marketing directors at mid-size companies. The product helps reduce time spent on reporting by 70%."></textarea>
+          <small>Any relevant details the AI should know</small>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="format">Output Format</label>
+            <select id="format">
+              <option value="paragraphs">Paragraphs (Essay)</option>
+              <option value="bullet-points">Bullet Points</option>
+              <option value="numbered-list">Numbered List</option>
+              <option value="step-by-step">Step-by-Step Guide</option>
+              <option value="table">Table Format</option>
+              <option value="code">Code / Technical</option>
+              <option value="json">JSON Structure</option>
+              <option value="social-post">Social Media Post</option>
+              <option value="email">Email</option>
+              <option value="script">Script / Dialogue</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="tone">Tone / Style</label>
+            <select id="tone">
+              <option value="professional">Professional</option>
+              <option value="casual">Casual / Conversational</option>
+              <option value="expert">Expert / Technical</option>
+              <option value="creative">Creative / Engaging</option>
+              <option value="funny">Funny / Witty</option>
+              <option value="persuasive">Persuasive / Sales</option>
+              <option value="empathetic">Empathetic / Supportive</option>
+              <option value="direct">Direct / No-nonsense</option>
+              <option value="academic">Academic / Formal</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Response Length</label>
+          <div class="length-selector">
+            <button type="button" class="length-btn" data-length="short">Short</button>
+            <button type="button" class="length-btn active" data-length="medium">Medium</button>
+            <button type="button" class="length-btn" data-length="long">Long</button>
+          </div>
+          <small>How detailed should the AI response be?</small>
+        </div>
+
+        <button type="submit" class="generate-btn">
+          <span>⚡</span>
+          Generate 3 Prompt Variations
+        </button>
+      </form>
+
+      <!-- Live Preview -->
+      <div class="live-preview" id="live-preview" style="display: none;">
+        <div class="live-preview-label">📝 Live Preview</div>
+        <div class="live-preview-text" id="live-preview-text"></div>
+      </div>
+    </div>
+
+    <!-- Output Area -->
+    <div class="output-area">
+      <div class="tool-card">
+        <h2>✨ Generated Prompts</h2>
+        
+        <div id="output-placeholder" class="output-placeholder">
+          <span class="icon">💡</span>
+          <p>Fill in the form and click generate to create 3 optimized prompt variations.</p>
+        </div>
+
+        <div id="prompt-cards" class="prompt-cards">
+          <!-- Direct Ask Card -->
+          <div class="prompt-card direct" id="card-direct">
+            <div class="prompt-header">
+              <h3>🎯 Direct Ask</h3>
+              <div class="prompt-meta">
+                <span class="ai-badge" id="ai-direct">ChatGPT / Claude</span>
+                <div class="quality-stars" id="stars-direct"></div>
+                <button class="copy-btn" onclick="copyPrompt('direct')">
+                  <span>📋</span> Copy
+                </button>
+              </div>
+            </div>
+            <div class="prompt-content">
+              <p class="prompt-text" id="prompt-direct"></p>
+            </div>
+          </div>
+
+          <!-- Roleplay Card -->
+          <div class="prompt-card roleplay" id="card-roleplay">
+            <div class="prompt-header">
+              <h3>🎭 Roleplay</h3>
+              <div class="prompt-meta">
+                <span class="ai-badge" id="ai-roleplay">ChatGPT / Claude</span>
+                <div class="quality-stars" id="stars-roleplay"></div>
+                <button class="copy-btn" onclick="copyPrompt('roleplay')">
+                  <span>📋</span> Copy
+                </button>
+              </div>
+            </div>
+            <div class="prompt-content">
+              <p class="prompt-text" id="prompt-roleplay"></p>
+            </div>
+          </div>
+
+          <!-- Framework Card -->
+          <div class="prompt-card framework" id="card-framework">
+            <div class="prompt-header">
+              <h3>🏗️ Framework</h3>
+              <div class="prompt-meta">
+                <span class="ai-badge" id="ai-framework">ChatGPT / Claude</span>
+                <div class="quality-stars" id="stars-framework"></div>
+                <button class="copy-btn" onclick="copyPrompt('framework')">
+                  <span>📋</span> Copy
+                </button>
+              </div>
+            </div>
+            <div class="prompt-content">
+              <p class="prompt-text" id="prompt-framework"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Affiliate Section -->
+  <div class="affiliate-section">
+    <h3>Ready to use these prompts?</h3>
+    <p>Use Magai to manage all your AI chats in one place — ChatGPT, Claude, Gemini, and more.</p>
+    <a href="/go/magai" class="affiliate-btn">
+      Try Magai Free →
+    </a>
+  </div>
+
+  <!-- Email Capture -->
+  <div class="email-capture" id="email-capture-section">
+    <h3>🔥 Get the Ultimate Prompt Engineering Guide</h3>
+    <p>50+ proven prompt templates, advanced techniques, and the frameworks top AI users swear by.</p>
+    <div id="capture-form-container">
+      <form class="capture-form" id="guide-form">
+        <input type="email" id="guide-email" placeholder="Enter your email" required>
+        <button type="submit">Get the Guide</button>
+      </form>
+    </div>
+    <div class="capture-success" id="capture-success">
+      ✅ Check your inbox! The guide is on its way.
+    </div>
+  </div>
+
+  <!-- FAQ Section -->
+  <div class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    
+    <div class="faq-item">
+      <h3>What is an AI prompt generator?</h3>
+      <p>An AI prompt generator helps you create effective prompts for AI tools like ChatGPT, Claude, and others. It takes your goals and context and generates optimized prompts that get better responses from AI.</p>
+    </div>
+    
+    <div class="faq-item">
+      <h3>How do I write better ChatGPT prompts?</h3>
+      <p>Better ChatGPT prompts include: clear task descriptions, relevant context, specified output format, desired tone, and length requirements. Our generator creates 3 variations: Direct Ask (straightforward), Roleplay (persona-based), and Framework (structured approach).</p>
+    </div>
+    
+    <div class="faq-item">
+      <h3>What's the difference between Direct, Roleplay, and Framework prompts?</h3>
+      <p>Direct Ask prompts get straight to the point. Roleplay prompts give the AI a persona or expertise to embody. Framework prompts use structured approaches like step-by-step instructions or specific methodologies for more comprehensive outputs.</p>
+    </div>
+    
+    <div class="faq-item">
+      <h3>Which AI should I use these prompts with?</h3>
+      <p>These prompts work with any modern AI assistant including ChatGPT, Claude, Gemini, and others. For managing multiple AI chats in one place, we recommend Magai.</p>
+    </div>
+  </div>
+
+  <!-- Related Tools -->
+  <div class="related-tools">
+    <h3>More Free Tools</h3>
+    <div class="tools-grid">
+      <a href="/free-tools/ai-cold-email-writer" class="tool-link">
+        <span class="icon">📧</span>
+        <span>AI Cold Email Writer</span>
+      </a>
+      <a href="/free-tools" class="tool-link">
+        <span class="icon">🧠</span>
+        <span>All Free Tools</span>
+      </a>
+      <a href="/toolkit" class="tool-link">
+        <span class="icon">🛠️</span>
+        <span>Founder Toolkit</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <nav class="footer-links">
+    <a href="/">Home</a>
+    <span class="sep">|</span>
+    <a href="/toolkit">Toolkit</a>
+    <span class="sep">|</span>
+    <a href="/free-tools">Free Tools</a>
+    <span class="sep">|</span>
+    <a href="/guides">Guides</a>
+  </nav>
+  <div class="footer-social">
+    <a href="https://instagram.com/thefounderdrop" target="_blank" rel="noopener">@thefounderdrop</a>
+  </div>
+  <p class="footer-copy">© 2026 The Founder Drop</p>
+</footer>
+
+<script>
+// State
+let selectedLength = 'medium';
+
+// Length selector
+document.querySelectorAll('.length-btn').forEach(btn => {
+  btn.addEventListener('click', function() {
+    document.querySelectorAll('.length-btn').forEach(b => b.classList.remove('active'));
+    this.classList.add('active');
+    selectedLength = this.dataset.length;
+    updateLivePreview();
+  });
+});
+
+// Live preview
+const taskInput = document.getElementById('task');
+const contextInput = document.getElementById('context');
+const formatSelect = document.getElementById('format');
+const toneSelect = document.getElementById('tone');
+const livePreview = document.getElementById('live-preview');
+const livePreviewText = document.getElementById('live-preview-text');
+
+function updateLivePreview() {
+  const task = taskInput.value.trim();
+  if (!task) {
+    livePreview.style.display = 'none';
+    return;
+  }
+  
+  const context = contextInput.value.trim();
+  const format = formatSelect.options[formatSelect.selectedIndex].text;
+  const tone = toneSelect.options[toneSelect.selectedIndex].text;
+  
+  let preview = `Task: ${task}`;
+  if (context) preview += `\nContext: ${context.substring(0, 100)}${context.length > 100 ? '...' : ''}`;
+  preview += `\nFormat: ${format} | Tone: ${tone} | Length: ${selectedLength}`;
+  
+  livePreviewText.textContent = preview;
+  livePreview.style.display = 'block';
+}
+
+[taskInput, contextInput, formatSelect, toneSelect].forEach(el => {
+  el.addEventListener('input', updateLivePreview);
+  el.addEventListener('change', updateLivePreview);
+});
+
+// Format helpers
+const formatInstructions = {
+  'paragraphs': 'Write your response in clear, well-structured paragraphs.',
+  'bullet-points': 'Format your response as bullet points for easy scanning.',
+  'numbered-list': 'Provide a numbered list with each point clearly labeled.',
+  'step-by-step': 'Break down your response into clear, actionable steps.',
+  'table': 'Present the information in a table format with relevant columns.',
+  'code': 'Include code examples with proper formatting and comments.',
+  'json': 'Structure your response as valid JSON.',
+  'social-post': 'Keep it concise and engaging for social media.',
+  'email': 'Format as a professional email with subject, greeting, body, and closing.',
+  'script': 'Write in script format with clear speaker labels and directions.'
+};
+
+const toneInstructions = {
+  'professional': 'Use a professional, business-appropriate tone.',
+  'casual': 'Keep it casual and conversational, like talking to a friend.',
+  'expert': 'Write as a subject matter expert with technical depth.',
+  'creative': 'Be creative, engaging, and use vivid language.',
+  'funny': 'Add humor and wit while still being helpful.',
+  'persuasive': 'Use persuasive language to convince and motivate.',
+  'empathetic': 'Be warm, understanding, and supportive.',
+  'direct': 'Be direct and concise. No fluff.',
+  'academic': 'Use formal academic language with proper citations style.'
+};
+
+const lengthInstructions = {
+  'short': 'Keep your response brief and to the point (1-2 paragraphs or equivalent).',
+  'medium': 'Provide a balanced response with good detail (3-5 paragraphs or equivalent).',
+  'long': 'Give a comprehensive, detailed response covering all aspects.'
+};
+
+// Persona options for roleplay
+const personas = [
+  { role: 'senior marketing strategist with 15+ years of experience', quality: 5 },
+  { role: 'bestselling author and communication expert', quality: 5 },
+  { role: 'Silicon Valley startup advisor', quality: 4 },
+  { role: 'world-class copywriter who has written for Fortune 500 companies', quality: 5 },
+  { role: 'productivity coach who has helped thousands of professionals', quality: 4 },
+  { role: 'award-winning journalist known for clear, compelling writing', quality: 5 },
+  { role: 'executive coach to Fortune 100 CEOs', quality: 5 },
+  { role: 'renowned UX researcher and product strategist', quality: 4 },
+  { role: 'viral content creator with millions of followers', quality: 4 },
+  { role: 'management consultant at a top-tier firm', quality: 5 }
+];
+
+// Framework options
+const frameworks = [
+  { name: 'AIDA', description: 'Attention, Interest, Desire, Action', quality: 5 },
+  { name: 'PAS', description: 'Problem, Agitate, Solution', quality: 5 },
+  { name: '5 Ws', description: 'Who, What, When, Where, Why', quality: 4 },
+  { name: 'STAR', description: 'Situation, Task, Action, Result', quality: 4 },
+  { name: 'Before-After-Bridge', description: 'Current state, desired state, how to get there', quality: 5 },
+  { name: 'SCQA', description: 'Situation, Complication, Question, Answer', quality: 5 }
+];
+
+// Get random item
+function randomItem(arr) {
+  return arr[Math.floor(Math.random() * arr.length)];
+}
+
+// Generate star rating HTML
+function generateStars(rating) {
+  let html = '';
+  for (let i = 1; i <= 5; i++) {
+    html += `<span class="star ${i <= rating ? 'filled' : ''}">★</span>`;
+  }
+  return html;
+}
+
+// Generate prompts
+function generatePrompts(task, context, format, tone, length) {
+  const formatInstruction = formatInstructions[format];
+  const toneInstruction = toneInstructions[tone];
+  const lengthInstruction = lengthInstructions[length];
+  
+  // Determine best AI for task
+  const aiRecommendations = {
+    'code': 'Claude / GPT-4',
+    'json': 'Claude / GPT-4',
+    'table': 'ChatGPT / Claude',
+    'creative': 'Claude / GPT-4',
+    'default': 'ChatGPT / Claude'
+  };
+  const recommendedAI = aiRecommendations[format] || aiRecommendations['default'];
+  
+  // Direct Ask Prompt
+  let directPrompt = task;
+  if (context) {
+    directPrompt += `\n\nContext: ${context}`;
+  }
+  directPrompt += `\n\n${formatInstruction} ${toneInstruction} ${lengthInstruction}`;
+  
+  // Roleplay Prompt
+  const persona = randomItem(personas);
+  let roleplayPrompt = `You are a ${persona.role}.\n\n`;
+  roleplayPrompt += `I need your help with the following:\n${task}`;
+  if (context) {
+    roleplayPrompt += `\n\nHere's the context: ${context}`;
+  }
+  roleplayPrompt += `\n\nBased on your expertise, ${formatInstruction.toLowerCase()} ${toneInstruction} ${lengthInstruction}`;
+  
+  // Framework Prompt
+  const framework = randomItem(frameworks);
+  let frameworkPrompt = `Use the ${framework.name} framework (${framework.description}) to help me with:\n\n${task}`;
+  if (context) {
+    frameworkPrompt += `\n\nRelevant context: ${context}`;
+  }
+  frameworkPrompt += `\n\nStructure your response according to the ${framework.name} framework. ${formatInstruction} ${toneInstruction} ${lengthInstruction}`;
+  
+  return {
+    direct: {
+      prompt: directPrompt,
+      ai: recommendedAI,
+      quality: context ? 4 : 3
+    },
+    roleplay: {
+      prompt: roleplayPrompt,
+      ai: 'Claude / Magai',
+      quality: persona.quality
+    },
+    framework: {
+      prompt: frameworkPrompt,
+      ai: 'ChatGPT / Claude',
+      quality: framework.quality
+    }
+  };
+}
+
+// Form submission
+document.getElementById('prompt-generator-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  
+  const task = taskInput.value.trim();
+  const context = contextInput.value.trim();
+  const format = formatSelect.value;
+  const tone = toneSelect.value;
+  
+  if (!task) {
+    alert('Please describe what you want the AI to do');
+    return;
+  }
+  
+  const btn = document.querySelector('.generate-btn');
+  btn.innerHTML = '<span>⏳</span> Generating...';
+  btn.disabled = true;
+  
+  // Simulate generation delay for UX
+  setTimeout(() => {
+    const prompts = generatePrompts(task, context, format, tone, selectedLength);
+    
+    // Update Direct card
+    document.getElementById('prompt-direct').textContent = prompts.direct.prompt;
+    document.getElementById('ai-direct').textContent = prompts.direct.ai;
+    document.getElementById('stars-direct').innerHTML = generateStars(prompts.direct.quality);
+    
+    // Update Roleplay card
+    document.getElementById('prompt-roleplay').textContent = prompts.roleplay.prompt;
+    document.getElementById('ai-roleplay').textContent = prompts.roleplay.ai;
+    document.getElementById('stars-roleplay').innerHTML = generateStars(prompts.roleplay.quality);
+    
+    // Update Framework card
+    document.getElementById('prompt-framework').textContent = prompts.framework.prompt;
+    document.getElementById('ai-framework').textContent = prompts.framework.ai;
+    document.getElementById('stars-framework').innerHTML = generateStars(prompts.framework.quality);
+    
+    // Show results
+    document.getElementById('output-placeholder').style.display = 'none';
+    document.getElementById('prompt-cards').classList.add('visible');
+    
+    btn.innerHTML = '<span>⚡</span> Generate 3 Prompt Variations';
+    btn.disabled = false;
+    
+    // Scroll to results on mobile
+    if (window.innerWidth < 900) {
+      document.getElementById('prompt-cards').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }, 600);
+});
+
+// Copy prompt function
+function copyPrompt(type) {
+  const promptText = document.getElementById(`prompt-${type}`).textContent;
+  
+  navigator.clipboard.writeText(promptText).then(() => {
+    const btn = document.querySelector(`#card-${type} .copy-btn`);
+    btn.innerHTML = '<span>✅</span> Copied!';
+    btn.classList.add('copied');
+    
+    setTimeout(() => {
+      btn.innerHTML = '<span>📋</span> Copy';
+      btn.classList.remove('copied');
+    }, 2000);
+  });
+}
+
+// Email capture form - GHL webhook placeholder
+// TODO: Add actual GHL webhook URL when created
+const GHL_WEBHOOK_URL = 'https://services.leadconnectorhq.com/hooks/YOUR_LOCATION_ID/webhook-trigger/YOUR_WEBHOOK_ID';
+
+document.getElementById('guide-form').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  
+  const email = document.getElementById('guide-email').value.trim();
+  const emailInput = document.getElementById('guide-email');
+  const btn = this.querySelector('button');
+  const formContainer = document.getElementById('capture-form-container');
+  const successEl = document.getElementById('capture-success');
+  
+  // Reset any previous error state
+  emailInput.style.borderColor = '';
+  
+  if (!email || !email.includes('@')) {
+    emailInput.style.borderColor = '#ff4444';
+    return;
+  }
+  
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+  
+  try {
+    // Check if webhook URL is configured
+    if (GHL_WEBHOOK_URL.includes('YOUR_')) {
+      // Dev mode - just show success
+      console.log('GHL webhook not configured. Email captured:', email);
+      formContainer.style.display = 'none';
+      successEl.classList.add('visible');
+      return;
+    }
+    
+    const response = await fetch(GHL_WEBHOOK_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: email })
+    });
+    
+    if (response.ok) {
+      formContainer.style.display = 'none';
+      successEl.classList.add('visible');
+    } else {
+      throw new Error('Request failed');
+    }
+  } catch (err) {
+    console.error('Webhook error:', err);
+    // Show success anyway in dev mode
+    formContainer.style.display = 'none';
+    successEl.classList.add('visible');
+  }
+});
+</script>
+
+</body>
+</html>
