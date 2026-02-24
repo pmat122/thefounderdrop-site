@@ -1165,7 +1165,8 @@ ${data.cta}`,
             e.preventDefault();
             
             const email = document.getElementById('lead-email').value;
-            // Note: GHL webhook URL to be configured - using placeholder pattern
+            const topic = document.getElementById('topic').value;
+            const postType = document.getElementById('postType').value;
             const webhookUrl = 'https://services.leadconnectorhq.com/hooks/73JctoYNF5rEgo4S5PU0/webhook-trigger/KIqbuWm46UxYvO8JTtoF';
             
             try {
@@ -1173,7 +1174,12 @@ ${data.cta}`,
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     mode: 'no-cors',
-                    body: JSON.stringify({ email })
+                    body: JSON.stringify({ 
+                        email,
+                        topic,
+                        postType,
+                        source: 'instagram-caption-generator'
+                    })
                 });
             } catch (err) {
                 console.log('Webhook sent (no-cors mode)');
