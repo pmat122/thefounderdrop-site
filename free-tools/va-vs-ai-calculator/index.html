@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VA vs AI Calculator | Compare Costs & Save Thousands</title>
+<meta name="description" content="Calculate exactly how much you could save replacing virtual assistants with AI tools. Free ROI calculator for founders and business owners.">
+<meta name="keywords" content="va vs ai cost, va replacement calculator, ai vs virtual assistant, automation roi calculator">
+
+<!-- Open Graph -->
+<meta property="og:title" content="VA vs AI Calculator | Compare Costs & Save Thousands">
+<meta property="og:description" content="Calculate exactly how much you could save replacing virtual assistants with AI tools.">
+<meta property="og:image" content="https://thefounderdrop.com/og-va-calculator.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://thefounderdrop.com/free-tools/va-vs-ai-calculator">
+<meta property="og:site_name" content="The Founder Drop">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="VA vs AI Calculator | The Founder Drop">
+<meta name="twitter:description" content="Calculate how much you could save with AI automation.">
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+<!-- Schema Markup -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "VA vs AI Calculator",
+  "description": "Calculate exactly how much you could save replacing virtual assistants with AI tools.",
+  "url": "https://thefounderdrop.com/free-tools/va-vs-ai-calculator",
+  "applicationCategory": "BusinessApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "operatingSystem": "Any",
+  "browserRequirements": "Requires JavaScript"
+}
+</script>
+
+<style>
+:root {
+  --primary: #5B9BD5;
+  --primary-hover: #4A8BC5;
+  --bg-dark: #0D0D0D;
+  --bg-card: #1A1A1A;
+  --bg-input: #141414;
+  --text-primary: #FFFFFF;
+  --text-secondary: #A0A0A0;
+  --text-muted: #666666;
+  --border: #2A2A2A;
+  --border-light: #333333;
+  --success: #4CAF50;
+  --accent-glow: rgba(91, 155, 213, 0.15);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--bg-dark);
+  color: var(--text-primary);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* Navigation */
+.site-nav {
+  border-bottom: 1px solid var(--border);
+  padding: 16px 20px;
+  position: sticky;
+  top: 0;
+  background: rgba(13, 13, 13, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 100;
+}
+
+.nav-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.nav-links a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover { color: var(--text-primary); }
+
+.nav-cta {
+  background: var(--primary) !important;
+  color: #fff !important;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
+.nav-cta:hover { background: var(--primary-hover) !important; }
+
+/* Container */
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* Page Header */
+.page-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.page-header h1 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.page-header p {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+}
+
+/* Calculator Card */
+.calc-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 32px;
+  margin-bottom: 24px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.form-group input, .form-group select {
+  width: 100%;
+  padding: 14px 16px;
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus, .form-group select:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.form-group small {
+  display: block;
+  margin-top: 6px;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.calculate-btn {
+  width: 100%;
+  padding: 16px;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.calculate-btn:hover { background: var(--primary-hover); }
+
+/* Results */
+#results {
+  display: none;
+  margin-top: 32px;
+}
+
+#results.visible { display: block; }
+
+.results-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.results-header h2 {
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+}
+
+.savings-highlight {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--success);
+  display: block;
+  margin: 16px 0;
+}
+
+.comparison-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.comparison-box {
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+}
+
+.comparison-box h3 {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.comparison-box .amount {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.comparison-box.va .amount { color: #ff6b6b; }
+.comparison-box.ai .amount { color: var(--success); }
+
+.breakdown-list {
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+.breakdown-list h4 {
+  margin-bottom: 12px;
+  font-size: 1rem;
+}
+
+.breakdown-list ul {
+  list-style: none;
+}
+
+.breakdown-list li {
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  color: var(--text-secondary);
+}
+
+.breakdown-list li:last-child { border-bottom: none; }
+
+/* CTA Card */
+.cta-card {
+  background: linear-gradient(135deg, rgba(91, 155, 213, 0.1), rgba(91, 155, 213, 0.05));
+  border: 1px solid var(--primary);
+  border-radius: 12px;
+  padding: 32px;
+  text-align: center;
+}
+
+.cta-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+}
+
+.cta-card p {
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+}
+
+.cta-card .cta-btn {
+  display: inline-block;
+  padding: 14px 28px;
+  background: var(--primary);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.cta-card .cta-btn:hover { background: var(--primary-hover); }
+
+/* Email Capture */
+.email-capture {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 32px;
+  margin-top: 32px;
+  text-align: center;
+}
+
+.email-capture h3 {
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+}
+
+.email-capture p {
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+}
+
+.email-form {
+  display: flex;
+  gap: 12px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.email-form input {
+  flex: 1;
+  padding: 14px 16px;
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-size: 1rem;
+}
+
+.email-form button {
+  padding: 14px 24px;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+#capture-success {
+  display: none;
+  color: var(--success);
+  font-weight: 600;
+}
+
+#capture-success.visible { display: block; }
+
+/* Footer */
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 32px 20px;
+  text-align: center;
+  margin-top: 60px;
+}
+
+.footer-links {
+  margin-bottom: 16px;
+}
+
+.footer-links a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  margin: 0 12px;
+  font-size: 0.9rem;
+}
+
+.footer-links .sep { color: var(--text-muted); }
+
+.footer-copy {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+@media (max-width: 600px) {
+  .page-header h1 { font-size: 1.8rem; }
+  .comparison-grid { grid-template-columns: 1fr; }
+  .email-form { flex-direction: column; }
+  .savings-highlight { font-size: 2.2rem; }
+}
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="nav-container">
+    <a href="/" class="nav-logo">The Founder Drop</a>
+    <div class="nav-links">
+      <a href="/toolkit">Toolkit</a>
+      <a href="/free-tools">Free Tools</a>
+      <a href="/guides">Guides</a>
+      <a href="/#form" class="nav-cta">Subscribe</a>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <header class="page-header">
+    <h1>VA vs AI Cost Calculator</h1>
+    <p>See exactly how much you could save by replacing manual tasks with AI tools.</p>
+  </header>
+
+  <div class="calc-card">
+    <form id="calculator-form">
+      <div class="form-group">
+        <label for="va-hours">Hours of VA work per month</label>
+        <input type="number" id="va-hours" placeholder="e.g., 80" min="1" max="500" required>
+        <small>Total hours spent on tasks like email, scheduling, data entry, research</small>
+      </div>
+
+      <div class="form-group">
+        <label for="va-rate">VA hourly rate ($)</label>
+        <input type="number" id="va-rate" placeholder="e.g., 15" min="1" max="100" required>
+        <small>Typical range: $5-25/hr depending on location and skill level</small>
+      </div>
+
+      <div class="form-group">
+        <label for="task-type">Primary task type</label>
+        <select id="task-type" required>
+          <option value="">Select main task category</option>
+          <option value="email">Email & Communication</option>
+          <option value="scheduling">Scheduling & Calendar</option>
+          <option value="data">Data Entry & Research</option>
+          <option value="content">Content Writing & Social</option>
+          <option value="support">Customer Support</option>
+          <option value="lead-gen">Lead Generation & Outreach</option>
+          <option value="admin">General Admin</option>
+        </select>
+      </div>
+
+      <button type="submit" class="calculate-btn">
+        <span>📊</span> Calculate My Savings
+      </button>
+    </form>
+
+    <div id="results">
+      <div class="results-header">
+        <h2>Your Potential Savings</h2>
+        <span class="savings-highlight" id="annual-savings">$0</span>
+        <p style="color: var(--text-secondary);">per year with AI automation</p>
+      </div>
+
+      <div class="comparison-grid">
+        <div class="comparison-box va">
+          <h3>Current VA Cost</h3>
+          <div class="amount" id="va-cost">$0/mo</div>
+        </div>
+        <div class="comparison-box ai">
+          <h3>AI Tools Cost</h3>
+          <div class="amount" id="ai-cost">$0/mo</div>
+        </div>
+      </div>
+
+      <div class="breakdown-list">
+        <h4>Recommended AI Stack</h4>
+        <ul id="tool-breakdown"></ul>
+      </div>
+
+      <div class="cta-card">
+        <h3>Ready to make the switch?</h3>
+        <p>Get our complete AI automation toolkit with setup guides for each tool.</p>
+        <a href="/toolkit" class="cta-btn">View the Toolkit →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Email Capture -->
+  <div class="email-capture">
+    <h3>🚀 Get the Full Automation Playbook</h3>
+    <p>Step-by-step guide to replacing VA tasks with AI — including tool configs and templates.</p>
+    <div id="capture-form-container">
+      <form class="email-form" id="sop-form">
+        <input type="email" id="sop-email" placeholder="Enter your email" required>
+        <button type="submit">Get It Free</button>
+      </form>
+    </div>
+    <p id="capture-success">✅ Check your inbox! The playbook is on its way.</p>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <nav class="footer-links">
+    <a href="/">Home</a>
+    <span class="sep">|</span>
+    <a href="/toolkit">Toolkit</a>
+    <span class="sep">|</span>
+    <a href="/free-tools">Free Tools</a>
+    <span class="sep">|</span>
+    <a href="/guides">Guides</a>
+  </nav>
+  <p class="footer-copy">© 2026 The Founder Drop</p>
+</footer>
+
+<script>
+// AI tool recommendations by task type
+const aiStacks = {
+  email: {
+    tools: [
+      { name: 'ChatGPT Plus', cost: 20, desc: 'Email drafting & responses' },
+      { name: 'Superhuman', cost: 30, desc: 'Inbox management' },
+      { name: 'Calendly', cost: 12, desc: 'Meeting scheduling' }
+    ],
+    automationRate: 0.85
+  },
+  scheduling: {
+    tools: [
+      { name: 'Calendly Pro', cost: 12, desc: 'Automated scheduling' },
+      { name: 'Motion', cost: 19, desc: 'AI calendar management' },
+      { name: 'Reclaim.ai', cost: 10, desc: 'Smart time blocking' }
+    ],
+    automationRate: 0.90
+  },
+  data: {
+    tools: [
+      { name: 'ChatGPT Plus', cost: 20, desc: 'Data analysis & entry' },
+      { name: 'Bardeen', cost: 15, desc: 'Web scraping automation' },
+      { name: 'Rows.com', cost: 12, desc: 'AI spreadsheets' }
+    ],
+    automationRate: 0.80
+  },
+  content: {
+    tools: [
+      { name: 'Jasper', cost: 49, desc: 'AI copywriting', link: '/go/jasper' },
+      { name: 'Magai', cost: 19, desc: 'Multi-model AI access', link: '/go/magai' },
+      { name: 'Buffer', cost: 15, desc: 'Social scheduling' }
+    ],
+    automationRate: 0.75
+  },
+  support: {
+    tools: [
+      { name: 'GoHighLevel', cost: 97, desc: 'CRM + AI chat', link: '/go/ghl' },
+      { name: 'Intercom Fin', cost: 50, desc: 'AI support agent' }
+    ],
+    automationRate: 0.70
+  },
+  'lead-gen': {
+    tools: [
+      { name: 'Apollo.io', cost: 49, desc: 'Lead database', link: '/go/apollo' },
+      { name: 'Instantly', cost: 37, desc: 'Cold email automation', link: '/go/instantly' },
+      { name: 'GoHighLevel', cost: 97, desc: 'CRM + follow-up', link: '/go/ghl' }
+    ],
+    automationRate: 0.85
+  },
+  admin: {
+    tools: [
+      { name: 'ChatGPT Plus', cost: 20, desc: 'General AI assistant' },
+      { name: 'Zapier', cost: 20, desc: 'Workflow automation' },
+      { name: 'Notion AI', cost: 10, desc: 'Docs & knowledge base' }
+    ],
+    automationRate: 0.75
+  }
+};
+
+// Calculator form submission
+document.getElementById('calculator-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  
+  const hours = parseFloat(document.getElementById('va-hours').value);
+  const rate = parseFloat(document.getElementById('va-rate').value);
+  const taskType = document.getElementById('task-type').value;
+  
+  if (!hours || !rate || !taskType) {
+    alert('Please fill in all fields');
+    return;
+  }
+  
+  const stack = aiStacks[taskType];
+  const monthlyVACost = hours * rate;
+  const monthlyAICost = stack.tools.reduce((sum, t) => sum + t.cost, 0);
+  const monthlySavings = monthlyVACost - monthlyAICost;
+  const annualSavings = monthlySavings * 12;
+  
+  // Update UI
+  document.getElementById('va-cost').textContent = '$' + monthlyVACost.toLocaleString() + '/mo';
+  document.getElementById('ai-cost').textContent = '$' + monthlyAICost.toLocaleString() + '/mo';
+  document.getElementById('annual-savings').textContent = '$' + Math.max(0, annualSavings).toLocaleString();
+  
+  // Build tool breakdown
+  const breakdownList = document.getElementById('tool-breakdown');
+  breakdownList.innerHTML = stack.tools.map(t => {
+    const linkHtml = t.link ? `<a href="${t.link}" style="color: var(--primary)">${t.name}</a>` : t.name;
+    return `<li><span>${linkHtml} — ${t.desc}</span><span>$${t.cost}/mo</span></li>`;
+  }).join('');
+  
+  // Show results
+  document.getElementById('results').classList.add('visible');
+  document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+});
+
+// Email capture form
+const GHL_WEBHOOK_URL = 'https://services.leadconnectorhq.com/hooks/73JctoYNF5rEgo4S5PU0/webhook-trigger/d8dc5980-71a0-45bf-9efc-55cc41b1a976';
+
+document.getElementById('sop-form').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  
+  const email = document.getElementById('sop-email').value.trim();
+  const emailInput = document.getElementById('sop-email');
+  const btn = this.querySelector('button');
+  const formContainer = document.getElementById('capture-form-container');
+  const successEl = document.getElementById('capture-success');
+  
+  emailInput.style.borderColor = '';
+  
+  if (!email || !email.includes('@')) {
+    emailInput.style.borderColor = '#ff4444';
+    return;
+  }
+  
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+  
+  try {
+    const response = await fetch(GHL_WEBHOOK_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: email, tool_source: 'va-calculator' })
+    });
+    
+    if (response.ok) {
+      formContainer.style.display = 'none';
+      successEl.classList.add('visible');
+    } else {
+      throw new Error('Request failed');
+    }
+  } catch (err) {
+    console.error('Webhook error:', err);
+    btn.textContent = 'Error - Try Again';
+    btn.disabled = false;
+    btn.style.background = '#ff4444';
+    setTimeout(() => {
+      btn.textContent = 'Get It Free';
+      btn.style.background = '';
+    }, 3000);
+  }
+});
+</script>
+
+</body>
+</html>
