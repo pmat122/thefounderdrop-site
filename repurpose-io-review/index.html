@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Repurpose.io Review 2026: Automate Your Content Distribution?</title>
+<meta name="description" content="In-depth Repurpose.io review for content creators. Automate distribution across 20+ platforms. Is it worth it? Features, pricing, and honest verdict inside.">
+<link rel="canonical" href="https://thefounderdrop.com/repurpose-io-review/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #06060a;
+    --surface: #0d0d14;
+    --card: #12121c;
+    --border: rgba(255,255,255,0.06);
+    --text: #e8e8ed;
+    --text-dim: #8a8a9a;
+    --accent: #4A90D9;
+    --accent-glow: rgba(74, 144, 217, 0.15);
+    --accent-bright: #5BA0E9;
+    --white: #ffffff;
+    --green: #34d399;
+    --red: #f87171;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    line-height: 1.7;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: 
+      linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
+    background-size: 80px 80px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .glow-orb {
+    position: fixed;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+    top: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(20px);
+    background: rgba(6, 6, 10, 0.8);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+
+  .logo-mark {
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--white);
+    background: var(--accent);
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+  }
+
+  .logo-text {
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--text);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 24px;
+  }
+
+  .nav-links a {
+    color: var(--text-dim);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+  }
+
+  .nav-links a:hover {
+    color: var(--accent);
+  }
+
+  main {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 120px 24px 80px;
+  }
+
+  .breadcrumb {
+    font-size: 13px;
+    color: var(--text-dim);
+    margin-bottom: 24px;
+  }
+
+  .breadcrumb a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .last-updated {
+    font-size: 13px;
+    color: var(--text-dim);
+    margin-bottom: 32px;
+  }
+
+  h1 {
+    font-family: 'Instrument Serif', serif;
+    font-size: clamp(32px, 5vw, 48px);
+    font-weight: 400;
+    line-height: 1.15;
+    color: var(--white);
+    margin-bottom: 32px;
+  }
+
+  h1 em {
+    font-style: italic;
+    color: var(--accent-bright);
+  }
+
+  .verdict-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px;
+    margin-bottom: 48px;
+  }
+
+  .verdict-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .rating {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .rating-score {
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--accent-bright);
+  }
+
+  .rating-stars {
+    color: #fbbf24;
+    font-size: 20px;
+  }
+
+  .rating-text {
+    font-size: 14px;
+    color: var(--text-dim);
+  }
+
+  .verdict-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  .verdict-item {
+    background: rgba(255,255,255,0.03);
+    padding: 16px;
+    border-radius: 10px;
+  }
+
+  .verdict-label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-dim);
+    margin-bottom: 4px;
+  }
+
+  .verdict-value {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--white);
+  }
+
+  .cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 16px 32px;
+    background: var(--accent);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 16px;
+    transition: background 0.3s, transform 0.15s;
+  }
+
+  .cta-button:hover {
+    background: var(--accent-bright);
+    transform: translateY(-2px);
+  }
+
+  h2 {
+    font-family: 'Instrument Serif', serif;
+    font-size: 28px;
+    font-weight: 400;
+    color: var(--white);
+    margin: 48px 0 20px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+  }
+
+  h2:first-of-type {
+    border-top: none;
+    padding-top: 0;
+  }
+
+  p {
+    color: var(--text);
+    margin-bottom: 16px;
+    font-size: 16px;
+  }
+
+  .section-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    margin: 24px 0;
+  }
+
+  .features-list {
+    list-style: none;
+  }
+
+  .features-list li {
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    gap: 16px;
+  }
+
+  .features-list li:last-child {
+    border-bottom: none;
+  }
+
+  .feature-icon {
+    font-size: 24px;
+    flex-shrink: 0;
+  }
+
+  .feature-content h4 {
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 4px;
+  }
+
+  .feature-content p {
+    font-size: 14px;
+    color: var(--text-dim);
+    margin: 0;
+  }
+
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin: 24px 0;
+  }
+
+  .pricing-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    text-align: center;
+  }
+
+  .pricing-card.featured {
+    border-color: var(--accent);
+    position: relative;
+  }
+
+  .pricing-card.featured::before {
+    content: 'BEST VALUE';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--accent);
+    color: var(--white);
+    font-size: 10px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 20px;
+  }
+
+  .pricing-name {
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 8px;
+  }
+
+  .pricing-price {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--accent-bright);
+    margin-bottom: 4px;
+  }
+
+  .pricing-period {
+    font-size: 13px;
+    color: var(--text-dim);
+    margin-bottom: 16px;
+  }
+
+  .pricing-features {
+    list-style: none;
+    text-align: left;
+    font-size: 14px;
+    color: var(--text-dim);
+  }
+
+  .pricing-features li {
+    padding: 6px 0;
+    padding-left: 20px;
+    position: relative;
+  }
+
+  .pricing-features li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--green);
+  }
+
+  .pros-cons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin: 24px 0;
+  }
+
+  @media (max-width: 600px) {
+    .pros-cons {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .pros, .cons {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+  }
+
+  .pros h3, .cons h3 {
+    font-weight: 600;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .pros h3 {
+    color: var(--green);
+  }
+
+  .cons h3 {
+    color: var(--red);
+  }
+
+  .pros ul, .cons ul {
+    list-style: none;
+  }
+
+  .pros li, .cons li {
+    padding: 8px 0;
+    padding-left: 24px;
+    position: relative;
+    font-size: 15px;
+  }
+
+  .pros li::before {
+    content: '✅';
+    position: absolute;
+    left: 0;
+  }
+
+  .cons li::before {
+    content: '❌';
+    position: absolute;
+    left: 0;
+  }
+
+  .alternatives-grid {
+    display: grid;
+    gap: 16px;
+    margin: 24px 0;
+  }
+
+  .alternative-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: border-color 0.3s;
+  }
+
+  .alternative-card:hover {
+    border-color: var(--accent);
+  }
+
+  .alternative-info h4 {
+    color: var(--white);
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+
+  .alternative-info p {
+    font-size: 14px;
+    color: var(--text-dim);
+    margin: 0;
+  }
+
+  .alternative-card a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+  }
+
+  .final-verdict {
+    background: linear-gradient(135deg, var(--surface) 0%, rgba(74, 144, 217, 0.1) 100%);
+    border: 1px solid var(--accent);
+    border-radius: 16px;
+    padding: 32px;
+    margin: 48px 0;
+  }
+
+  .final-verdict h2 {
+    border: none;
+    margin: 0 0 20px;
+    padding: 0;
+  }
+
+  .toolkit-cta {
+    background: var(--surface);
+    border: 2px solid var(--accent);
+    border-radius: 16px;
+    padding: 40px;
+    text-align: center;
+    margin: 60px 0 40px;
+  }
+
+  .toolkit-cta .emoji {
+    font-size: 48px;
+    margin-bottom: 16px;
+  }
+
+  .toolkit-cta h3 {
+    font-family: 'Instrument Serif', serif;
+    font-size: 28px;
+    color: var(--white);
+    margin-bottom: 12px;
+  }
+
+  .toolkit-cta p {
+    color: var(--text-dim);
+    margin-bottom: 24px;
+  }
+
+  footer {
+    border-top: 2px solid #333;
+    padding: 60px 20px;
+    text-align: center;
+    background: #0a0a0f;
+    position: relative;
+    z-index: 1;
+  }
+
+  .footer-links {
+    margin-bottom: 20px;
+  }
+
+  .footer-links a {
+    color: #cccccc;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 0 16px;
+  }
+
+  .footer-social a {
+    color: var(--accent-bright);
+    text-decoration: none;
+    font-size: 16px;
+  }
+
+  .footer-copy {
+    color: #888888;
+    font-size: 14px;
+    margin-top: 16px;
+  }
+
+  @media (max-width: 768px) {
+    nav { padding: 16px 20px; }
+    .nav-links { display: none; }
+    main { padding: 100px 20px 60px; }
+    .verdict-header { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<div class="glow-orb"></div>
+
+<nav>
+  <a href="/" class="logo">
+    <div class="logo-mark">FD</div>
+    <span class="logo-text">The Founder Drop</span>
+  </a>
+  <div class="nav-links">
+    <a href="/best-ai-tools-solo-founders">Best AI Tools</a>
+    <a href="/toolkit">Toolkit</a>
+    <a href="/free-tools">Free Tools</a>
+  </div>
+</nav>
+
+<main>
+  <div class="breadcrumb">
+    <a href="/">Home</a> → <a href="/best-ai-tools-solo-founders">Best AI Tools</a> → Repurpose.io Review
+  </div>
+
+  <p class="last-updated">Last updated: February 2026</p>
+
+  <h1>Repurpose.io Review 2026: Automate Your <em>Content Distribution</em>?</h1>
+
+  <div class="verdict-box">
+    <div class="verdict-header">
+      <div class="rating">
+        <span class="rating-score">4.5</span>
+        <div>
+          <div class="rating-stars">★★★★☆</div>
+          <div class="rating-text">out of 5</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="verdict-grid">
+      <div class="verdict-item">
+        <div class="verdict-label">Best For</div>
+        <div class="verdict-value">Multi-Platform Distribution</div>
+      </div>
+      <div class="verdict-item">
+        <div class="verdict-label">Price</div>
+        <div class="verdict-value">$25 – $125/mo</div>
+      </div>
+      <div class="verdict-item">
+        <div class="verdict-label">Free Trial</div>
+        <div class="verdict-value">14 Days</div>
+      </div>
+    </div>
+    
+    <a href="/go/repurpose" class="cta-button" target="_blank" rel="noopener">
+      Try Repurpose.io Free →
+    </a>
+  </div>
+
+  <h2>What Is Repurpose.io?</h2>
+  <p>Repurpose.io is the content distribution automation platform that eliminates manual uploading forever. Connect your content sources—YouTube, podcasts, TikTok, Zoom—and it automatically publishes to 20+ platforms.</p>
+  
+  <p>The magic is in the workflows. Set up automated rules like "When a new YouTube video is published, extract the audio and post to Spotify, Apple Podcasts, and SoundCloud." Or "When I upload to TikTok, auto-post to Instagram Reels and YouTube Shorts."</p>
+  
+  <p>For content creators who are tired of manually uploading the same video to five different platforms, Repurpose.io is a massive time-saver. Set it once and your content flows everywhere automatically.</p>
+
+  <h2>Key Features</h2>
+  <div class="section-card">
+    <ul class="features-list">
+      <li>
+        <span class="feature-icon">🔄</span>
+        <div class="feature-content">
+          <h4>Automated Workflows</h4>
+          <p>Set up trigger-based publishing rules. When content appears in one place, it automatically flows to others.</p>
+        </div>
+      </li>
+      <li>
+        <span class="feature-icon">📱</span>
+        <div class="feature-content">
+          <h4>20+ Platform Integrations</h4>
+          <p>Connect YouTube, TikTok, Instagram, LinkedIn, Twitter, Facebook, podcasts, and more in one dashboard.</p>
+        </div>
+      </li>
+      <li>
+        <span class="feature-icon">🎵</span>
+        <div class="feature-content">
+          <h4>Audio & Video Support</h4>
+          <p>Handle both video and audio content. Extract audio from videos for podcast distribution automatically.</p>
+        </div>
+      </li>
+      <li>
+        <span class="feature-icon">📅</span>
+        <div class="feature-content">
+          <h4>Custom Scheduling</h4>
+          <p>Schedule posts for optimal times on each platform. Queue content for later publishing.</p>
+        </div>
+      </li>
+      <li>
+        <span class="feature-icon">🎬</span>
+        <div class="feature-content">
+          <h4>Basic Video Editing</h4>
+          <p>Trim, resize, and add watermarks to videos automatically during the repurposing process.</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <h2>Pricing Breakdown</h2>
+  <div class="pricing-grid">
+    <div class="pricing-card">
+      <div class="pricing-name">Podcaster</div>
+      <div class="pricing-price">$25</div>
+      <div class="pricing-period">per month</div>
+      <ul class="pricing-features">
+        <li>Audio content focus</li>
+        <li>10 destination accounts</li>
+        <li>20 uploads per day</li>
+        <li>Basic workflows</li>
+      </ul>
+    </div>
+    <div class="pricing-card featured">
+      <div class="pricing-name">Content Marketer</div>
+      <div class="pricing-price">$75</div>
+      <div class="pricing-period">per month</div>
+      <ul class="pricing-features">
+        <li>Video + audio content</li>
+        <li>20 destination accounts</li>
+        <li>Unlimited uploads</li>
+        <li>Advanced workflows</li>
+        <li>Team collaboration</li>
+      </ul>
+    </div>
+    <div class="pricing-card">
+      <div class="pricing-name">Agency</div>
+      <div class="pricing-price">$125</div>
+      <div class="pricing-period">per month</div>
+      <ul class="pricing-features">
+        <li>Everything in Content Marketer</li>
+        <li>Unlimited destinations</li>
+        <li>White-label options</li>
+        <li>Client management</li>
+        <li>Priority support</li>
+      </ul>
+    </div>
+  </div>
+  <p style="text-align: center; color: var(--text-dim); font-size: 14px;">✅ 14-day free trial available</p>
+
+  <h2>Pros & Cons</h2>
+  <div class="pros-cons">
+    <div class="pros">
+      <h3>👍 Pros</h3>
+      <ul>
+        <li>True "set and forget" automation</li>
+        <li>Works with audio AND video</li>
+        <li>20+ platform integrations</li>
+        <li>Saves hours of manual uploading</li>
+      </ul>
+    </div>
+    <div class="cons">
+      <h3>👎 Cons</h3>
+      <ul>
+        <li>Doesn't create clips (just distributes)</li>
+        <li>Basic editing features only</li>
+        <li>Learning curve for workflows</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>Alternatives to Consider</h2>
+  <div class="alternatives-grid">
+    <div class="alternative-card">
+      <div class="alternative-info">
+        <h4>Opus Pro</h4>
+        <p>Better for creating short clips from long videos. Different use case.</p>
+      </div>
+      <a href="/go/opus" target="_blank" rel="noopener">Try Free →</a>
+    </div>
+    <div class="alternative-card">
+      <div class="alternative-info">
+        <h4>Buffer</h4>
+        <p>Simpler social scheduling. Less automation, easier to use.</p>
+      </div>
+      <a href="/buffer-review">Read Review →</a>
+    </div>
+    <div class="alternative-card">
+      <div class="alternative-info">
+        <h4>Zapier + Native Tools</h4>
+        <p>DIY approach with more flexibility but more setup work.</p>
+      </div>
+      <a href="/guides/content-automation">Learn More →</a>
+    </div>
+  </div>
+
+  <div class="final-verdict">
+    <h2>Final Verdict</h2>
+    <p>Repurpose.io solves a real problem: the tedious process of uploading the same content to multiple platforms. For podcasters and video creators who publish consistently, the automation pays for itself in time savings within the first month.</p>
+    
+    <p>The key thing to understand: Repurpose.io is about distribution, not creation. It won't make clips or edit your videos—it just moves content from A to B automatically. If you need clip creation, look at Opus Pro instead (or use both together).</p>
+    
+    <p><strong>Who should buy:</strong> Podcasters, YouTubers, and content creators who publish regularly across multiple platforms.</p>
+    
+    <p><strong>Who should skip:</strong> Those who only post to 1-2 platforms, or who need AI-powered clip creation.</p>
+    
+    <div style="margin-top: 24px;">
+      <a href="/go/repurpose" class="cta-button" target="_blank" rel="noopener">
+        Try Repurpose.io Free →
+      </a>
+    </div>
+  </div>
+
+  <div class="toolkit-cta">
+    <div class="emoji">🧰</div>
+    <h3>Get The Founder Toolkit</h3>
+    <p>The 9 AI tools I use to run my entire business as a solo founder.</p>
+    <a href="/toolkit" class="cta-button">Get Free Access →</a>
+  </div>
+
+</main>
+
+<footer>
+  <div class="footer-links">
+    <a href="/">Home</a>
+    <a href="/toolkit">Toolkit</a>
+    <a href="/free-tools">Free Tools</a>
+    <a href="/guides">Guides</a>
+  </div>
+  <div class="footer-social">
+    <a href="https://instagram.com/thefounderdrop" target="_blank" rel="noopener">@thefounderdrop</a>
+  </div>
+  <p class="footer-copy">© 2026 The Founder Drop</p>
+</footer>
+
+</body>
+</html>
