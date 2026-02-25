@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Founder Guides | The Founder Drop</title>
-<meta name="description" content="Tactical playbooks for founders. Step-by-step guides on growth, automation, and AI tools for every profession.">
+<title>Founder Guides | AI Tool Reviews, Comparisons & Roundups</title>
+<meta name="description" content="In-depth AI tool reviews, head-to-head comparisons, and industry-specific roundups. Find the best tools for your business.">
 
 <!-- Open Graph -->
-<meta property="og:title" content="Founder Guides | The Founder Drop">
-<meta property="og:description" content="Tactical playbooks for founders. Step-by-step guides on growth, automation, and AI tools.">
+<meta property="og:title" content="Founder Guides | AI Tool Reviews, Comparisons & Roundups">
+<meta property="og:description" content="In-depth AI tool reviews, head-to-head comparisons, and industry-specific roundups.">
 <meta property="og:image" content="https://thefounderdrop.com/og-guides.png">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://thefounderdrop.com/guides">
@@ -17,7 +17,7 @@
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Founder Guides | The Founder Drop">
-<meta name="twitter:description" content="Tactical playbooks for founders.">
+<meta name="twitter:description" content="AI tool reviews, comparisons & roundups for founders.">
 
 <!-- Favicon -->
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -34,11 +34,7 @@
   --border: #2A2A2A;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -86,19 +82,20 @@ body {
   transition: color 0.2s;
 }
 
-.nav-links a:hover {
-  color: var(--text-primary);
-}
+.nav-links a:hover { color: var(--text-primary); }
 
 .nav-cta {
   background: var(--primary) !important;
   color: #fff !important;
   padding: 8px 16px;
   border-radius: 6px;
+  transition: background 0.2s;
 }
 
+.nav-cta:hover { background: var(--primary-hover) !important; }
+
 .container {
-  max-width: 900px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 60px 20px;
 }
@@ -112,66 +109,101 @@ body {
   font-size: 2.5rem;
   font-weight: 800;
   margin-bottom: 12px;
-  background: linear-gradient(135deg, var(--text-primary), var(--primary));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
 }
 
 .page-header p {
   color: var(--text-secondary);
   font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
-.guides-section {
+/* Section Styles */
+.section {
   margin-bottom: 48px;
 }
 
-.guides-section h2 {
-  font-size: 1.3rem;
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.section-header .icon {
+  font-size: 1.5rem;
+}
+
+.section-header h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.section-header .count {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.8rem;
   color: var(--text-secondary);
 }
 
-.guides-grid {
+/* Card Grid */
+.card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
 }
 
 .guide-card {
   display: block;
-  padding: 28px;
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: 12px;
+  padding: 20px;
   text-decoration: none;
   transition: all 0.2s;
 }
 
 .guide-card:hover {
   border-color: var(--primary);
-  transform: translateY(-4px);
+  transform: translateY(-2px);
+}
+
+.guide-card .badge {
+  display: inline-block;
+  background: rgba(91, 155, 213, 0.15);
+  color: var(--primary);
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
 }
 
 .guide-card h3 {
-  font-size: 1.3rem;
-  font-weight: 700;
   color: var(--text-primary);
+  font-size: 1.05rem;
   margin-bottom: 8px;
+  line-height: 1.4;
 }
 
 .guide-card p {
   color: var(--text-secondary);
-  font-size: 0.95rem;
-  line-height: 1.6;
+  font-size: 0.9rem;
+  line-height: 1.5;
 }
 
+/* Footer */
 .site-footer {
   border-top: 1px solid var(--border);
   padding: 40px 20px;
   text-align: center;
-  margin-top: 60px;
+  margin-top: 40px;
 }
 
 .footer-links {
@@ -182,12 +214,9 @@ body {
   color: var(--text-secondary);
   text-decoration: none;
   font-size: 0.9rem;
-  transition: color 0.2s;
 }
 
-.footer-links a:hover {
-  color: var(--primary);
-}
+.footer-links a:hover { color: var(--primary); }
 
 .footer-links .sep {
   color: var(--border);
@@ -208,18 +237,10 @@ body {
   font-size: 0.8rem;
 }
 
-@media (max-width: 768px) {
-  .page-header h1 {
-    font-size: 2rem;
-  }
-  
-  .guides-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .nav-links a:not(.nav-cta) {
-    display: none;
-  }
+@media (max-width: 600px) {
+  .page-header h1 { font-size: 2rem; }
+  .nav-links a:not(.nav-cta) { display: none; }
+  .card-grid { grid-template-columns: 1fr; }
 }
 </style>
 </head>
@@ -240,38 +261,148 @@ body {
 <div class="container">
   <header class="page-header">
     <h1>Founder Guides</h1>
-    <p>Tactical playbooks. No fluff. Just what works.</p>
+    <p>In-depth reviews, head-to-head comparisons, and curated AI tool roundups for every industry.</p>
   </header>
 
-  <section class="guides-section">
-    <h2>AI Tools by Profession</h2>
-    <div class="guides-grid">
-      <a href="/guides/ai-tools-for-real-estate-agents" class="guide-card">
-        <h3>🏡 AI Tools for Real Estate Agents</h3>
-        <p>Close more deals, automate follow-ups, and save 10+ hours per week with these AI-powered tools built for realtors.</p>
+  <!-- TOOL REVIEWS -->
+  <section class="section">
+    <div class="section-header">
+      <span class="icon">⭐</span>
+      <h2>Tool Reviews</h2>
+      <span class="count">7 reviews</span>
+    </div>
+    <div class="card-grid">
+      <a href="/gohighlevel-review" class="guide-card">
+        <span class="badge">CRM</span>
+        <h3>GoHighLevel Review 2026</h3>
+        <p>Is the all-in-one CRM worth $97/month? Full breakdown for solo founders.</p>
       </a>
-
-      <a href="/guides/ai-tools-for-coaches" class="guide-card">
-        <h3>💡 AI Tools for Coaches</h3>
-        <p>Automate client onboarding, create content faster, and scale your coaching business without burning out.</p>
+      <a href="/instantly-review" class="guide-card">
+        <span class="badge">Cold Email</span>
+        <h3>Instantly Review 2026</h3>
+        <p>The cold email tool taking over outreach. Features, pricing, and honest take.</p>
       </a>
-
-      <a href="/guides/ai-tools-for-accountants" class="guide-card">
-        <h3>📊 AI Tools for Accountants</h3>
-        <p>Automate bookkeeping, speed up tax prep, and deliver client insights faster. Save 10+ hours per week.</p>
+      <a href="/copy-ai-review" class="guide-card">
+        <span class="badge">AI Writing</span>
+        <h3>Copy.ai Review 2026</h3>
+        <p>AI copywriting for marketing teams. Worth the subscription?</p>
       </a>
-
-      <a href="/guides/ai-tools-for-lawyers" class="guide-card">
-        <h3>⚖️ AI Tools for Lawyers</h3>
-        <p>Automate legal research, draft documents faster, and manage cases more efficiently. Save 15+ hours per week.</p>
+      <a href="/opus-pro-review" class="guide-card">
+        <span class="badge">Video</span>
+        <h3>Opus Pro Review 2026</h3>
+        <p>Turn long videos into viral clips. Full review of the AI video tool.</p>
       </a>
-
-      <a href="/guides/ai-tools-for-ecommerce" class="guide-card">
-        <h3>🛒 AI Tools for Ecommerce</h3>
-        <p>Automate product descriptions, create high-converting ads, and deliver better customer support. Scale faster.</p>
+      <a href="/repurpose-io-review" class="guide-card">
+        <span class="badge">Repurposing</span>
+        <h3>Repurpose.io Review 2026</h3>
+        <p>Automate content distribution across platforms. Complete breakdown.</p>
+      </a>
+      <a href="/synthesia-review" class="guide-card">
+        <span class="badge">AI Video</span>
+        <h3>Synthesia Review 2026</h3>
+        <p>Create AI avatar videos without cameras. Is it worth the price?</p>
+      </a>
+      <a href="/elevenlabs-review" class="guide-card">
+        <span class="badge">AI Voice</span>
+        <h3>ElevenLabs Review 2026</h3>
+        <p>The most realistic AI voice generator. Full feature breakdown.</p>
       </a>
     </div>
   </section>
+
+  <!-- COMPARISONS -->
+  <section class="section">
+    <div class="section-header">
+      <span class="icon">⚔️</span>
+      <h2>Tool Comparisons</h2>
+      <span class="count">6 comparisons</span>
+    </div>
+    <div class="card-grid">
+      <a href="/gohighlevel-vs-clickfunnels" class="guide-card">
+        <span class="badge">CRM vs Funnels</span>
+        <h3>GoHighLevel vs ClickFunnels</h3>
+        <p>All-in-one CRM vs dedicated funnel builder. Which wins for founders?</p>
+      </a>
+      <a href="/instantly-vs-apollo" class="guide-card">
+        <span class="badge">Cold Email</span>
+        <h3>Instantly vs Apollo</h3>
+        <p>Two giants of cold outreach. Which one should you choose?</p>
+      </a>
+      <a href="/copy-ai-vs-jasper" class="guide-card">
+        <span class="badge">AI Writing</span>
+        <h3>Copy.ai vs Jasper</h3>
+        <p>The AI copywriting showdown. Features, pricing, and verdict.</p>
+      </a>
+      <a href="/vidiq-vs-tubebuddy" class="guide-card">
+        <span class="badge">YouTube</span>
+        <h3>VidIQ vs TubeBuddy</h3>
+        <p>YouTube optimization tools compared. Which grows your channel faster?</p>
+      </a>
+      <a href="/opus-pro-vs-repurpose-io" class="guide-card">
+        <span class="badge">Video</span>
+        <h3>Opus Pro vs Repurpose.io</h3>
+        <p>AI clip maker vs content distributor. Different tools, different jobs.</p>
+      </a>
+      <a href="/pictory-vs-synthesia" class="guide-card">
+        <span class="badge">AI Video</span>
+        <h3>Pictory vs Synthesia</h3>
+        <p>Text-to-video vs AI avatars. Which video AI fits your workflow?</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- INDUSTRY ROUNDUPS -->
+  <section class="section">
+    <div class="section-header">
+      <span class="icon">🎯</span>
+      <h2>AI Tools by Industry</h2>
+      <span class="count">5 guides</span>
+    </div>
+    <div class="card-grid">
+      <a href="/guides/ai-tools-for-real-estate-agents" class="guide-card">
+        <span class="badge">Real Estate</span>
+        <h3>7 Best AI Tools for Real Estate Agents</h3>
+        <p>Close more deals and automate follow-ups with these AI tools.</p>
+      </a>
+      <a href="/guides/ai-tools-for-lawyers" class="guide-card">
+        <span class="badge">Legal</span>
+        <h3>Best AI Tools for Lawyers</h3>
+        <p>Legal research, contract review, and client communication AI.</p>
+      </a>
+      <a href="/guides/ai-tools-for-accountants" class="guide-card">
+        <span class="badge">Accounting</span>
+        <h3>Best AI Tools for Accountants</h3>
+        <p>Automate bookkeeping, tax prep, and client reports.</p>
+      </a>
+      <a href="/guides/ai-tools-for-coaches" class="guide-card">
+        <span class="badge">Coaching</span>
+        <h3>Best AI Tools for Coaches</h3>
+        <p>Scale your coaching business with AI scheduling, content, and CRM.</p>
+      </a>
+      <a href="/guides/ai-tools-for-ecommerce" class="guide-card">
+        <span class="badge">E-commerce</span>
+        <h3>Best AI Tools for E-commerce</h3>
+        <p>Product descriptions, customer service, and marketing automation.</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- GENERAL ROUNDUPS -->
+  <section class="section">
+    <div class="section-header">
+      <span class="icon">🚀</span>
+      <h2>Founder Roundups</h2>
+      <span class="count">1 guide</span>
+    </div>
+    <div class="card-grid">
+      <a href="/best-ai-tools-solo-founders" class="guide-card">
+        <span class="badge">Featured</span>
+        <h3>Best AI Tools for Solo Founders in 2026</h3>
+        <p>The complete AI stack for running a one-person business.</p>
+      </a>
+    </div>
+  </section>
+
 </div>
 
 <footer class="site-footer">
