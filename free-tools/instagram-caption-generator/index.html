@@ -1167,7 +1167,7 @@ ${data.cta}`,
             const email = document.getElementById('lead-email').value;
             const topic = document.getElementById('topic').value;
             const postType = document.getElementById('postType').value;
-            const webhookUrl = 'https://services.leadconnectorhq.com/hooks/73JctoYNF5rEgo4S5PU0/webhook-trigger/KIqbuWm46UxYvO8JTtoF';
+            const webhookUrl = 'https://services.leadconnectorhq.com/hooks/73JctoYNF5rEgo4S5PU0/webhook-trigger/d8dc5980-71a0-45bf-9efc-55cc41b1a976';
             
             try {
                 await fetch(webhookUrl, {
@@ -1178,7 +1178,7 @@ ${data.cta}`,
                         email,
                         topic,
                         postType,
-                        source: 'instagram-caption-generator'
+                        tool_source: 'instagram-caption-generator'
                     })
                 });
             } catch (err) {

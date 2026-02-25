@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Best AI Tools for Solo Founders in 2026 | The Founder Drop</title>
+<meta name="description" content="The ultimate list of AI tools for solo founders. Tested tools for content, outreach, automation, and growth. Updated February 2026.">
+<link rel="canonical" href="https://thefounderdrop.com/best-ai-tools-solo-founders">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #06060a;
+    --surface: #0d0d14;
+    --card: #12121c;
+    --border: rgba(255,255,255,0.06);
+    --text: #e8e8ed;
+    --text-dim: #8a8a9a;
+    --accent: #4A90D9;
+    --accent-glow: rgba(74, 144, 217, 0.15);
+    --accent-bright: #5BA0E9;
+    --white: #ffffff;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+    line-height: 1.7;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: 
+      linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
+    background-size: 80px 80px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .glow-orb {
+    position: fixed;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+    top: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    pointer-events: none;
+    z-index: 0;
+    animation: pulse 8s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 0.4; transform: translateX(-50%) scale(1); }
+    50% { opacity: 0.7; transform: translateX(-50%) scale(1.1); }
+  }
+
+  /* Navigation */
+  nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(20px);
+    background: rgba(6, 6, 10, 0.8);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+
+  .logo-mark {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--white);
+    background: var(--accent);
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+  }
+
+  .logo-text {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--text);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+  }
+
+  .nav-links a {
+    color: var(--text-dim);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover {
+    color: var(--accent);
+  }
+
+  /* Main Content */
+  .content {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 120px 24px 80px;
+  }
+
+  .breadcrumb {
+    font-size: 13px;
+    color: var(--text-dim);
+    margin-bottom: 24px;
+  }
+
+  .breadcrumb a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .breadcrumb a:hover {
+    text-decoration: underline;
+  }
+
+  h1 {
+    font-family: 'Instrument Serif', serif;
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -1px;
+    color: var(--white);
+    margin-bottom: 20px;
+  }
+
+  h1 em {
+    font-style: italic;
+    color: var(--accent-bright);
+  }
+
+  .meta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    color: var(--text-dim);
+    font-size: 14px;
+    margin-bottom: 32px;
+  }
+
+  .meta-divider {
+    width: 4px;
+    height: 4px;
+    background: var(--text-dim);
+    border-radius: 50%;
+  }
+
+  .intro {
+    font-size: 18px;
+    line-height: 1.8;
+    color: var(--text);
+    margin-bottom: 48px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .intro strong {
+    color: var(--white);
+  }
+
+  /* Table of Contents */
+  .toc {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 24px 32px;
+    margin-bottom: 48px;
+  }
+
+  .toc h3 {
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-dim);
+    margin-bottom: 16px;
+  }
+
+  .toc ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 8px;
+  }
+
+  .toc a {
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 15px;
+    transition: color 0.2s;
+  }
+
+  .toc a:hover {
+    color: var(--accent-bright);
+    text-decoration: underline;
+  }
+
+  /* Quick Pick Table */
+  .quick-pick {
+    margin-bottom: 64px;
+  }
+
+  .quick-pick h2 {
+    font-family: 'Instrument Serif', serif;
+    font-size: 32px;
+    color: var(--white);
+    margin-bottom: 24px;
+  }
+
+  .table-wrapper {
+    overflow-x: auto;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+
+  th {
+    background: var(--surface);
+    padding: 16px;
+    text-align: left;
+    font-weight: 600;
+    color: var(--white);
+    border-bottom: 1px solid var(--border);
+  }
+
+  td {
+    padding: 16px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+  }
+
+  tr:last-child td {
+    border-bottom: none;
+  }
+
+  tr:hover td {
+    background: rgba(74, 144, 217, 0.05);
+  }
+
+  .table-link {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .table-link:hover {
+    text-decoration: underline;
+  }
+
+  .price-tag {
+    color: var(--text-dim);
+    font-size: 13px;
+  }
+
+  /* Category Sections */
+  .category-section {
+    margin-bottom: 72px;
+    scroll-margin-top: 100px;
+  }
+
+  .category-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 32px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid var(--accent);
+  }
+
+  .category-icon {
+    font-size: 32px;
+  }
+
+  .category-section h2 {
+    font-family: 'Instrument Serif', serif;
+    font-size: 32px;
+    color: var(--white);
+  }
+
+  /* Tool Cards */
+  .tool-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px;
+    margin-bottom: 24px;
+    transition: border-color 0.3s, transform 0.3s;
+  }
+
+  .tool-card:hover {
+    border-color: rgba(74, 144, 217, 0.3);
+  }
+
+  .tool-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .tool-card h3 {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 4px;
+  }
+
+  .tool-card h3 a {
+    color: var(--white);
+    text-decoration: none;
+  }
+
+  .tool-card h3 a:hover {
+    color: var(--accent);
+  }
+
+  .best-for {
+    font-size: 14px;
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  .tool-badge {
+    background: var(--accent-glow);
+    color: var(--accent);
+    padding: 6px 14px;
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: 1px solid rgba(74, 144, 217, 0.2);
+  }
+
+  .tool-description {
+    font-size: 16px;
+    line-height: 1.75;
+    color: var(--text);
+    margin-bottom: 20px;
+  }
+
+  .tool-features {
+    list-style: none;
+    margin-bottom: 20px;
+  }
+
+  .tool-features li {
+    padding: 8px 0;
+    padding-left: 28px;
+    position: relative;
+    color: var(--text);
+  }
+
+  .tool-features li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: bold;
+  }
+
+  .tool-pricing {
+    font-size: 14px;
+    color: var(--text-dim);
+    margin-bottom: 24px;
+    padding: 12px 16px;
+    background: rgba(255,255,255,0.03);
+    border-radius: 8px;
+    display: inline-block;
+  }
+
+  .tool-pricing strong {
+    color: var(--white);
+  }
+
+  .cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 28px;
+    background: var(--accent);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 15px;
+    transition: background 0.3s, transform 0.15s;
+  }
+
+  .cta-button:hover {
+    background: var(--accent-bright);
+    transform: translateY(-2px);
+  }
+
+  .cta-button svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  /* Brief Mentions */
+  .brief-mention {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .brief-mention h4 {
+    font-size: 16px;
+    color: var(--white);
+    margin-bottom: 4px;
+  }
+
+  .brief-mention p {
+    font-size: 14px;
+    color: var(--text-dim);
+  }
+
+  /* Internal Links Section */
+  .internal-links {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px;
+    margin: 48px 0;
+    text-align: center;
+  }
+
+  .internal-links h3 {
+    font-family: 'Instrument Serif', serif;
+    font-size: 24px;
+    color: var(--white);
+    margin-bottom: 16px;
+  }
+
+  .internal-links p {
+    color: var(--text-dim);
+    margin-bottom: 24px;
+  }
+
+  .link-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .link-button {
+    padding: 12px 24px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--border);
+    color: var(--text);
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 500;
+    transition: all 0.3s;
+  }
+
+  .link-button:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: var(--accent-glow);
+  }
+
+  /* Footer CTA */
+  .footer-cta {
+    background: linear-gradient(135deg, var(--surface) 0%, rgba(74, 144, 217, 0.1) 100%);
+    border: 2px solid var(--accent);
+    border-radius: 20px;
+    padding: 48px 40px;
+    text-align: center;
+    margin: 64px 0;
+  }
+
+  .footer-cta-icon {
+    font-size: 48px;
+    margin-bottom: 20px;
+  }
+
+  .footer-cta h2 {
+    font-family: 'Instrument Serif', serif;
+    font-size: 32px;
+    color: var(--white);
+    margin-bottom: 12px;
+  }
+
+  .footer-cta p {
+    font-size: 18px;
+    color: var(--text-dim);
+    margin-bottom: 28px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .footer-cta .cta-button {
+    font-size: 16px;
+    padding: 16px 32px;
+  }
+
+  /* Footer */
+  footer {
+    border-top: 2px solid #333;
+    padding: 60px 20px;
+    text-align: center;
+    background: #0a0a0f;
+    position: relative;
+    z-index: 1;
+  }
+
+  .footer-links {
+    margin-bottom: 20px;
+  }
+
+  .footer-links a {
+    color: #cccccc;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 0 16px;
+  }
+
+  .footer-links a:hover {
+    color: var(--accent);
+  }
+
+  .footer-social {
+    margin-bottom: 16px;
+  }
+
+  .footer-social a {
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 16px;
+  }
+
+  footer p {
+    color: #888888;
+    font-size: 14px;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    nav { padding: 16px 20px; }
+    .nav-links { display: none; }
+    .content { padding: 100px 20px 60px; }
+    .tool-card { padding: 24px; }
+    .footer-cta { padding: 32px 24px; }
+    .table-wrapper { font-size: 13px; }
+    th, td { padding: 12px 10px; }
+    .meta { flex-direction: column; align-items: flex-start; gap: 8px; }
+    .meta-divider { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="glow-orb"></div>
+
+<nav>
+  <a href="/" class="logo">
+    <div class="logo-mark">FD</div>
+    <span class="logo-text">The Founder Drop</span>
+  </a>
+  <div class="nav-links">
+    <a href="/free-tools">Free Tools</a>
+    <a href="/toolkit">Toolkit</a>
+    <a href="/guides">Guides</a>
+  </div>
+</nav>
+
+<main class="content">
+  <div class="breadcrumb">
+    <a href="/">Home</a> / Best AI Tools for Solo Founders
+  </div>
+
+  <h1>Best AI Tools for <em>Solo Founders</em> (2026)</h1>
+  
+  <div class="meta">
+    <span>Last updated: February 2026</span>
+    <span class="meta-divider"></span>
+    <span>17 tools reviewed</span>
+    <span class="meta-divider"></span>
+    <span>15 min read</span>
+  </div>
+
+  <div class="intro">
+    <p>I've tested over 100 AI tools in the past year. Most are garbage. Some are game-changers. This is the list of <strong>AI tools I actually use</strong> to run my business as a solo founder — covering everything from CRM and outreach to content creation and SEO.</p>
+    <p>Every tool here has been battle-tested. I'm not listing 50 options for each category. Just the ones that work, with honest takes on who they're best for and what they actually cost.</p>
+  </div>
+
+  <!-- Table of Contents -->
+  <div class="toc">
+    <h3>Jump to Category</h3>
+    <ul>
+      <li><a href="#crm-automation">🔧 CRM & Automation</a></li>
+      <li><a href="#cold-outreach">📧 Cold Outreach</a></li>
+      <li><a href="#ai-writing">✍️ AI Writing</a></li>
+      <li><a href="#content-repurposing">🔄 Content Repurposing</a></li>
+      <li><a href="#video-creation">🎬 Video Creation</a></li>
+      <li><a href="#seo">🔍 SEO</a></li>
+      <li><a href="#faceless-video">🎭 Faceless Video</a></li>
+    </ul>
+  </div>
+
+  <!-- Quick Pick Table -->
+  <section class="quick-pick">
+    <h2>⚡ Quick Pick: Top Tools at a Glance</h2>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Tool</th>
+            <th>Best For</th>
+            <th>Starting Price</th>
+            <th>Link</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>GoHighLevel</strong></td>
+            <td>All-in-one CRM & automation</td>
+            <td class="price-tag">$97/mo</td>
+            <td><a href="/go/ghl" class="table-link">Try Free →</a></td>
+          </tr>
+          <tr>
+            <td><strong>Instantly</strong></td>
+            <td>Cold email at scale</td>
+            <td class="price-tag">$37/mo</td>
+            <td><a href="/go/instantly" class="table-link">Try Free →</a></td>
+          </tr>
+          <tr>
+            <td><strong>Apollo</strong></td>
+            <td>Lead database + sequences</td>
+            <td class="price-tag">Free tier</td>
+            <td><a href="/go/apollo" class="table-link">Try Free →</a></td>
+          </tr>
+          <tr>
+            <td><strong>Magai</strong></td>
+            <td>Multi-model AI chat</td>
+            <td class="price-tag">$19/mo</td>
+            <td><a href="/go/magai" class="table-link">Try Free →</a></td>
+          </tr>
+          <tr>
+            <td><strong>Jasper</strong></td>
+            <td>Brand-voice content</td>
+            <td class="price-tag">$49/mo</td>
+            <td><a href="/go/jasper" class="table-link">Try Free →</a></td>
+          </tr>
+          <tr>
+            <td><strong>Ranked AI</strong></td>
+            <td>AI-powered SEO</td>
+            <td class="price-tag">$29/mo</td>
+            <td><a href="/go/ranked" class="table-link">Try Free →</a></td>
+          </tr>
+          <tr>
+            <td><strong>Opus Pro</strong></td>
+            <td>Long-form to shorts</td>
+            <td class="price-tag">$15/mo</td>
+            <td><a href="/go/opus" class="table-link">Try Free →</a></td>
+          </tr>
+          <tr>
+            <td><strong>ElevenLabs</strong></td>
+            <td>AI voice generation</td>
+            <td class="price-tag">Free tier</td>
+            <td><a href="/go/elevenlabs" class="table-link">Try Free →</a></td>
+          </tr>
+          <tr>
+            <td><strong>Synthesia</strong></td>
+            <td>AI avatar videos</td>
+            <td class="price-tag">$29/mo</td>
+            <td><a href="/go/synthesia" class="table-link">Try Free →</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- CRM & Automation -->
+  <section id="crm-automation" class="category-section">
+    <div class="category-header">
+      <span class="category-icon">🔧</span>
+      <h2>CRM & Automation</h2>
+    </div>
+
+    <div class="tool-card">
+      <div class="tool-header">
+        <div>
+          <h3><a href="/go/ghl">GoHighLevel (GHL)</a></h3>
+          <span class="best-for">Best for: Replacing 10+ tools with one platform</span>
+        </div>
+        <span class="tool-badge">Editor's Pick</span>
+      </div>
+      <p class="tool-description">
+        GoHighLevel is the Swiss Army knife for solo founders. It combines your CRM, email marketing, SMS campaigns, landing pages, appointment scheduling, and sales pipelines into one platform. Instead of paying for Calendly, Mailchimp, ClickFunnels, and a dozen other tools, you pay one flat fee and get everything.
+      </p>
+      <p class="tool-description">
+        The real power is in the automation workflows. You can build complex sequences that trigger based on behavior — someone books a call, they automatically get a confirmation email, SMS reminder, and follow-up sequence if they no-show. The learning curve is real (give yourself a weekend), but once you've built your systems, they run themselves.
+      </p>
+      <ul class="tool-features">
+        <li>Full CRM with pipeline management and deal tracking</li>
+        <li>Built-in email, SMS, and voicemail drop campaigns</li>
+        <li>Landing pages and funnel builder (no coding needed)</li>
+        <li>Appointment scheduling with automated reminders</li>
+      </ul>
+      <div class="tool-pricing"><strong>Pricing:</strong> Starts at $97/month (14-day free trial)</div>
+      <br>
+      <a href="/go/ghl" class="cta-button">Try GoHighLevel Free → <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+    </div>
+  </section>
+
+  <!-- Cold Outreach -->
+  <section id="cold-outreach" class="category-section">
+    <div class="category-header">
+      <span class="category-icon">📧</span>
+      <h2>Cold Outreach</h2>
+    </div>
+
+    <div class="tool-card">
+      <div class="tool-header">
+        <div>
+          <h3><a href="/go/instantly">Instantly</a></h3>
+          <span class="best-for">Best for: Cold email campaigns at scale</span>
+        </div>
+        <span class="tool-badge">Top Pick</span>
+      </div>
+      <p class="tool-description">
+        Instantly is purpose-built for cold email. While most email tools penalize you for sending cold outreach, Instantly is designed for it. The killer feature is the warm-up tool — it automatically warms up your email accounts by sending and receiving emails, building your sender reputation so you actually land in inboxes instead of spam.
+      </p>
+      <p class="tool-description">
+        The campaign builder makes it easy to create multi-step sequences with smart timing. You can connect unlimited email accounts and rotate sending across them, which lets you scale without burning domains. The analytics show exactly what's working — open rates, reply rates, and which sequences convert best.
+      </p>
+      <ul class="tool-features">
+        <li>Automated email warm-up to maximize deliverability</li>
+        <li>Unlimited email accounts with smart rotation</li>
+        <li>AI-powered email writer for quick copy generation</li>
+        <li>Built-in lead finder with 160M+ contacts</li>
+      </ul>
+      <div class="tool-pricing"><strong>Pricing:</strong> Starts at $37/month (free trial available)</div>
+      <br>
+      <a href="/go/instantly" class="cta-button">Try Instantly Free → <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+    </div>
+
+    <div class="tool-card">
+      <div class="tool-header">
+        <div>
+          <h3><a href="/go/apollo">Apollo.io</a></h3>
+          <span class="best-for">Best for: Lead database + outbound sequences</span>
+        </div>
+      </div>
+      <p class="tool-description">
+        Apollo is where you find the people to email. It's a massive B2B database with over 275 million contacts, plus built-in tools to reach them. The search filters are incredibly granular — find decision-makers by job title, company size, tech stack, funding round, and dozens of other criteria.
+      </p>
+      <p class="tool-description">
+        What makes Apollo powerful for solo founders is the combination of data and outreach in one tool. You don't need to export lists and import them elsewhere — build your list, enrich it with verified emails, and launch sequences all in one workflow. The free tier is legitimately useful (50 emails/month), making it a great starting point.
+      </p>
+      <ul class="tool-features">
+        <li>275M+ contact database with advanced filtering</li>
+        <li>Email and phone number verification built-in</li>
+        <li>Multi-channel sequences (email, calls, LinkedIn)</li>
+        <li>Chrome extension for prospecting on LinkedIn</li>
+      </ul>
+      <div class="tool-pricing"><strong>Pricing:</strong> Free tier available, paid plans from $49/month</div>
+      <br>
+      <a href="/go/apollo" class="cta-button">Try Apollo Free → <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+    </div>
+  </section>
+
+  <!-- AI Writing -->
+  <section id="ai-writing" class="category-section">
+    <div class="category-header">
+      <span class="category-icon">✍️</span>
+      <h2>AI Writing</h2>
+    </div>
+
+    <div class="tool-card">
+      <div class="tool-header">
+        <div>
+          <h3><a href="/go/magai">Magai</a></h3>
+          <span class="best-for">Best for: Multi-model AI access in one interface</span>
+        </div>
+        <span class="tool-badge">Best Value</span>
+      </div>
+      <p class="tool-description">
+        Magai gives you access to multiple AI models — GPT-4, Claude, Gemini, and more — through one clean interface. Instead of juggling subscriptions to OpenAI, Anthropic, and Google, you pay one price and switch between models depending on the task. Need creative copy? Use Claude. Technical writing? GPT-4. It's like having a team of AI writers.
+      </p>
+      <p class="tool-description">
+        The chat organization is excellent for founders. Create folders for different projects, save conversation history, and use custom personas that remember your brand voice. You can also create and share prompt templates with your team — or sell them to clients if you're running an agency.
+      </p>
+      <ul class="tool-features">
+        <li>Access to GPT-4, Claude, Gemini, and more in one place</li>
+        <li>Organized chat folders and saved conversations</li>
+        <li>Custom personas and reusable prompt templates</li>
+        <li>Document upload for context-aware writing</li>
+      </ul>
+      <div class="tool-pricing"><strong>Pricing:</strong> Starts at $19/month</div>
+      <br>
+      <a href="/go/magai" class="cta-button">Try Magai Free → <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+    </div>
+
+    <div class="tool-card">
+      <div class="tool-header">
+        <div>
+          <h3><a href="/go/jasper">Jasper</a></h3>
+          <span class="best-for">Best for: Brand-consistent marketing content</span>
+        </div>
+      </div>
+      <p class="tool-description">
+        Jasper was one of the first AI writing tools and it's still one of the best for marketing content. The brand voice feature is what sets it apart — you train it on your existing content, and it learns to write like you. Every blog post, email, and ad matches your style without constant prompting.
+      </p>
+      <p class="tool-description">
+        The template library covers every marketing use case: blog posts, social media, product descriptions, ads, emails, and more. You're not staring at a blank chat window — you pick a template, fill in the details, and get usable copy in seconds. For founders who need to produce consistent content at scale, Jasper pays for itself in saved time.
+      </p>
+      <ul class="tool-features">
+        <li>Brand voice training that learns your writing style</li>
+        <li>50+ templates for every content type</li>
+        <li>Chrome extension for writing anywhere</li>
+        <li>Team collaboration with shared assets</li>
+      </ul>
+      <div class="tool-pricing"><strong>Pricing:</strong> Starts at $49/month (7-day free trial)</div>
+      <br>
+      <a href="/go/jasper" class="cta-button">Try Jasper Free → <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+    </div>
+
+    <div class="tool-card">
+      <div class="tool-header">
+        <div>
+          <h3><a href="/go/copyai">Copy.ai</a></h3>
+          <span class="best-for">Best for: Quick marketing copy and workflows</span>
+        </div>
+      </div>
+      <p class="tool-description">
+        Copy.ai focuses on speed and simplicity. It's great for founders who need quick marketing copy without a steep learning curve. The workflow feature is particularly powerful — you can chain multiple AI steps together, like "research topic → generate outline → write draft → create social posts" all in one click.
+      </p>
+      <p class="tool-description">
+        The free tier is genuinely useful with 2,000 words per month, making it a great way to test AI writing before committing. The paid plans unlock workflows and higher limits. It's less customizable than Jasper but faster for straightforward tasks like ad copy, product descriptions, and social posts.
+      </p>
+      <ul class="tool-features">
+        <li>Pre-built workflows for end-to-end content creation</li>
+        <li>90+ tools and templates for marketing copy</li>
+        <li>Generous free tier for testing</li>
+        <li>Infobase for storing brand info and context</li>
+      </ul>
+      <div class="tool-pricing"><strong>Pricing:</strong> Free tier available, Pro at $49/month</div>
+      <br>
+      <a href="/go/copyai" class="cta-button">Try Copy.ai Free → <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+    </div>
+
+    <div class="tool-card">
+      <div class="tool-header">
+        <div>
+          <h3><a href="/go/koala">Koala Writer</a></h3>
+          <span class="best-for">Best for: SEO blog posts on autopilot</span>
+        </div>
+      </div>
+      <p class="tool-description">
+        Koala is built specifically for SEO content. Give it a keyword, and it researches competitors, generates an optimized outline, writes a full article with proper headings and internal linking suggestions, and even adds relevant images. The quality rivals what you'd get from a mid-tier content writer — for a fraction of the cost.
+      </p>
+      <p class="tool-description">
+        The real-time SERP analysis is what makes Koala different. It studies what's ranking and structures your content to compete. For founders doing content marketing, you can produce 10-20 solid blog posts per month without burning out on writing. Just review, edit, and publish.
+      </p>
+      <ul class="tool-features">
+        <li>Real-time SERP analysis for competitive content</li>
+        <li>One-click full article generation (2,000+ words)</li>
+        <li>Auto-generated images and media suggestions</li>
+        <li>WordPress integration for direct publishing</li>
+      </ul>
+      <div class="tool-pricing"><strong>Pricing:</strong> Starts at $9/month for 15 articles</div>
+      <br>
+      <a href="/go/koala" class="cta-button">Try Koala Free → <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+    </div>
+  </section>
+
+  <!-- Content Repurposing -->
+  <section id="content-repurposing" class="category-section">
+    <div class="category-header">
+      <span class="category-icon">🔄</span>
+      <h2>Content Repurposing</h2>
+    </div>
+
+    <div class="tool-card">
+      <div class="tool-header">
+        <div>
+          <h3><a href="/go/opus">Opus Pro</a></h3>
+          <span class="best-for">Best for: Turning long videos into viral clips</span>
+        </div>
+        <span class="tool-badge">Top Pick</span>
+      </div>
+      <p class="tool-description">
+        Opus Pro uses AI to find the most engaging moments in your long-form videos and turns them into perfectly-formatted short clips. Upload a podcast or YouTube video, and it automatically identifies hook-worthy segments, adds captions, and formats them for TikTok, Reels, and Shorts. What used to take hours of editing now takes minutes.
+      </p>
+      <p class="tool-description">
+        The AI "virality score" predicts which clips are most likely to perform, so you're not guessing. It also handles the technical stuff — auto-reframing for vertical video, animated captions that match trending styles, and background music suggestions. For founders building a personal brand through video, this is the ultimate leverage tool.
+      </p>
+      <ul class="tool-features">
+        <li>AI-powered clip detection finds the best moments</li>
+        <li>Virality score ranks clips by predicted performance</li>
+        <li>Auto-generated captions with trending styles</li>
+        <li>One-click export to all social platforms</li>
+      </ul>
+      <div class="tool-pricing"><strong>Pricing:</strong> Starts at $15/month (free trial available)</div>
+      <br>
+      <a href="/go/opus" class="cta-button">Try Opus Pro Free → <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+    </div>
+
+    <div class="tool-card">
+      <div class="tool-header">
+        <div>
+          <h3><a href="/go/repurpose">Repurpose.io</a></h3>
+          <span class="best-for">Best for: Automated cross-platform publishing</span>
+        </div>
+      </div>
+      <p class="tool-description">
+        Repurpose.io automates the distribution side of content repurposing. Connect your YouTube, podcast, or TikTok, and it automatically publishes to every other platform. Record once, publish everywhere — without manual uploading or reformatting. It handles the conversions, aspect ratios, and even scheduling.
+      </p>
+      <p class="tool-description">
+        The workflow builder is powerful but approachable. Set up rules like "when I post a YouTube video, automatically create an audiogram and post to Twitter" or "take my TikToks and post them to Instagram Reels and YouTube Shorts." Once configured, your content distribution runs on autopilot.
+      </p>
+      <ul class="tool-features">
+        <li>Automatic cross-posting to 20+ platforms</li>
+        <li>Custom workflows with conditional triggers</li>
+        <li>Audio-to-video conversion for podcasters</li>
+        <li>Scheduling and queue management</li>
+      </ul>
+      <div class="tool-pricing"><strong>Pricing:</strong> Starts at $25/month</div>
+      <br>
+      <a href="/go/repurpose" class="cta-button">Try Repurpose.io Free → <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+    </div>
+
+    <div class="tool-card">
+      <div class="tool-header">
+        <div>
+          <h3><a href="/go/pictory">Pictory</a></h3>
+          <span class="best-for">Best for: Blog posts to video conversions</span>
+        </div>
+      </div>
+      <p class="tool-description">
+        Pictory turns written content into video. Paste a blog post URL or script, and it generates a video with stock footage, text overlays, and AI voiceover. It's perfect for founders who have written content but want to expand into video without learning video editing or showing their face.
+      </p>
+      <p class="tool-description">
+        The quality won't fool anyone into thinking it's hand-crafted, but it's perfectly usable for educational content, explainer videos, and social media. The auto-matching of visuals to text is surprisingly good, and the AI voices have improved dramatically. You can also use it to add captions to existing videos.
+      </p>
+      <ul class="tool-features">
+        <li>Blog-to-video conversion in minutes</li>
+        <li>AI voiceover with multiple voice options</li>
+        <li>Automatic scene-matching with stock footage</li>
+        <li>Built-in editor for customization</li>
+      </ul>
+      <div class="tool-pricing"><strong>Pricing:</strong> Starts at $19/month</div>
+      <br>
+      <a href="/go/pictory" class="cta-button">Try Pictory Free → <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+    </div>
+  </section>
+
+  <!-- Video Creation -->
+  <section id="video-creation" class="category-section">
+    <div class="category-header">
+      <span class="category-icon">🎬</span>
+      <h2>Video Creation</h2>
+    </div>
+
+    <div class="tool-card">
+      <div class="tool-header">
+        <div>
+          <h3><a href="/go/synthesia">Synthesia</a></h3>
+          <span class="best-for">Best for: Professional AI avatar videos</span>
+        </div>
+        <span class="tool-badge">Editor's Pick</span>
+      </div>
+      <p class="tool-description">
+        Synthesia creates professional videos using AI avatars — no camera, no studio, no editing skills needed. Type your script, choose an avatar, and get a polished video in minutes. The avatars are realistic enough for corporate training, product demos, and educational content. Many Fortune 500 companies use this for internal comms.
+      </p>
+      <p class="tool-description">
+        For solo founders, the use cases are powerful: sales videos that scale (personalized at the first name level), product tutorials you can update without re-filming, and multilingual content without hiring translators. You can also create a custom avatar that looks like you, so you can "present" without being on camera.
+      </p>
+      <ul class="tool-features">
+        <li>140+ diverse, realistic AI avatars</li>
+        <li>120+ languages with native-sounding voices</li>
+        <li>Custom avatar creation (your digital twin)</li>
+        <li>Screen recording integration for demos</li>
+      </ul>
+      <div class="tool-pricing"><strong>Pricing:</strong> Starts at $29/month (free demo available)</div>
+      <br>
+      <a href="/go/synthesia" class="cta-button">Try Synthesia Free → <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+    </div>
+
+    <div class="tool-card">
+      <div class="tool-header">
+        <div>
+          <h3><a href="/go/elevenlabs">ElevenLabs</a></h3>
+          <span class="best-for">Best for: Ultra-realistic AI voiceovers</span>
+        </div>
+        <span class="tool-badge">Best Quality</span>
+      </div>
+      <p class="tool-description">
+        ElevenLabs has the most realistic AI voices on the market — so good that many podcasts and YouTube channels use them without disclosure (which you shouldn't do, but it speaks to the quality). The voices have natural intonation, breathing, and emotion that makes them nearly indistinguishable from human recordings.
+      </p>
+      <p class="tool-description">
+        The voice cloning feature is a game-changer. Record a few minutes of your voice, and ElevenLabs creates a clone that speaks any text in your voice. Use it for video narration, podcast intros, or even voice messages. The API makes it easy to integrate into apps and automations.
+      </p>
+      <ul class="tool-features">
+        <li>Most realistic text-to-speech on the market</li>
+        <li>Voice cloning from just a few minutes of audio</li>
+        <li>29 languages with emotional control</li>
+        <li>API access for automation and apps</li>
+      </ul>
+      <div class="tool-pricing"><strong>Pricing:</strong> Free tier (10,000 chars/mo), paid from $5/month</div>
+      <br>
+      <a href="/go/elevenlabs" class="cta-button">Try ElevenLabs Free → <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+    </div>
+
+    <div class="tool-card">
+      <div class="tool-header">
+        <div>
+          <h3><a href="/go/submagic">Submagic</a></h3>
+          <span class="best-for">Best for: Trendy captions for short-form video</span>
+        </div>
+      </div>
+      <p class="tool-description">
+        Submagic automatically adds those animated, attention-grabbing captions you see on viral TikToks and Reels. Upload your video, and it transcribes, styles, and animates the captions in seconds. The styles match what's trending — word-by-word highlighting, emoji emphasis, and smooth animations that keep viewers watching.
+      </p>
+      <p class="tool-description">
+        Beyond captions, Submagic adds auto-generated B-roll suggestions, transitions, and sound effects. It's designed for the short-form creator who wants professional-looking content without spending hours in Premiere Pro. The output is ready to post immediately.
+      </p>
+      <ul class="tool-features">
+        <li>AI-powered transcription with 98%+ accuracy</li>
+        <li>20+ trending caption styles with animations</li>
+        <li>Auto emoji and B-roll suggestions</li>
+        <li>One-click social media formatting</li>
+      </ul>
+      <div class="tool-pricing"><strong>Pricing:</strong> Starts at $9/month</div>
+      <br>
+      <a href="/go/submagic" class="cta-button">Try Submagic Free → <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+    </div>
+
+    <div class="tool-card">
+      <div class="tool-header">
+        <div>
+          <h3><a href="/go/veed">VEED</a></h3>
+          <span class="best-for">Best for: Browser-based video editing</span>
+        </div>
+      </div>
+      <p class="tool-description">
+        VEED is a full video editor that runs entirely in your browser — no software to download, no rendering on your machine. It's surprisingly powerful for basic editing: trimming, text overlays, transitions, background removal, and auto-subtitles. Perfect for quick edits when you don't want to open a heavy editing app.
+      </p>
+      <p class="tool-description">
+        The AI features are solid: one-click background removal, eye contact correction (makes you look at the camera), and noise removal. For founders creating content on the go, VEED lets you edit professional-looking videos from any computer with a browser.
+      </p>
+      <ul class="tool-features">
+        <li>Full video editor in the browser</li>
+        <li>AI background removal and noise reduction</li>
+        <li>Eye contact correction for better engagement</li>
+        <li>Team collaboration and brand kits</li>
+      </ul>
+      <div class="tool-pricing"><strong>Pricing:</strong> Free tier available, paid from $18/month</div>
+      <br>
+      <a href="/go/veed" class="cta-button">Try VEED Free → <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+    </div>
+  </section>
+
+  <!-- SEO -->
+  <section id="seo" class="category-section">
+    <div class="category-header">
+      <span class="category-icon">🔍</span>
+      <h2>SEO</h2>
+    </div>
+
+    <div class="tool-card">
+      <div class="tool-header">
+        <div>
+          <h3><a href="/go/ranked">Ranked AI</a></h3>
+          <span class="best-for">Best for: AI-powered SEO on autopilot</span>
+        </div>
+        <span class="tool-badge">Top Pick</span>
+      </div>
+      <p class="tool-description">
+        Ranked AI handles the tedious parts of SEO that most founders ignore: keyword research, content optimization, and technical audits. It continuously monitors your site, identifies opportunities, and tells you exactly what to fix — prioritized by impact. No more guessing what to work on or drowning in SEO jargon.
+      </p>
+      <p class="tool-description">
+        The content optimizer is particularly useful. Paste your article, and it shows exactly how to improve it for your target keyword — what sections to add, which questions to answer, and where you're falling short compared to ranking competitors. It takes the mystery out of "why isn't this ranking?" and gives you actionable fixes.
+      </p>
+      <ul class="tool-features">
+        <li>Automated keyword opportunity discovery</li>
+        <li>Content optimization with specific recommendations</li>
+        <li>Technical SEO monitoring and alerts</li>
+        <li>Competitor tracking and gap analysis</li>
+      </ul>
+      <div class="tool-pricing"><strong>Pricing:</strong> Starts at $29/month</div>
+      <br>
+      <a href="/go/ranked" class="cta-button">Try Ranked AI Free → <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+    </div>
+  </section>
+
+  <!-- Faceless Video -->
+  <section id="faceless-video" class="category-section">
+    <div class="category-header">
+      <span class="category-icon">🎭</span>
+      <h2>Faceless Video</h2>
+    </div>
+
+    <div class="tool-card">
+      <div class="tool-header">
+        <div>
+          <h3><a href="/go/faceless">Faceless.video</a></h3>
+          <span class="best-for">Best for: Automated faceless YouTube content</span>
+        </div>
+        <span class="tool-badge">Hot</span>
+      </div>
+      <p class="tool-description">
+        Faceless.video automates the entire faceless YouTube channel workflow. Give it a topic, and it generates the script, creates visuals, adds AI voiceover, edits everything together, and can even upload to YouTube. We're talking full 8-10 minute videos created in minutes instead of hours.
+      </p>
+      <p class="tool-description">
+        The niches where this thrives are explainer content, Reddit story channels, top 10 lists, and educational content. You won't win any filmmaking awards, but the economics are wild — produce 30 videos a month across multiple niches and let the algorithm find winners. Some founders run entire faceless channel portfolios this way.
+      </p>
+      <ul class="tool-features">
+        <li>Full video generation from just a topic</li>
+        <li>AI scriptwriting with hook optimization</li>
+        <li>Stock footage matching and B-roll automation</li>
+        <li>Direct YouTube upload integration</li>
+      </ul>
+      <div class="tool-pricing"><strong>Pricing:</strong> Starts at $29/month</div>
+      <br>
+      <a href="/go/faceless" class="cta-button">Try Faceless.video Free → <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+    </div>
+
+    <div class="tool-card">
+      <div class="tool-header">
+        <div>
+          <h3><a href="/go/smartshort">Smart Short</a></h3>
+          <span class="best-for">Best for: AI-generated short-form content</span>
+        </div>
+      </div>
+      <p class="tool-description">
+        Smart Short focuses specifically on short-form faceless content for TikTok, Reels, and Shorts. It's optimized for the vertical, fast-paced style that performs on these platforms. Input a topic or trend, and it creates scroll-stopping shorts with dynamic text, relevant clips, and punchy narration.
+      </p>
+      <p class="tool-description">
+        The trend detection feature helps you stay relevant — it identifies what's blowing up and suggests content angles. For founders building a short-form presence without wanting to be on camera, this is a solid shortcut. The output quality is good enough that many viral faceless accounts are powered by tools like this.
+      </p>
+      <ul class="tool-features">
+        <li>Short-form video generation in under 5 minutes</li>
+        <li>Trending topic detection and suggestions</li>
+        <li>Multiple AI voice options and styles</li>
+        <li>Optimized for TikTok, Reels, and Shorts formats</li>
+      </ul>
+      <div class="tool-pricing"><strong>Pricing:</strong> Starts at $19/month</div>
+      <br>
+      <a href="/go/smartshort" class="cta-button">Try Smart Short Free → <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+    </div>
+  </section>
+
+  <!-- Internal Links Section -->
+  <div class="internal-links">
+    <h3>Keep Building</h3>
+    <p>More resources to help you scale as a solo founder.</p>
+    <div class="link-buttons">
+      <a href="/free-tools" class="link-button">🛠 Free AI Tools</a>
+      <a href="/toolkit" class="link-button">📦 The Founder Toolkit</a>
+      <a href="#" class="link-button">📚 Guides & Tutorials</a>
+    </div>
+  </div>
+
+  <!-- Footer CTA -->
+  <div class="footer-cta">
+    <div class="footer-cta-icon">🧰</div>
+    <h2>Get The Founder Toolkit</h2>
+    <p>The 9 AI tools I use to run my entire business as a solo founder. Get the complete stack — free.</p>
+    <a href="/toolkit" class="cta-button">Get Free Access → <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+  </div>
+
+</main>
+
+<footer>
+  <div class="footer-links">
+    <a href="/">Home</a>
+    <a href="/toolkit">Toolkit</a>
+    <a href="/free-tools">Free Tools</a>
+    <a href="/guides">Guides</a>
+  </div>
+  <div class="footer-social">
+    <a href="https://instagram.com/thefounderdrop" target="_blank" rel="noopener">@thefounderdrop</a>
+  </div>
+  <p>© 2026 The Founder Drop</p>
+</footer>
+
+</body>
+</html>

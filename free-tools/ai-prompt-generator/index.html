@@ -1288,9 +1288,8 @@ function copyPrompt(type) {
   });
 }
 
-// Email capture form - GHL webhook placeholder
-// TODO: Add actual GHL webhook URL when created
-const GHL_WEBHOOK_URL = 'https://services.leadconnectorhq.com/hooks/YOUR_LOCATION_ID/webhook-trigger/YOUR_WEBHOOK_ID';
+// Email capture form - Unified homepage webhook with tool_source
+const GHL_WEBHOOK_URL = 'https://services.leadconnectorhq.com/hooks/73JctoYNF5rEgo4S5PU0/webhook-trigger/d8dc5980-71a0-45bf-9efc-55cc41b1a976';
 
 document.getElementById('guide-form').addEventListener('submit', async function(e) {
   e.preventDefault();
@@ -1325,7 +1324,7 @@ document.getElementById('guide-form').addEventListener('submit', async function(
     const response = await fetch(GHL_WEBHOOK_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email: email })
+      body: JSON.stringify({ email: email, tool_source: 'ai-prompt-generator' })
     });
     
     if (response.ok) {
