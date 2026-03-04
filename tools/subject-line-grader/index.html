@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cold Email Subject Line Grader | The Founder Drop</title>
+  <meta name="description" content="Free AI-powered tool to grade and improve your cold email subject lines. Get instant feedback on open rate potential.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+      min-height: 100vh;
+      color: #fff;
+    }
+    
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    
+    .header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 24px;
+      text-decoration: none;
+    }
+    
+    .logo-mark {
+      width: 48px;
+      height: 48px;
+      background: #fff;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 18px;
+      color: #0a0a0a;
+    }
+    
+    .logo-text {
+      font-size: 18px;
+      font-weight: 700;
+      color: #fff;
+    }
+    
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, #fff 0%, #a0a0a0 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .subtitle {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.7);
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    
+    /* Email Gate */
+    .email-gate {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 16px;
+      padding: 32px;
+      margin-bottom: 32px;
+    }
+    
+    .email-gate h2 {
+      font-size: 1.3rem;
+      margin-bottom: 8px;
+    }
+    
+    .email-gate p {
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 20px;
+      font-size: 0.95rem;
+    }
+    
+    .email-form {
+      display: flex;
+      gap: 12px;
+    }
+    
+    .email-form input {
+      flex: 1;
+      padding: 14px 18px;
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 10px;
+      background: rgba(255,255,255,0.05);
+      color: #fff;
+      font-size: 1rem;
+    }
+    
+    .email-form input:focus {
+      outline: none;
+      border-color: #FF6B35;
+    }
+    
+    .email-form button {
+      padding: 14px 28px;
+      background: linear-gradient(135deg, #FF6B35 0%, #FF8C42 100%);
+      border: none;
+      border-radius: 10px;
+      color: #fff;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    
+    .email-form button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(255, 107, 53, 0.3);
+    }
+    
+    /* Tool Card */
+    .tool-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 16px;
+      padding: 32px;
+      display: none;
+    }
+    
+    .tool-card.active {
+      display: block;
+    }
+    
+    .input-group {
+      margin-bottom: 24px;
+    }
+    
+    .input-group label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: rgba(255,255,255,0.9);
+    }
+    
+    .input-group input,
+    .input-group textarea {
+      width: 100%;
+      padding: 14px 18px;
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 10px;
+      background: rgba(255,255,255,0.05);
+      color: #fff;
+      font-size: 1rem;
+      font-family: inherit;
+    }
+    
+    .input-group input:focus,
+    .input-group textarea:focus {
+      outline: none;
+      border-color: #FF6B35;
+    }
+    
+    .grade-btn {
+      width: 100%;
+      padding: 16px;
+      background: linear-gradient(135deg, #FF6B35 0%, #FF8C42 100%);
+      border: none;
+      border-radius: 10px;
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    
+    .grade-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(255, 107, 53, 0.3);
+    }
+    
+    /* Results */
+    .results {
+      margin-top: 32px;
+      display: none;
+    }
+    
+    .results.active {
+      display: block;
+    }
+    
+    .score-card {
+      background: rgba(255,255,255,0.08);
+      border-radius: 12px;
+      padding: 24px;
+      text-align: center;
+      margin-bottom: 24px;
+    }
+    
+    .score {
+      font-size: 4rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+    
+    .score.excellent { color: #10B981; }
+    .score.good { color: #FBBF24; }
+    .score.needs-work { color: #EF4444; }
+    
+    .score-label {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.8);
+    }
+    
+    .feedback-section {
+      margin-bottom: 24px;
+    }
+    
+    .feedback-section h3 {
+      font-size: 1.1rem;
+      margin-bottom: 12px;
+      color: rgba(255,255,255,0.9);
+    }
+    
+    .feedback-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 8px;
+      margin-bottom: 8px;
+    }
+    
+    .feedback-icon {
+      font-size: 1.2rem;
+    }
+    
+    .suggestions {
+      background: linear-gradient(135deg, rgba(255,107,53,0.1) 0%, rgba(255,140,66,0.1) 100%);
+      border: 1px solid rgba(255,107,53,0.3);
+      border-radius: 12px;
+      padding: 20px;
+    }
+    
+    .suggestions h3 {
+      color: #FF8C42;
+      margin-bottom: 12px;
+    }
+    
+    .suggestion {
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+    
+    .suggestion:last-child {
+      border-bottom: none;
+    }
+    
+    .suggestion:hover {
+      color: #FF8C42;
+    }
+    
+    /* CTA Section */
+    .cta-section {
+      margin-top: 48px;
+      padding: 32px;
+      background: linear-gradient(135deg, rgba(255,107,53,0.15) 0%, rgba(255,140,66,0.1) 100%);
+      border: 1px solid rgba(255,107,53,0.3);
+      border-radius: 16px;
+      text-align: center;
+    }
+    
+    .cta-section h3 {
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+    }
+    
+    .cta-section p {
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 20px;
+    }
+    
+    .cta-link {
+      display: inline-block;
+      padding: 14px 32px;
+      background: linear-gradient(135deg, #FF6B35 0%, #FF8C42 100%);
+      border-radius: 10px;
+      color: #fff;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 0.2s;
+    }
+    
+    .cta-link:hover {
+      transform: translateY(-2px);
+    }
+    
+    .powered-by {
+      text-align: center;
+      margin-top: 32px;
+      padding-top: 32px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      color: rgba(255,255,255,0.5);
+      font-size: 0.9rem;
+    }
+    
+    .powered-by a {
+      color: #FF6B35;
+      text-decoration: none;
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 1.8rem; }
+      .email-form { flex-direction: column; }
+      .container { padding: 24px 16px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <a href="https://thefounderdrop.com" class="logo">
+        <div class="logo-mark">FD</div>
+        <span class="logo-text">The Founder Drop</span>
+      </a>
+      <h1>Cold Email Subject Line Grader</h1>
+      <p class="subtitle">Get instant AI feedback on your subject lines. Improve open rates before you hit send.</p>
+    </header>
+    
+    <!-- Email Gate -->
+    <div class="email-gate" id="emailGate">
+      <h2>🔓 Unlock Free Access</h2>
+      <p>Enter your email to use this tool. We'll also send you our best cold email templates.</p>
+      <form class="email-form" id="emailForm">
+        <input type="email" id="emailInput" placeholder="you@company.com" required>
+        <button type="submit">Unlock Tool</button>
+      </form>
+    </div>
+    
+    <!-- Tool -->
+    <div class="tool-card" id="toolCard">
+      <div class="input-group">
+        <label for="subjectLine">Your Subject Line</label>
+        <input type="text" id="subjectLine" placeholder="e.g., Quick question about [Company]'s growth" maxlength="100">
+      </div>
+      <div class="input-group">
+        <label for="targetAudience">Target Audience (optional)</label>
+        <input type="text" id="targetAudience" placeholder="e.g., SaaS founders, Marketing directors">
+      </div>
+      <button class="grade-btn" id="gradeBtn">Grade My Subject Line</button>
+      
+      <div class="results" id="results">
+        <div class="score-card">
+          <div class="score" id="scoreValue">85</div>
+          <div class="score-label" id="scoreLabel">Good</div>
+        </div>
+        
+        <div class="feedback-section" id="feedbackSection">
+          <h3>📊 Analysis</h3>
+          <div id="feedbackItems"></div>
+        </div>
+        
+        <div class="suggestions">
+          <h3>💡 Better Alternatives</h3>
+          <div id="suggestionItems"></div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- CTA -->
+    <div class="cta-section">
+      <h3>Want to 10x Your Cold Email Results?</h3>
+      <p>Instantly.ai is the #1 cold email platform used by 50,000+ founders. Warm up emails, avoid spam, and close more deals.</p>
+      <a href="https://instantly.ai/?via=founderdrop" class="cta-link" target="_blank" rel="noopener">Try Instantly Free →</a>
+    </div>
+    
+    <div class="powered-by">
+      Free tool by <a href="https://thefounderdrop.com">The Founder Drop</a> · Daily drops for founders who build with AI
+    </div>
+  </div>
+
+  <script>
+    // Subject line grading logic
+    const criteria = {
+      length: { weight: 20, ideal: [30, 50] },
+      personalization: { weight: 20, patterns: [/\[.*?\]/, /{{.*?}}/, /\byou\b/i, /\byour\b/i] },
+      curiosity: { weight: 15, patterns: [/\?$/, /how/i, /why/i, /what if/i, /secret/i, /reveal/i] },
+      urgency: { weight: 10, patterns: [/quick/i, /now/i, /today/i, /urgent/i, /limited/i, /last chance/i] },
+      clarity: { weight: 15, avoid: [/re:/i, /fwd:/i, /!!!/] },
+      spam: { weight: 20, avoid: [/free/i, /guarantee/i, /act now/i, /!!!/, /\$\$\$/, /click here/i, /buy now/i, /limited time/i, /urgent/i, /100%/i] }
+    };
+
+    function gradeSubjectLine(subject, audience) {
+      let score = 100;
+      const feedback = [];
+      const suggestions = [];
+      
+      // Length check
+      const len = subject.length;
+      if (len < 20) {
+        score -= 15;
+        feedback.push({ icon: '⚠️', text: `Too short (${len} chars). Aim for 30-50 characters.` });
+      } else if (len > 60) {
+        score -= 10;
+        feedback.push({ icon: '⚠️', text: `Too long (${len} chars). Mobile cuts off at ~40 chars.` });
+      } else if (len >= 30 && len <= 50) {
+        feedback.push({ icon: '✅', text: `Good length (${len} chars). Fits well on mobile.` });
+      }
+      
+      // Personalization check
+      const hasPersonalization = criteria.personalization.patterns.some(p => p.test(subject));
+      if (hasPersonalization) {
+        feedback.push({ icon: '✅', text: 'Uses personalization tokens. Great for open rates.' });
+      } else {
+        score -= 15;
+        feedback.push({ icon: '💡', text: 'Add personalization like [First Name] or [Company].' });
+        suggestions.push(`${subject.split(' ').slice(0, 2).join(' ')} for [Company]`);
+      }
+      
+      // Curiosity check
+      const hasCuriosity = criteria.curiosity.patterns.some(p => p.test(subject));
+      if (hasCuriosity) {
+        feedback.push({ icon: '✅', text: 'Creates curiosity. Encourages opens.' });
+      } else {
+        score -= 10;
+        feedback.push({ icon: '💡', text: 'Try adding a question or curiosity hook.' });
+        suggestions.push(`Quick question about ${subject.toLowerCase()}`);
+      }
+      
+      // Spam check
+      const spamMatches = criteria.spam.avoid.filter(p => p.test(subject));
+      if (spamMatches.length > 0) {
+        score -= spamMatches.length * 10;
+        feedback.push({ icon: '🚨', text: `Contains spam triggers: may hurt deliverability.` });
+      } else {
+        feedback.push({ icon: '✅', text: 'No spam triggers detected.' });
+      }
+      
+      // All caps check
+      if (subject === subject.toUpperCase() && subject.length > 3) {
+        score -= 20;
+        feedback.push({ icon: '🚨', text: 'ALL CAPS looks spammy. Use sentence case.' });
+      }
+      
+      // Emoji check (light usage is fine)
+      const emojiCount = (subject.match(/[\u{1F300}-\u{1F9FF}]/gu) || []).length;
+      if (emojiCount > 2) {
+        score -= 10;
+        feedback.push({ icon: '⚠️', text: 'Too many emojis. 1 max is recommended.' });
+      }
+      
+      // Generate suggestions
+      if (suggestions.length === 0) {
+        const base = subject.replace(/[?!.]$/, '');
+        suggestions.push(`${base} (+ a quick ask)`);
+        suggestions.push(`[First Name] — ${base.toLowerCase()}`);
+        suggestions.push(`Re: ${base}`);
+      }
+      
+      score = Math.max(0, Math.min(100, score));
+      
+      return { score, feedback, suggestions };
+    }
+
+    // DOM elements
+    const emailGate = document.getElementById('emailGate');
+    const emailForm = document.getElementById('emailForm');
+    const emailInput = document.getElementById('emailInput');
+    const toolCard = document.getElementById('toolCard');
+    const subjectLine = document.getElementById('subjectLine');
+    const targetAudience = document.getElementById('targetAudience');
+    const gradeBtn = document.getElementById('gradeBtn');
+    const results = document.getElementById('results');
+    const scoreValue = document.getElementById('scoreValue');
+    const scoreLabel = document.getElementById('scoreLabel');
+    const feedbackItems = document.getElementById('feedbackItems');
+    const suggestionItems = document.getElementById('suggestionItems');
+
+    // Check if already unlocked
+    if (localStorage.getItem('fd_subject_grader_unlocked')) {
+      emailGate.style.display = 'none';
+      toolCard.classList.add('active');
+    }
+
+    // Email form submission
+    emailForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const email = emailInput.value.trim();
+      if (!email) return;
+      
+      // Send to GHL webhook
+      try {
+        await fetch('https://services.leadconnectorhq.com/hooks/73JctoYNF5rEgo4S5PU0/webhook-trigger/d8dc5980-71a0-45bf-9efc-55cc41b1a976', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ 
+            email: email,
+            tool_source: 'subject-grader'
+          })
+        });
+      } catch (err) {
+        console.log('Webhook error (non-blocking)', err);
+      }
+      
+      localStorage.setItem('fd_subject_grader_unlocked', 'true');
+      emailGate.style.display = 'none';
+      toolCard.classList.add('active');
+    });
+
+    // Grade button
+    gradeBtn.addEventListener('click', () => {
+      const subject = subjectLine.value.trim();
+      if (!subject) {
+        alert('Please enter a subject line to grade.');
+        return;
+      }
+      
+      const audience = targetAudience.value.trim();
+      const result = gradeSubjectLine(subject, audience);
+      
+      // Update score
+      scoreValue.textContent = result.score;
+      scoreValue.className = 'score';
+      if (result.score >= 80) {
+        scoreValue.classList.add('excellent');
+        scoreLabel.textContent = 'Excellent! Ready to send.';
+      } else if (result.score >= 60) {
+        scoreValue.classList.add('good');
+        scoreLabel.textContent = 'Good, but could be better.';
+      } else {
+        scoreValue.classList.add('needs-work');
+        scoreLabel.textContent = 'Needs work. See suggestions below.';
+      }
+      
+      // Update feedback
+      feedbackItems.innerHTML = result.feedback.map(f => `
+        <div class="feedback-item">
+          <span class="feedback-icon">${f.icon}</span>
+          <span>${f.text}</span>
+        </div>
+      `).join('');
+      
+      // Update suggestions
+      suggestionItems.innerHTML = result.suggestions.map(s => `
+        <div class="suggestion" onclick="document.getElementById('subjectLine').value='${s.replace(/'/g, "\\'")}'">${s}</div>
+      `).join('');
+      
+      results.classList.add('active');
+    });
+
+    // Enter key to grade
+    subjectLine.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') gradeBtn.click();
+    });
+  </script>
+</body>
+</html>
