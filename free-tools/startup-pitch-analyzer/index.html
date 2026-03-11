@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Startup Pitch Analyzer - Is Your Deck Ready for Investors?</title>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KGNYW70SKP"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-KGNYW70SKP');
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            max-width: 600px;
+            width: 100%;
+            padding: 40px;
+        }
+        h1 {
+            color: #1a1a1a;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+        .form-section {
+            margin-bottom: 30px;
+        }
+        .form-section.hidden {
+            display: none;
+        }
+        label {
+            display: block;
+            color: #333;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+        textarea, input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        textarea:focus, input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102,126,234,0.1);
+        }
+        .btn {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background: #5568d3;
+        }
+        .btn-secondary {
+            background: #f0f0f0;
+            color: #333;
+            margin-left: 10px;
+        }
+        .btn-secondary:hover {
+            background: #e0e0e0;
+        }
+        .results {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+        .score-badge {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+        .score-badge.high { background: #10b981; }
+        .score-badge.medium { background: #f59e0b; }
+        .score-badge.low { background: #ef4444; }
+        .result-item {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .result-item:last-child {
+            border-bottom: none;
+        }
+        .result-title {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        .result-text {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        .email-gate {
+            background: #f0f0f0;
+            padding: 20px;
+            border-radius: 6px;
+            margin: 20px 0;
+        }
+        .email-gate h3 {
+            font-size: 16px;
+            margin-bottom: 12px;
+            color: #333;
+        }
+        .email-input-group {
+            display: flex;
+            gap: 10px;
+        }
+        .email-input-group input {
+            flex: 1;
+            margin-bottom: 0;
+        }
+        .email-input-group button {
+            flex: 0 0 auto;
+            padding: 12px 20px;
+        }
+        .cta-section {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 6px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        .cta-section p {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+        .cta-link {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .cta-link:hover {
+            background: #5568d3;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 25px;
+            }
+            h1 {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Startup Pitch Analyzer</h1>
+        <p class="subtitle">Get instant feedback on whether your pitch deck is investor-ready</p>
+
+        <div id="inputSection" class="form-section">
+            <label for="companyName">Company Name</label>
+            <input type="text" id="companyName" placeholder="e.g., TechStartup Inc.">
+
+            <label for="problemStatement">Problem You're Solving</label>
+            <textarea id="problemStatement" placeholder="Describe the market problem..."></textarea>
+
+            <label for="solution">Your Solution</label>
+            <textarea id="solution" placeholder="How your company solves this..."></textarea>
+
+            <label for="marketSize">Total Addressable Market (TAM)</label>
+            <input type="text" id="marketSize" placeholder="e.g., $10B+">
+
+            <label for="traction">Current Traction</label>
+            <textarea id="traction" placeholder="Revenue, users, growth rate..."></textarea>
+
+            <label for="teamHighlight">Team (Key Experience)</label>
+            <input type="text" id="teamHighlight" placeholder="e.g., Ex-Google, Serial Entrepreneur">
+
+            <button class="btn" onclick="analyzePitch()">Analyze My Pitch</button>
+        </div>
+
+        <div id="resultsSection" class="form-section hidden">
+            <div class="results">
+                <div id="scoreDisplay"></div>
+                <div id="strengths"></div>
+                <div id="gaps"></div>
+                <div id="recommendations"></div>
+            </div>
+
+            <div class="email-gate">
+                <h3>Want detailed investor feedback?</h3>
+                <p style="color: #666; font-size: 13px; margin-bottom: 12px;">Get personalized recommendations</p>
+                <div class="email-input-group">
+                    <input type="email" id="emailInput" placeholder="your@email.com">
+                    <button class="btn" onclick="sendFeedback()">Send Feedback</button>
+                </div>
+            </div>
+
+            <div class="cta-section">
+                <p>Track investor conversations automatically:</p>
+                <a href="/go/ghl" class="cta-link">Try GoHighLevel for Investor Management →</a>
+            </div>
+
+            <button class="btn btn-secondary" onclick="resetForm()" style="width: 100%;">Analyze Another</button>
+        </div>
+    </div>
+
+    <script>
+        function analyzePitch() {
+            const company = document.getElementById('companyName').value.trim();
+            const problem = document.getElementById('problemStatement').value.trim();
+            const solution = document.getElementById('solution').value.trim();
+            const market = document.getElementById('marketSize').value.trim();
+            const traction = document.getElementById('traction').value.trim();
+            const team = document.getElementById('teamHighlight').value.trim();
+
+            if (!company || !problem || !solution) {
+                alert('Please fill in Company Name, Problem, and Solution');
+                return;
+            }
+
+            let score = 50;
+            if (market) score += 15;
+            if (traction) score += 20;
+            if (team) score += 15;
+
+            const scoreLevel = score >= 80 ? 'high' : score >= 60 ? 'medium' : 'low';
+            const scoreText = score >= 80 ? 'Investor-Ready' : score >= 60 ? 'Needs Work' : 'Early Stage';
+
+            let strengths = '<div class="result-item"><div class="result-title">✓ Strengths</div><div class="result-text">';
+            if (problem && solution) strengths += '• Clear problem-solution fit<br>';
+            if (market) strengths += '• Defined market size<br>';
+            if (traction) strengths += '• Demonstrated traction<br>';
+            if (team) strengths += '• Strong team<br>';
+            strengths += '</div></div>';
+
+            let gaps = '<div class="result-item"><div class="result-title">⚠ Gaps</div><div class="result-text">';
+            if (!market) gaps += '• Add TAM/market size<br>';
+            if (!traction) gaps += '• Include traction metrics<br>';
+            if (!team) gaps += '• Highlight team credentials<br>';
+            gaps += '</div></div>';
+
+            let recommendations = '<div class="result-item"><div class="result-title">→ Next Steps</div><div class="result-text">';
+            if (score < 70) {
+                recommendations += '• Add customer validation<br>';
+                recommendations += '• Include revenue/growth metrics<br>';
+            } else {
+                recommendations += '• Refine investor pitch deck<br>';
+                recommendations += '• Start warm outreach<br>';
+            }
+            recommendations += '</div></div>';
+
+            document.getElementById('scoreDisplay').innerHTML = `<div class="score-badge ${scoreLevel}">${scoreText} (${score}%)</div>`;
+            document.getElementById('strengths').innerHTML = strengths;
+            document.getElementById('gaps').innerHTML = gaps;
+            document.getElementById('recommendations').innerHTML = recommendations;
+
+            document.getElementById('inputSection').classList.add('hidden');
+            document.getElementById('resultsSection').classList.remove('hidden');
+
+            gtag('event', 'analyze_pitch');
+        }
+
+        function sendFeedback() {
+            const email = document.getElementById('emailInput').value.trim();
+            if (!email) {
+                alert('Please enter your email');
+                return;
+            }
+
+            const company = document.getElementById('companyName').value;
+            const payload = {
+                email: email,
+                company_name: company,
+                tool_source: 'pitch-analyzer'
+            };
+
+            fetch('https://services.leadconnectorhq.com/hooks/73JctoYNF5rEgo4S5PU0/webhook-trigger/d8dc5980-71a0-45bf-9efc-55cc41b1a976', {
+                method: 'POST',
+                body: JSON.stringify(payload)
+            }).then(r => {
+                gtag('event', 'email_submitted');
+                alert('Thanks! Check your email for detailed feedback.');
+                resetForm();
+            }).catch(e => {
+                alert('Error submitting email. Please try again.');
+            });
+        }
+
+        function resetForm() {
+            document.getElementById('companyName').value = '';
+            document.getElementById('problemStatement').value = '';
+            document.getElementById('solution').value = '';
+            document.getElementById('marketSize').value = '';
+            document.getElementById('traction').value = '';
+            document.getElementById('teamHighlight').value = '';
+            document.getElementById('emailInput').value = '';
+            document.getElementById('inputSection').classList.remove('hidden');
+            document.getElementById('resultsSection').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
