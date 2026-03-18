@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KGNYW70SKP"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-KGNYW70SKP');
+    </script>
+    <!-- Meta Pixel -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '3173190099527827');
+      fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=3173190099527827&ev=PageView&noscript=1"
+    /></noscript>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lead Response Time Calculator | How Much Revenue Are You Losing?</title>
+<meta name="description" content="Calculate how much revenue you lose from slow lead follow-up. See exactly what faster response times would mean for your bottom line.">
+<meta name="keywords" content="lead response time calculator, lead follow up speed, speed to lead calculator, lead conversion rate">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Lead Response Time Calculator | How Much Revenue Are You Losing?">
+<meta property="og:description" content="Calculate how much revenue you lose from slow lead follow-up. See exactly what faster response times would mean for your bottom line.">
+<meta property="og:image" content="https://thefounderdrop.com/og-lead-response.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://thefounderdrop.com/free-tools/lead-response-calculator">
+<meta property="og:site_name" content="The Founder Drop">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Lead Response Time Calculator | The Founder Drop">
+<meta name="twitter:description" content="See how much revenue you're losing from slow lead response times.">
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+<!-- Schema Markup -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Lead Response Time Calculator",
+  "description": "Calculate how much revenue you lose from slow lead follow-up and see the impact of faster response times.",
+  "url": "https://thefounderdrop.com/free-tools/lead-response-calculator",
+  "applicationCategory": "BusinessApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "operatingSystem": "Any",
+  "browserRequirements": "Requires JavaScript"
+}
+</script>
+
+<style>
+:root {
+  --primary: #5B9BD5;
+  --primary-hover: #4A8BC5;
+  --bg-dark: #0D0D0D;
+  --bg-card: #1A1A1A;
+  --bg-input: #141414;
+  --text-primary: #FFFFFF;
+  --text-secondary: #A0A0A0;
+  --text-muted: #666666;
+  --border: #2A2A2A;
+  --border-light: #333333;
+  --success: #4CAF50;
+  --danger: #ff4444;
+  --warning: #ff9800;
+  --accent-glow: rgba(91, 155, 213, 0.15);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--bg-dark);
+  color: var(--text-primary);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* Navigation */
+.site-nav {
+  border-bottom: 1px solid var(--border);
+  padding: 16px 20px;
+  position: sticky;
+  top: 0;
+  background: rgba(13, 13, 13, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 100;
+}
+
+.nav-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.nav-links a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover { color: var(--text-primary); }
+
+.nav-cta {
+  background: var(--primary) !important;
+  color: #fff !important;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
+.nav-cta:hover { background: var(--primary-hover) !important; }
+
+/* Container */
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* Page Header */
+.page-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.page-header h1 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.page-header p {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+}
+
+.stat-bar {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--primary);
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Calculator Card */
+.calc-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 32px;
+  margin-bottom: 24px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.form-group input, .form-group select {
+  width: 100%;
+  padding: 14px 16px;
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus, .form-group select:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.form-group small {
+  display: block;
+  margin-top: 6px;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.calculate-btn {
+  width: 100%;
+  padding: 16px;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.calculate-btn:hover { background: var(--primary-hover); }
+
+/* Results */
+#results {
+  display: none;
+  margin-top: 32px;
+}
+
+#results.visible { display: block; }
+
+.results-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.results-header h2 {
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+}
+
+.lost-revenue {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--danger);
+  display: block;
+  margin: 16px 0;
+}
+
+.lost-label {
+  color: var(--text-secondary);
+  font-size: 1rem;
+}
+
+/* Speed Comparison */
+.speed-comparison {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.speed-box {
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+}
+
+.speed-box h3 {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.speed-box .rate {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.speed-box .revenue {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin-top: 4px;
+}
+
+.speed-box.current .rate { color: var(--danger); }
+.speed-box.optimal .rate { color: var(--success); }
+
+/* Breakdown */
+.breakdown-card {
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+.breakdown-card h4 {
+  margin-bottom: 16px;
+  font-size: 1rem;
+}
+
+.breakdown-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.breakdown-row:last-child { border-bottom: none; }
+
+.breakdown-row .label {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.breakdown-row .value {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.breakdown-row.highlight {
+  padding-top: 14px;
+  margin-top: 4px;
+}
+
+.breakdown-row.highlight .label { color: var(--success); font-weight: 600; }
+.breakdown-row.highlight .value { color: var(--success); font-size: 1.1rem; }
+
+/* Response Time Scale */
+.time-scale {
+  margin-bottom: 24px;
+}
+
+.time-scale h4 {
+  margin-bottom: 16px;
+  font-size: 1rem;
+}
+
+.scale-bar {
+  position: relative;
+  height: 8px;
+  background: linear-gradient(to right, var(--success), var(--warning), var(--danger));
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+
+.scale-marker {
+  position: absolute;
+  top: -8px;
+  width: 24px;
+  height: 24px;
+  background: var(--text-primary);
+  border-radius: 50%;
+  transform: translateX(-50%);
+  border: 3px solid var(--bg-dark);
+  transition: left 0.5s ease;
+}
+
+.scale-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* Insight Box */
+.insight-box {
+  background: linear-gradient(135deg, rgba(91, 155, 213, 0.1), rgba(91, 155, 213, 0.05));
+  border: 1px solid var(--primary);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+.insight-box p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.insight-box strong {
+  color: var(--text-primary);
+}
+
+/* CTA Card */
+.cta-card {
+  background: linear-gradient(135deg, rgba(91, 155, 213, 0.1), rgba(91, 155, 213, 0.05));
+  border: 1px solid var(--primary);
+  border-radius: 12px;
+  padding: 32px;
+  text-align: center;
+}
+
+.cta-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+}
+
+.cta-card p {
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+}
+
+.cta-card .cta-btn {
+  display: inline-block;
+  padding: 14px 28px;
+  background: var(--primary);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.cta-card .cta-btn:hover { background: var(--primary-hover); }
+
+/* Email Capture */
+.email-capture {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 32px;
+  margin-top: 32px;
+  text-align: center;
+}
+
+.email-capture h3 {
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+}
+
+.email-capture p {
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+}
+
+.email-form {
+  display: flex;
+  gap: 12px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.email-form input {
+  flex: 1;
+  padding: 14px 16px;
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-size: 1rem;
+}
+
+.email-form button {
+  padding: 14px 24px;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+#capture-success {
+  display: none;
+  color: var(--success);
+  font-weight: 600;
+}
+
+#capture-success.visible { display: block; }
+
+/* Tips Section */
+.tips-section {
+  margin-top: 40px;
+}
+
+.tips-section h3 {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+}
+
+.tip-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 12px;
+}
+
+.tip-card h4 {
+  font-size: 1rem;
+  margin-bottom: 8px;
+  color: var(--primary);
+}
+
+.tip-card p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+/* Affiliate CTA */
+.affiliate-cta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--primary);
+  border-radius: 12px;
+  padding: 24px;
+  margin-top: 32px;
+}
+
+.affiliate-cta-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.affiliate-cta-content h4 {
+  font-size: 1.1rem;
+  margin-bottom: 4px;
+}
+
+.affiliate-cta-content p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-bottom: 0;
+}
+
+.affiliate-cta-btn {
+  margin-left: auto;
+  padding: 12px 20px;
+  background: var(--primary);
+  color: #fff !important;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: background 0.2s;
+  flex-shrink: 0;
+}
+
+.affiliate-cta-btn:hover { background: var(--primary-hover); }
+
+/* Footer */
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 32px 20px;
+  text-align: center;
+  margin-top: 60px;
+}
+
+.footer-links {
+  margin-bottom: 16px;
+}
+
+.footer-links a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  margin: 0 12px;
+  font-size: 0.9rem;
+}
+
+.footer-links .sep { color: var(--text-muted); }
+
+.footer-social { margin-bottom: 16px; }
+.footer-social a { color: var(--primary); text-decoration: none; }
+
+.footer-copy {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+@media (max-width: 600px) {
+  .page-header h1 { font-size: 1.8rem; }
+  .speed-comparison { grid-template-columns: 1fr; }
+  .email-form { flex-direction: column; }
+  .lost-revenue { font-size: 2.2rem; }
+  .stat-bar { gap: 20px; }
+  .stat-number { font-size: 1.4rem; }
+  .affiliate-cta {
+    flex-direction: column;
+    text-align: center;
+  }
+  .affiliate-cta-btn { margin-left: 0; }
+  .nav-links a:not(.nav-cta) { display: none; }
+}
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="nav-container">
+    <a href="/" class="nav-logo">The Founder Drop</a>
+    <div class="nav-links">
+      <a href="/toolkit">Toolkit</a>
+      <a href="/free-tools">Free Tools</a>
+      <a href="/guides">Guides</a>
+      <a href="/" class="nav-cta">Subscribe</a>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <header class="page-header">
+    <h1>Lead Response Time Calculator</h1>
+    <p>See exactly how much revenue you lose every month from slow lead follow-up.</p>
+    <div class="stat-bar">
+      <div class="stat-item">
+        <div class="stat-number">78%</div>
+        <div class="stat-label">Buy from first responder</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">21x</div>
+        <div class="stat-label">More likely in 5 min</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">$15K+</div>
+        <div class="stat-label">Avg lost per month</div>
+      </div>
+    </div>
+  </header>
+
+  <div class="calc-card">
+    <form id="calculator-form">
+      <div class="form-group">
+        <label for="monthly-leads">New leads per month</label>
+        <input type="number" id="monthly-leads" placeholder="e.g., 50" min="1" max="10000" required>
+        <small>Website forms, social DMs, calls, referrals — all inbound leads</small>
+      </div>
+
+      <div class="form-group">
+        <label for="deal-value">Average deal value ($)</label>
+        <input type="number" id="deal-value" placeholder="e.g., 2000" min="1" max="1000000" required>
+        <small>Average revenue per closed deal or customer</small>
+      </div>
+
+      <div class="form-group">
+        <label for="current-response">Current average response time</label>
+        <select id="current-response" required>
+          <option value="">How fast do you respond to leads?</option>
+          <option value="5">Under 5 minutes</option>
+          <option value="15">5-15 minutes</option>
+          <option value="30">15-30 minutes</option>
+          <option value="60">30-60 minutes</option>
+          <option value="180">1-3 hours</option>
+          <option value="480">3-8 hours</option>
+          <option value="1440">Next business day (24h)</option>
+          <option value="2880">2+ days</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="business-type">Business type</label>
+        <select id="business-type" required>
+          <option value="">Select your business type</option>
+          <option value="agency">Agency / Consulting</option>
+          <option value="saas">SaaS / Software</option>
+          <option value="ecommerce">E-commerce</option>
+          <option value="coaching">Coaching / Courses</option>
+          <option value="services">Local Services</option>
+          <option value="freelance">Freelancer</option>
+        </select>
+      </div>
+
+      <button type="submit" class="calculate-btn">
+        <span>Calculate My Lost Revenue</span>
+      </button>
+    </form>
+
+    <div id="results">
+      <div class="results-header">
+        <h2>Revenue You're Leaving on the Table</h2>
+        <span class="lost-revenue" id="lost-monthly">$0</span>
+        <p class="lost-label">lost per month from slow follow-up</p>
+      </div>
+
+      <div class="speed-comparison">
+        <div class="speed-box current">
+          <h3>Your Current Rate</h3>
+          <div class="rate" id="current-rate">0%</div>
+          <div class="revenue" id="current-revenue">$0/mo closed</div>
+        </div>
+        <div class="speed-box optimal">
+          <h3>With 5-Min Response</h3>
+          <div class="rate" id="optimal-rate">0%</div>
+          <div class="revenue" id="optimal-revenue">$0/mo closed</div>
+        </div>
+      </div>
+
+      <div class="time-scale">
+        <h4>Your Position on the Response Time Scale</h4>
+        <div class="scale-bar">
+          <div class="scale-marker" id="scale-marker"></div>
+        </div>
+        <div class="scale-labels">
+          <span>5 min (best)</span>
+          <span>1 hour</span>
+          <span>24 hours</span>
+          <span>48h+ (worst)</span>
+        </div>
+      </div>
+
+      <div class="breakdown-card">
+        <h4>Your Numbers Breakdown</h4>
+        <div class="breakdown-row">
+          <span class="label">Monthly leads</span>
+          <span class="value" id="b-leads">0</span>
+        </div>
+        <div class="breakdown-row">
+          <span class="label">Average deal value</span>
+          <span class="value" id="b-deal">$0</span>
+        </div>
+        <div class="breakdown-row">
+          <span class="label">Current response time</span>
+          <span class="value" id="b-time">-</span>
+        </div>
+        <div class="breakdown-row">
+          <span class="label">Current close rate (estimated)</span>
+          <span class="value" id="b-current-close">0%</span>
+        </div>
+        <div class="breakdown-row">
+          <span class="label">Close rate with 5-min response</span>
+          <span class="value" id="b-optimal-close">0%</span>
+        </div>
+        <div class="breakdown-row">
+          <span class="label">Monthly revenue (current)</span>
+          <span class="value" id="b-current-rev">$0</span>
+        </div>
+        <div class="breakdown-row">
+          <span class="label">Monthly revenue (5-min response)</span>
+          <span class="value" id="b-optimal-rev">$0</span>
+        </div>
+        <div class="breakdown-row highlight">
+          <span class="label">Revenue recovered annually</span>
+          <span class="value" id="b-annual">$0</span>
+        </div>
+      </div>
+
+      <div class="insight-box" id="insight-box">
+        <p id="insight-text"></p>
+      </div>
+
+      <div class="cta-card">
+        <h3>Automate Your Lead Follow-Up</h3>
+        <p>The fastest way to respond in under 5 minutes — every time — is to automate it. GoHighLevel responds to leads instantly with texts, emails, and voicemail drops, so you never lose a deal to slow follow-up again.</p>
+        <a href="/go/ghl" class="cta-btn" target="_blank" rel="noopener">Try GoHighLevel Free →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Affiliate CTA -->
+  <div class="affiliate-cta">
+    <div class="affiliate-cta-icon">&#9889;</div>
+    <div class="affiliate-cta-content">
+      <h4>Never lose a lead to slow follow-up again</h4>
+      <p>GoHighLevel automates texts, emails, and calls within seconds of a new lead. Used by 100,000+ businesses.</p>
+    </div>
+    <a href="/go/ghl" class="affiliate-cta-btn" target="_blank" rel="noopener">Try GHL Free →</a>
+  </div>
+
+  <!-- Email Capture -->
+  <div class="email-capture">
+    <h3>Get the Speed-to-Lead Playbook</h3>
+    <p>5 automations that respond to leads in under 60 seconds — with templates you can copy.</p>
+    <div id="capture-form-container">
+      <form class="email-form" id="sop-form">
+        <input type="email" id="sop-email" placeholder="Enter your email" required>
+        <button type="submit">Get It Free</button>
+      </form>
+    </div>
+    <p id="capture-success">Check your inbox! The Speed-to-Lead Playbook is on its way.</p>
+  </div>
+
+  <!-- Tips Section -->
+  <div class="tips-section">
+    <h3>How to Fix Your Response Time</h3>
+
+    <div class="tip-card">
+      <h4>1. Set up instant auto-replies</h4>
+      <p>When a lead submits a form, send an automated text and email within 60 seconds acknowledging their inquiry. This alone can increase conversion by 30-50%.</p>
+    </div>
+
+    <div class="tip-card">
+      <h4>2. Use a CRM with built-in automation</h4>
+      <p>Tools like <a href="/go/ghl" style="color: var(--primary)">GoHighLevel</a> can trigger automated follow-up sequences the moment a lead comes in — texts, emails, and even voicemail drops.</p>
+    </div>
+
+    <div class="tip-card">
+      <h4>3. Route leads to the right person instantly</h4>
+      <p>Use round-robin assignment or territory-based routing so leads never sit in a shared inbox waiting. Every minute counts.</p>
+    </div>
+
+    <div class="tip-card">
+      <h4>4. Follow up 5+ times in the first 48 hours</h4>
+      <p>The data is clear: most deals close after the 5th follow-up. Use <a href="/go/instantly" style="color: var(--primary)">automated email sequences</a> so no lead falls through the cracks.</p>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <nav class="footer-links">
+    <a href="/">Home</a>
+    <span class="sep">|</span>
+    <a href="/toolkit">Toolkit</a>
+    <span class="sep">|</span>
+    <a href="/free-tools">Free Tools</a>
+    <span class="sep">|</span>
+    <a href="/guides">Guides</a>
+  </nav>
+  <div class="footer-social">
+    <a href="https://instagram.com/thefounderdrop" target="_blank" rel="noopener">@thefounderdrop</a>
+  </div>
+  <p class="footer-copy">&copy; 2026 The Founder Drop</p>
+</footer>
+
+<script>
+// Conversion rates by response time (based on industry research)
+// Sources: Lead Connect, Harvard Business Review, InsideSales.com
+const conversionByTime = {
+  5: 0.21,     // 5 min = ~21% conversion (baseline optimal)
+  15: 0.16,    // 15 min = ~16%
+  30: 0.12,    // 30 min = ~12%
+  60: 0.08,    // 1 hour = ~8%
+  180: 0.05,   // 3 hours = ~5%
+  480: 0.03,   // 8 hours = ~3%
+  1440: 0.015, // 24 hours = ~1.5%
+  2880: 0.008  // 48+ hours = ~0.8%
+};
+
+// Business type multipliers
+const businessMultipliers = {
+  agency: 1.1,
+  saas: 0.9,
+  ecommerce: 0.85,
+  coaching: 1.15,
+  services: 1.2,
+  freelance: 1.0
+};
+
+const responseLabels = {
+  5: 'Under 5 minutes',
+  15: '5-15 minutes',
+  30: '15-30 minutes',
+  60: '30-60 minutes',
+  180: '1-3 hours',
+  480: '3-8 hours',
+  1440: 'Next business day',
+  2880: '2+ days'
+};
+
+document.getElementById('calculator-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  const leads = parseFloat(document.getElementById('monthly-leads').value);
+  const dealValue = parseFloat(document.getElementById('deal-value').value);
+  const responseTime = parseInt(document.getElementById('current-response').value);
+  const businessType = document.getElementById('business-type').value;
+
+  if (!leads || !dealValue || !responseTime || !businessType) {
+    alert('Please fill in all fields');
+    return;
+  }
+
+  const multiplier = businessMultipliers[businessType];
+  const currentRate = conversionByTime[responseTime] * multiplier;
+  const optimalRate = conversionByTime[5] * multiplier;
+
+  const currentRevenue = leads * currentRate * dealValue;
+  const optimalRevenue = leads * optimalRate * dealValue;
+  const lostMonthly = optimalRevenue - currentRevenue;
+  const lostAnnually = lostMonthly * 12;
+
+  // Update main number
+  document.getElementById('lost-monthly').textContent = '$' + Math.round(lostMonthly).toLocaleString();
+
+  // Update comparison
+  document.getElementById('current-rate').textContent = (currentRate * 100).toFixed(1) + '%';
+  document.getElementById('optimal-rate').textContent = (optimalRate * 100).toFixed(1) + '%';
+  document.getElementById('current-revenue').textContent = '$' + Math.round(currentRevenue).toLocaleString() + '/mo';
+  document.getElementById('optimal-revenue').textContent = '$' + Math.round(optimalRevenue).toLocaleString() + '/mo';
+
+  // Update scale marker position
+  const maxTime = 2880;
+  const position = Math.min((Math.log(responseTime) / Math.log(maxTime)) * 100, 100);
+  document.getElementById('scale-marker').style.left = position + '%';
+
+  // Update breakdown
+  document.getElementById('b-leads').textContent = leads.toLocaleString();
+  document.getElementById('b-deal').textContent = '$' + dealValue.toLocaleString();
+  document.getElementById('b-time').textContent = responseLabels[responseTime];
+  document.getElementById('b-current-close').textContent = (currentRate * 100).toFixed(1) + '%';
+  document.getElementById('b-optimal-close').textContent = (optimalRate * 100).toFixed(1) + '%';
+  document.getElementById('b-current-rev').textContent = '$' + Math.round(currentRevenue).toLocaleString();
+  document.getElementById('b-optimal-rev').textContent = '$' + Math.round(optimalRevenue).toLocaleString();
+  document.getElementById('b-annual').textContent = '$' + Math.round(lostAnnually).toLocaleString();
+
+  // Generate insight
+  var insight = '';
+  if (responseTime <= 5) {
+    insight = '<strong>You are already responding fast.</strong> You are in the top 1% of businesses for response time. Focus on optimizing your close rate and follow-up sequence rather than speed.';
+  } else if (responseTime <= 30) {
+    insight = 'You are losing <strong>$' + Math.round(lostMonthly).toLocaleString() + '/month</strong> by not responding in under 5 minutes. The fix is simple: automate your first touch. A single automated text message sent within 60 seconds of a form submission can recover most of this revenue.';
+  } else if (responseTime <= 180) {
+    insight = 'At <strong>' + responseLabels[responseTime].toLowerCase() + '</strong> response time, you are losing <strong>$' + Math.round(lostAnnually).toLocaleString() + ' per year</strong>. Research shows 78% of buyers purchase from the first company that responds. Every hour you wait, your competitors are closing your leads.';
+  } else {
+    insight = '<strong>This is a revenue emergency.</strong> At ' + responseLabels[responseTime].toLowerCase() + ' response time, you are converting less than ' + (currentRate * 100).toFixed(1) + '% of your leads. That means <strong>' + Math.round(leads * (1 - currentRate)) + ' leads per month</strong> are going to competitors who respond faster. Automating your follow-up could recover <strong>$' + Math.round(lostAnnually).toLocaleString() + '/year</strong>.';
+  }
+  document.getElementById('insight-text').innerHTML = insight;
+
+  // GA4 event
+  if (typeof gtag === 'function') {
+    gtag('event', 'calculator_result', {
+      event_category: 'free_tool',
+      event_label: 'lead-response-calculator',
+      value: Math.round(lostMonthly)
+    });
+  }
+
+  // Show results
+  document.getElementById('results').classList.add('visible');
+  document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+});
+
+// Email capture
+var GHL_WEBHOOK_URL = 'https://services.leadconnectorhq.com/hooks/73JctoYNF5rEgo4S5PU0/webhook-trigger/d8dc5980-71a0-45bf-9efc-55cc41b1a976';
+
+document.getElementById('sop-form').addEventListener('submit', async function(e) {
+  e.preventDefault();
+
+  var email = document.getElementById('sop-email').value.trim();
+  var emailInput = document.getElementById('sop-email');
+  var btn = this.querySelector('button');
+  var formContainer = document.getElementById('capture-form-container');
+  var successEl = document.getElementById('capture-success');
+
+  emailInput.style.borderColor = '';
+
+  if (!email || !email.includes('@')) {
+    emailInput.style.borderColor = '#ff4444';
+    return;
+  }
+
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+
+  try {
+    var response = await fetch(GHL_WEBHOOK_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: email, tool_source: 'lead-response-calculator' })
+    });
+
+    if (response.ok) {
+      formContainer.style.display = 'none';
+      successEl.classList.add('visible');
+
+      if (typeof gtag === 'function') {
+        gtag('event', 'lead_capture', {
+          event_category: 'free_tool',
+          event_label: 'lead-response-calculator'
+        });
+      }
+    } else {
+      throw new Error('Request failed');
+    }
+  } catch (err) {
+    console.error('Webhook error:', err);
+    btn.textContent = 'Error - Try Again';
+    btn.disabled = false;
+    btn.style.background = '#ff4444';
+    setTimeout(function() {
+      btn.textContent = 'Get It Free';
+      btn.style.background = '';
+    }, 3000);
+  }
+});
+</script>
+
+</body>
+</html>
