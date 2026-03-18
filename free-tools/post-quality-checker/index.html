@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Quality Checker — The Founder Drop</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #e0e0e0;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #00D4FF 0%, #0099FF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .subtitle {
+            color: #888;
+            font-size: 14px;
+        }
+        
+        .input-section {
+            background: #0f3460;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border: 1px solid #1a5276;
+        }
+        
+        textarea {
+            width: 100%;
+            height: 120px;
+            padding: 12px;
+            background: #1a1a2e;
+            color: #e0e0e0;
+            border: 1px solid #1a5276;
+            border-radius: 6px;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            resize: vertical;
+        }
+        
+        textarea:focus {
+            outline: none;
+            border-color: #00D4FF;
+        }
+        
+        button {
+            background: linear-gradient(135deg, #00D4FF 0%, #0099FF 100%);
+            color: #000;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: transform 0.2s;
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+        }
+        
+        button:active {
+            transform: translateY(0);
+        }
+        
+        .analysis {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .check {
+            background: #0f3460;
+            border: 1px solid #1a5276;
+            border-radius: 8px;
+            padding: 20px;
+        }
+        
+        .check.pass {
+            border-color: #00F5A0;
+            background: rgba(0, 245, 160, 0.05);
+        }
+        
+        .check.fail {
+            border-color: #FF6B35;
+            background: rgba(255, 107, 53, 0.05);
+        }
+        
+        .check.warning {
+            border-color: #FFB703;
+            background: rgba(255, 183, 3, 0.05);
+        }
+        
+        .check-title {
+            display: flex;
+            align-items: center;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+        
+        .check-icon {
+            margin-right: 8px;
+            font-size: 18px;
+        }
+        
+        .check.pass .check-icon::before {
+            content: "✓";
+            color: #00F5A0;
+        }
+        
+        .check.fail .check-icon::before {
+            content: "✗";
+            color: #FF6B35;
+        }
+        
+        .check.warning .check-icon::before {
+            content: "⚠";
+            color: #FFB703;
+        }
+        
+        .check-detail {
+            font-size: 12px;
+            color: #aaa;
+            line-height: 1.5;
+        }
+        
+        .summary {
+            background: #0f3460;
+            border: 1px solid #1a5276;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .score {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #00D4FF 0%, #0099FF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .status {
+            font-size: 16px;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #1a5276;
+        }
+        
+        .status.ready {
+            color: #00F5A0;
+        }
+        
+        .status.issues {
+            color: #FFB703;
+        }
+        
+        .status.blocked {
+            color: #FF6B35;
+        }
+        
+        .recommendation {
+            background: rgba(0, 212, 255, 0.1);
+            border-left: 3px solid #00D4FF;
+            padding: 12px;
+            border-radius: 4px;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+        
+        .banned-phrase {
+            background: rgba(255, 107, 53, 0.2);
+            color: #FF6B35;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-weight: 600;
+        }
+        
+        .footer {
+            text-align: center;
+            color: #666;
+            font-size: 12px;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #1a5276;
+        }
+        
+        label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #00D4FF;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📊 Post Quality Checker</h1>
+            <p class="subtitle">Validate posts against SKILL-social-post.md preflight criteria</p>
+        </header>
+        
+        <div class="input-section">
+            <label for="caption">Paste Full Post Caption:</label>
+            <textarea id="caption" placeholder="Headline&#10;&#10;Caption body...&#10;&#10;Comment PLAYBOOK below...&#10;&#10;@thefounderdrop&#10;&#10;Source: [Publication]&#10;&#10;#hashtag1 #hashtag2 #hashtag3"></textarea>
+            
+            <label for="headline" style="margin-top: 15px;">Or Paste Headline Only:</label>
+            <textarea id="headline" placeholder="Headline that opens curiosity gap..."></textarea>
+            
+            <button onclick="analyzePost()">Analyze Post</button>
+        </div>
+        
+        <div id="results" style="display: none;">
+            <div class="summary">
+                <div class="score" id="scoreValue">—</div>
+                <div class="status" id="statusText">Ready to analyze</div>
+                <div id="recommendationBox"></div>
+            </div>
+            
+            <div class="analysis" id="checksContainer"></div>
+        </div>
+        
+        <div class="footer">
+            <p>Built for The Founder Drop | Real-time post quality validation</p>
+        </div>
+    </div>
+    
+    <script>
+        const BANNED_PHRASES = [
+            "here's why",
+            "here's what",
+            "here's how",
+            "here's proof",
+            "changes everything",
+            "nobody's talking",
+            "what it means",
+            "what you need to know",
+            "the secret"
+        ];
+        
+        function analyzePost() {
+            const caption = document.getElementById('caption').value.trim();
+            const headline = document.getElementById('headline').value.trim();
+            
+            let fullText = caption || headline;
+            
+            if (!fullText) {
+                alert('Please paste a caption or headline');
+                return;
+            }
+            
+            const checks = runChecks(fullText, caption);
+            displayResults(checks);
+            document.getElementById('results').style.display = 'block';
+        }
+        
+        function runChecks(fullText, hasCaption) {
+            const lines = fullText.split('\n').filter(l => l.trim());
+            const headlineText = lines[0] || '';
+            
+            let checks = [];
+            
+            // Check 1: Banned phrases
+            const bannedFound = BANNED_PHRASES.filter(phrase =>
+                fullText.toLowerCase().includes(phrase)
+            );
+            
+            checks.push({
+                title: 'Banned Phrases',
+                pass: bannedFound.length === 0,
+                warning: false,
+                detail: bannedFound.length === 0
+                    ? 'No banned phrases found'
+                    : `Found: ${bannedFound.map(p => `"${p}"`).join(', ')}`
+            });
+            
+            // Check 2: Headline creates tension
+            const hasQuestion = fullText.includes('?');
+            const hasNumber = /\$|\d+(?:M|B|K)|percent|%/.test(fullText);
+            const hasContrast = fullText.includes('But') || fullText.includes('Then') || fullText.includes('Now');
+            
+            checks.push({
+                title: 'Headline Opens Curiosity Gap',
+                pass: hasQuestion || hasNumber || hasContrast,
+                warning: !(hasQuestion || hasNumber || hasContrast),
+                detail: hasQuestion || hasNumber || hasContrast
+                    ? 'Headline includes question, number, or contrast'
+                    : 'Consider adding a number, question, or contradiction'
+            });
+            
+            // Check 3: Source attribution
+            const hasSource = fullText.toLowerCase().includes('source:');
+            checks.push({
+                title: 'Source Attribution',
+                pass: hasSource,
+                warning: false,
+                detail: hasSource
+                    ? 'Source line included'
+                    : 'Missing: Source: [Publication Name]'
+            });
+            
+            // Check 4: CTA present
+            const hasPlaybookCTA = fullText.toLowerCase().includes('comment playbook');
+            const hasGeneralCTA = fullText.toLowerCase().includes('comment') && (fullText.toLowerCase().includes('below') || fullText.toLowerCase().includes('and i'));
+            
+            checks.push({
+                title: 'Call-to-Action',
+                pass: hasPlaybookCTA || hasGeneralCTA,
+                warning: !hasPlaybookCTA && hasGeneralCTA,
+                detail: hasPlaybookCTA
+                    ? 'PLAYBOOK CTA present (ideal)'
+                    : hasGeneralCTA
+                    ? 'Generic CTA present (update to PLAYBOOK)'
+                    : 'Missing CTA entirely'
+            });
+            
+            // Check 5: Hashtags
+            const hashtagCount = (fullText.match(/#\w+/g) || []).length;
+            checks.push({
+                title: 'Hashtags (3-5 required)',
+                pass: hashtagCount >= 3 && hashtagCount <= 5,
+                warning: hashtagCount > 0 && (hashtagCount < 3 || hashtagCount > 5),
+                detail: `Found ${hashtagCount} hashtags (target: 3-5)`
+            });
+            
+            // Check 6: @thefounderdrop mention
+            const hasHandle = fullText.includes('@thefounderdrop');
+            checks.push({
+                title: 'Brand Handle',
+                pass: hasHandle,
+                warning: false,
+                detail: hasHandle
+                    ? '@thefounderdrop included'
+                    : 'Missing @thefounderdrop'
+            });
+            
+            // Check 7: Caption structure (if full caption provided)
+            if (hasCaption) {
+                const lowerText = fullText.toLowerCase();
+                const hasHook = lines.length > 0;
+                const hasBody = lines.length > 2;
+                const hasCtaSection = lowerText.includes('comment') && (lowerText.includes('below') || lowerText.includes('and i'));
+                
+                checks.push({
+                    title: 'Caption Structure',
+                    pass: hasHook && hasBody && hasCtaSection,
+                    warning: !(hasHook && hasBody && hasCtaSection),
+                    detail: hasHook && hasBody && hasCtaSection
+                        ? 'HOOK → BODY → BRIDGE → CTA detected'
+                        : 'Review structure: Hook → Body → Bridge → CTA'
+                });
+            }
+            
+            return checks;
+        }
+        
+        function displayResults(checks) {
+            const passed = checks.filter(c => c.pass).length;
+            const total = checks.length;
+            const score = Math.round((passed / total) * 100);
+            
+            document.getElementById('scoreValue').textContent = score + '%';
+            
+            let statusClass = 'ready';
+            let statusText = 'Ready for video generation ✓';
+            
+            if (score < 100) {
+                statusClass = score >= 70 ? 'issues' : 'blocked';
+                statusText = score >= 70
+                    ? 'Issues found — review below'
+                    : 'Preflight failed — address issues before proceeding';
+            }
+            
+            document.getElementById('statusText').className = `status ${statusClass}`;
+            document.getElementById('statusText').textContent = statusText;
+            
+            let recommendation = '';
+            const failedChecks = checks.filter(c => !c.pass && !c.warning);
+            const warningChecks = checks.filter(c => c.warning);
+            
+            if (failedChecks.length > 0) {
+                recommendation += `<strong>Must fix:</strong> ${failedChecks.map(c => c.title).join(', ')}<br>`;
+            }
+            if (warningChecks.length > 0) {
+                recommendation += `<strong>Should review:</strong> ${warningChecks.map(c => c.title).join(', ')}`;
+            }
+            
+            const recBox = document.getElementById('recommendationBox');
+            if (recommendation) {
+                recBox.innerHTML = `<div class="recommendation">${recommendation}</div>`;
+            } else {
+                recBox.innerHTML = '<div class="recommendation" style="background: rgba(0, 245, 160, 0.1); border-color: #00F5A0; color: #00F5A0;">✓ All checks passed. Ready to proceed.</div>';
+            }
+            
+            displayChecks(checks);
+        }
+        
+        function displayChecks(checks) {
+            const container = document.getElementById('checksContainer');
+            container.innerHTML = '';
+            
+            checks.forEach(check => {
+                const statusClass = check.pass ? 'pass' : check.warning ? 'warning' : 'fail';
+                const div = document.createElement('div');
+                div.className = `check ${statusClass}`;
+                div.innerHTML = `
+                    <div class="check-title">
+                        <span class="check-icon"></span>
+                        ${check.title}
+                    </div>
+                    <div class="check-detail">${check.detail}</div>
+                `;
+                container.appendChild(div);
+            });
+        }
+        
+        // Auto-analyze on paste
+        document.getElementById('caption').addEventListener('paste', () => {
+            setTimeout(() => {
+                if (document.getElementById('caption').value.trim().length > 20) {
+                    analyzePost();
+                }
+            }, 100);
+        });
+    </script>
+</body>
+</html>
