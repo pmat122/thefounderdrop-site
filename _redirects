@@ -76,3 +76,8 @@
 /go/canva https://www.canva.com/ 302
 /go/notion https://www.notion.com/ 302
 /go/calendly https://calendly.com/ 302
+
+# Canonical consolidation — redirect root duplicates to /guides/ canonical versions
+/gohighlevel-review/        /guides/gohighlevel-review/        301
+/gohighlevel-vs-clickfunnels/ /guides/gohighlevel-vs-clickfunnels/ 301
+/instantly-vs-apollo/        /guides/instantly-vs-apollo/        301
