@@ -68,7 +68,7 @@
 <style>
   :root {
     --bg: #0a0a0a;
-    --bg-alt: #111111;
+    --bg-alt: #111827;
     --surface: #161616;
     --card: #1a1a1a;
     --border: rgba(255,255,255,0.08);
@@ -223,70 +223,46 @@
     position: relative;
   }
 
-  /* Video placeholder */
-  .video-placeholder {
-    position: relative;
-    max-width: 720px;
-    margin: 0 auto 40px;
-    aspect-ratio: 16/9;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-  }
-
-  .video-placeholder-inner {
-    text-align: center;
-    color: var(--text-dim);
-  }
-
-  .video-placeholder-inner .play-icon {
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.08);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 12px;
-    border: 2px solid rgba(255,255,255,0.15);
-  }
-
-  .video-placeholder-inner .play-icon svg {
-    width: 24px;
-    height: 24px;
-    fill: var(--text-dim);
-    margin-left: 3px;
-  }
-
   /* CTA Button */
   .cta-btn {
     display: inline-block;
-    padding: 18px 48px;
+    padding: 22px 58px;
     background: var(--green);
     color: #fff;
     font-weight: 700;
-    font-size: 18px;
-    border-radius: 10px;
+    font-size: 21px;
+    border-radius: 12px;
     text-decoration: none;
     transition: transform 0.2s, box-shadow 0.2s;
     position: relative;
     letter-spacing: -0.3px;
+    box-shadow: 0 0 30px rgba(55, 202, 55, 0.25), 0 0 60px rgba(55, 202, 55, 0.1);
   }
 
   .cta-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 30px var(--green-glow);
+    box-shadow: 0 0 40px rgba(55, 202, 55, 0.35), 0 8px 30px var(--green-glow);
+  }
+
+  .cta-wrap {
+    padding: 40px 0;
+    text-align: center;
   }
 
   .cta-subtext {
     display: block;
-    margin-top: 14px;
+    margin-top: 16px;
     font-size: 14px;
     color: var(--text-muted);
+    position: relative;
+  }
+
+  .urgency-line {
+    display: block;
+    margin-top: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--gold);
     position: relative;
   }
 
@@ -391,8 +367,8 @@
   }
 
   .option-card {
-    background: var(--card);
-    border: 1px solid var(--border);
+    background: #111827;
+    border: 1px solid rgba(91,155,213,0.2);
     border-radius: 12px;
     padding: 32px 24px;
     text-align: center;
@@ -454,10 +430,10 @@
   /* Bonus cards */
   .bonuses-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 24px;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 28px;
     margin: 48px auto 0;
-    max-width: 1000px;
+    max-width: 1100px;
   }
 
   .bonus-card {
@@ -465,16 +441,17 @@
     border: 1px solid var(--border);
     border-radius: 16px;
     overflow: hidden;
-    transition: transform 0.2s, border-color 0.2s;
+    transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
   }
 
   .bonus-card:hover {
-    transform: translateY(-4px);
-    border-color: rgba(91, 155, 213, 0.3);
+    transform: translateY(-6px);
+    border-color: rgba(91, 155, 213, 0.4);
+    box-shadow: 0 0 30px rgba(91, 155, 213, 0.12), 0 8px 24px rgba(0,0,0,0.3);
   }
 
   .bonus-card-image {
-    height: 160px;
+    height: 200px;
     background: linear-gradient(135deg, rgba(91,155,213,0.15) 0%, rgba(91,155,213,0.05) 100%);
     display: flex;
     align-items: center;
@@ -483,7 +460,7 @@
   }
 
   .bonus-card-image .bonus-icon {
-    font-size: 48px;
+    font-size: 60px;
   }
 
   .bonus-card-value {
@@ -499,14 +476,14 @@
   }
 
   .bonus-card-body {
-    padding: 24px;
+    padding: 28px;
   }
 
   .bonus-card-body h3 {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 700;
     color: var(--white);
-    margin-bottom: 12px;
+    margin-bottom: 14px;
   }
 
   .bonus-card-body ul {
@@ -515,7 +492,7 @@
   }
 
   .bonus-card-body ul li {
-    font-size: 14px;
+    font-size: 15px;
     color: var(--text-dim);
     padding: 4px 0;
     padding-left: 20px;
@@ -619,6 +596,15 @@
     border-radius: 16px;
     padding: 32px;
     position: relative;
+  }
+
+  .testimonial-hero-stat {
+    font-size: 36px;
+    font-weight: 900;
+    color: #5B9BD5;
+    letter-spacing: -1px;
+    margin-bottom: 8px;
+    line-height: 1.1;
   }
 
   .testimonial-result {
@@ -940,18 +926,11 @@
   <h1>Get My Entire Client Acquisition System&nbsp;&mdash;&nbsp;Free</h1>
   <p class="hero-sub">Pre-built funnels. Automated email sequences. Done-for-you workflows. One-click import. <strong style="color:var(--white)">$2,000+ value</strong> &mdash; yours free when you start your 14-day trial.</p>
 
-  <!-- Video Placeholder -->
-  <div class="video-placeholder" id="vsl-placeholder">
-    <div class="video-placeholder-inner">
-      <div class="play-icon">
-        <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
-      </div>
-      <p style="font-size:14px;">Video Coming Soon</p>
-    </div>
+  <div class="cta-wrap">
+    <a href="/go/ghl" class="cta-btn">Get Free System + Start Trial</a>
+    <span class="cta-subtext">No credit card tricks. Cancel anytime. Keep the templates forever.</span>
+    <span class="urgency-line">Limited to 50 new users per month &mdash; <span id="spots-count">23</span> spots remaining this month</span>
   </div>
-
-  <a href="/go/ghl" class="cta-btn">Get Free System + Start Trial</a>
-  <span class="cta-subtext">No credit card tricks. Cancel anytime. Keep the templates forever.</span>
 </section>
 
 <!-- Logo Bar -->
@@ -1133,8 +1112,9 @@
         <p>Receive the full system &mdash; import everything in one click. Launch the same afternoon.</p>
       </div>
     </div>
-    <div style="text-align:center;" class="reveal">
+    <div class="cta-wrap reveal">
       <a href="/go/ghl" class="cta-btn">Get Free System + Start Trial</a>
+      <span class="urgency-line">Limited to 50 new users per month &mdash; <span class="spots-mirror">23</span> spots remaining</span>
     </div>
   </div>
 </section>
@@ -1148,7 +1128,8 @@
     </div>
     <div class="testimonials-grid">
       <div class="testimonial-card reveal">
-        <span class="testimonial-result">7 new clients &bull; $120K closed</span>
+        <div class="testimonial-hero-stat">$120K Closed</div>
+        <span class="testimonial-result">7 new clients &bull; 14 days</span>
         <blockquote>"I imported the funnel on a Monday, ran my first campaign on Tuesday, and by Friday I had 7 new client calls booked. We closed $120K in the first 14 days."</blockquote>
         <div class="testimonial-author">
           <div class="testimonial-avatar">I</div>
@@ -1159,7 +1140,8 @@
         </div>
       </div>
       <div class="testimonial-card reveal">
-        <span class="testimonial-result">12x ROI &bull; First month</span>
+        <div class="testimonial-hero-stat">12x ROI</div>
+        <span class="testimonial-result">First month</span>
         <blockquote>"DonorCure had tried three different CRMs before. Within 30 days of using this system, we saw a 12x return on investment. The automated follow-ups alone changed everything."</blockquote>
         <div class="testimonial-author">
           <div class="testimonial-avatar">S</div>
@@ -1170,7 +1152,8 @@
         </div>
       </div>
       <div class="testimonial-card reveal">
-        <span class="testimonial-result">6x return &bull; 14 days</span>
+        <div class="testimonial-hero-stat">6x Return</div>
+        <span class="testimonial-result">14 days &bull; 11 extra appointments</span>
         <blockquote>"We copied the templates word-for-word. Didn't change a thing. Within two weeks we had a 6x return. The missed call text-back alone booked us 11 extra appointments."</blockquote>
         <div class="testimonial-author">
           <div class="testimonial-avatar">J</div>
@@ -1235,8 +1218,9 @@
         </div>
       </div>
     </div>
-    <div style="text-align:center;margin-top:48px;" class="reveal">
+    <div class="cta-wrap reveal">
       <a href="/go/ghl" class="cta-btn">Get Free System + Start Trial</a>
+      <span class="urgency-line">Limited to 50 new users per month &mdash; <span class="spots-mirror">23</span> spots remaining</span>
     </div>
   </div>
 </section>
@@ -1306,8 +1290,11 @@
 <section class="final-cta">
   <h2>Your Calendar Won't Fill Itself</h2>
   <p>Every day you wait, another competitor is installing the system that books their calls, follows up automatically, and closes deals while they sleep. Your move.</p>
-  <a href="/go/ghl" class="cta-btn" style="position:relative;">Get Free System + Start Trial</a>
-  <span class="cta-subtext" style="position:relative;">Start free. Cancel anytime. Keep everything.</span>
+  <div class="cta-wrap" style="position:relative;">
+    <a href="/go/ghl" class="cta-btn">Get Free System + Start Trial</a>
+    <span class="cta-subtext">Start free. Cancel anytime. Keep everything.</span>
+    <span class="urgency-line">Limited to 50 new users per month &mdash; <span class="spots-mirror">23</span> spots remaining</span>
+  </div>
 </section>
 
 <!-- Footer -->
