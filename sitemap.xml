@@ -1218,4 +1218,28 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://thefounderdrop.com/guides</loc>
+    <lastmod>2026-03-30</lastmod>
+  </url>
+  <url>
+    <loc>https://thefounderdrop.com/free-tools</loc>
+    <lastmod>2026-03-30</lastmod>
+  </url>
+  <url>
+    <loc>https://thefounderdrop.com/free-tools/va-vs-ai-calculator</loc>
+    <lastmod>2026-03-30</lastmod>
+  </url>
+  <url>
+    <loc>https://thefounderdrop.com/toolkit</loc>
+    <lastmod>2026-03-30</lastmod>
+  </url>
+  <url>
+    <loc>https://thefounderdrop.com/free-tools/instagram-caption-generator</loc>
+    <lastmod>2026-03-30</lastmod>
+  </url>
+  <url>
+    <loc>https://thefounderdrop.com/free-tools/ai-cold-email-writer</loc>
+    <lastmod>2026-03-30</lastmod>
+  </url>
 </urlset>
