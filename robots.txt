@@ -1,4 +1,18 @@
 User-agent: *
 Allow: /
+Disallow: /go/
+
+# LLM Crawlers — Welcome
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: GoogleOther
+Allow: /
 
 Sitemap: https://thefounderdrop.com/sitemap.xml
