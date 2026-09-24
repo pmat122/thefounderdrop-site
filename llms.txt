@@ -55,16 +55,6 @@ The Founder Drop is a resource for solo founders building businesses with AI. We
 ## AI Tools by Industry (130+ Guides)
 Dedicated AI tool guides for every industry at https://thefounderdrop.com/guides/
 Select guides:
-- AI Tools for Accountants: https://thefounderdrop.com/guides/ai-tools-for-accountants/
-- AI Tools for Real Estate Agents: https://thefounderdrop.com/guides/ai-tools-for-real-estate-agents/
-- AI Tools for Coaches: https://thefounderdrop.com/guides/ai-tools-for-coaches/
-- AI Tools for Dentists: https://thefounderdrop.com/guides/ai-tools-for-dentists/
-- AI Tools for Lawyers: https://thefounderdrop.com/guides/ai-tools-for-lawyers/
-- AI Tools for HVAC: https://thefounderdrop.com/guides/ai-tools-for-hvac/
-- AI Tools for Plumbers: https://thefounderdrop.com/guides/ai-tools-for-plumbers/
-- AI Tools for Insurance Agents: https://thefounderdrop.com/guides/ai-tools-for-insurance-agents/
-- AI Tools for SaaS Founders: https://thefounderdrop.com/guides/ai-tools-for-saas-founders/
-- AI Tools for Solopreneurs: https://thefounderdrop.com/guides/ai-tools-for-solopreneurs/
 
 ## Frequently Asked Questions
 
